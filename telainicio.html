@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/telaInicio.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <title>CerealistaSolza</title>
+    
+</head>
+<body>
+    <body>
+        <div id="headersuperior">
+            <img src="/css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+        </div> 
+        <div id="headerinferior">
+            <button type="button" class="buttonLink"><a href="telaprodutos.html"></a>Produtos</button>
+            <button type="button" class="buttonLink"><a href="telafuncionarios.html"></a>Funcionarios</button>
+            <button type="button" class="buttonLink"><a href="telarelatoriodeProdutos.html"></a>Relatório</button>
+        </div>
+            <div class="container">
+                    <div id="textos">
+                        <h1>Dados de Saída</h1>
+                        <h1>Dados de Entrada</h1>
+                    </div>
+                    <div id="chart1"></div>
+                    <div id="chart2"></div>
+                
+            </div>
+        </div>
+        <div id="footersuperior"></div>
+        <!-- <div id="footerinferior"></div>   -->
+
+        <!-- script -->
+        <script>
+            var options = {
+        chart: {
+        type: 'line'
+        },
+        colors:['#F44336', '#E91E63', '#9C27B0'],
+        series: [{
+        name: 'Dados de saida',
+        data: [30,40,35,50,49,60,70,91,125,1,12,200]
+        }],
+        xaxis: {
+        categories: ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","novembro","Dezembro"]
+        }
+        }
+
+        var chart = new ApexCharts(document.querySelector("#chart1"), options);
+
+        chart.render();
+
+        var options = {
+        chart: {
+        type: 'line'
+        },
+        series: [{
+        name: 'Dados de saida',
+        data: [30,40,35,50,49,60,70,91,125,1,12,200]
+        }],
+        xaxis: {
+        categories: ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","novembro","Dezembro"]
+        }
+        }
+
+        var chart = new ApexCharts(document.querySelector("#chart2"), options);
+
+        chart.render();
+        </script>
+    </body>
+</body>
+</html>

@@ -1,0 +1,117 @@
+*{
+    border: 0;
+    padding: 0;
+}
+body{
+    display:contents;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#headersuperior{
+        background-color: black ;
+        height: 6vh;
+}
+#headerinferior{
+    background-color: #3a6b03;
+    height: 2em;
+}
+#footersuperior{
+    background-color: #3a6b03;
+    height: 2em;
+    
+}
+#footerinferior{
+    background-color: black;
+    height: 5vh;
+}
+.container{
+    background-image: url(img/image\ copy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 87.3vh;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 580px;
+    height: 730px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 3em;
+    padding: 1em;
+    align-items: center;
+    position:absolute;
+    top: 13%;
+    left: 34%;
+}
+.inputbutton1,.inputbutton2{
+    font-size: 20px;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 400px;
+    height: 60px;
+    padding: 5px;
+    outline: none;
+    background-color: transparent; 
+    /* border: 1px solid white; */
+    border-bottom: 1px solid white;
+
+    
+}
+#confirmar{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    width: 230px;
+    height: 50px;
+    padding: 5px;
+    outline: none;
+    border-radius: 1em;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+#confirmar:hover{
+    background-color: rgb(0, 0, 0, 0.7);
+}
+#foto{
+    width:250px;
+    height: 250px;
+}
+.bottons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+#titleLoginEmail{
+    color: white;
+    position:absolute;
+    height: 40px;
+    top: 63.5%;
+    left: 17%;
+    font-size: large;
+    transition: 0.5s;
+}
+
+#titleLoginSenha{
+    color: white;
+    position:absolute;
+    font-size: large;
+    left: 17%;
+    top: 73.5%;
+    transition: 0.5s;
+}
+
+.inputbutton1:focus~#titleLoginSenha,
+.inputbutton1:valid~#titleLoginSenha
+{
+    top: 69.3%;
+    font-size: 13px ;
+}
+.inputbutton2:focus~#titleLoginEmail,
+.inputbutton2:valid~#titleLoginEmail{
+    top: 58.5%;
+    font-size: 13px ;
+}
