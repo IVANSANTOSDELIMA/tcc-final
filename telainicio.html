@@ -9,26 +9,23 @@
     
 </head>
 <body>
-    <body>
-        <div id="headersuperior">
-            <img src="/css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-        </div> 
-        <div id="headerinferior">
-            <button type="button" class="buttonLink"><a href="telaprodutos.html"></a>Produtos</button>
-            <button type="button" class="buttonLink"><a href="telafuncionarios.html"></a>Funcionarios</button>
-            <button type="button" class="buttonLink"><a href="telarelatoriodeProdutos.html"></a>Relatório</button>
-        </div>
+        <div class="containerTotal">
+            <div class="containerButtons">
+                <img src="/css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+                <a href="telaprodutos.html"></a>Produtos
+                <a href="telafuncionarios.html"></a>Funcionarios
+                <a href="telarelatoriodeProdutos.html"></a>Relatório
+            </div>
+            <header id="headersuperior"></header>
             <div class="container">
-                    <div id="textos">
-                        <h1>Dados de Saída</h1>
-                        <h1>Dados de Entrada</h1>
-                    </div>
-                    <div id="chart1"></div>
-                    <div id="chart2"></div>
-                
+                <div class="containertrafic">
+                    
+                </div>
+                        <div id="chart1"></div>
+                        <div id="chart2"></div>
             </div>
         </div>
-        <div id="footersuperior"></div>
+        
         <!-- <div id="footerinferior"></div>   -->
 
         <!-- script -->
@@ -68,6 +65,6 @@
 
         chart.render();
         </script>
-    </body>
+    
 </body>
 </html>
