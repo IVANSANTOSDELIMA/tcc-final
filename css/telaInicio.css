@@ -1,3 +1,10 @@
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
 *{
     border: 0;
     padding: 0;
@@ -8,8 +15,8 @@ body{
 }
 #headersuperior{
     position: fixed;
-    background-color:#a6a4a4c1 ;
-    height: 4vh;
+    background-color:#ffffff ;
+    height: 6vh;
     left: 15.7%;
     width: 200vh;
     /* border: solid 2px #818181; */
@@ -24,46 +31,57 @@ body{
     display: flex;
     height: 150vh;
     width: 2000px;
-    background-color: #ffffff;
+    background-color: #e4e4e4;
 }
 .containerButtons{
+    font-family: inter;
+    font-size: 25px;
     position: fixed;
     /* border: solid 2px #818181; */
     display: flex;
     width: 300px;
     height: 100vh;
-    background-color: #a5a4a4;
+    background-color: #ffffff;
     flex-direction: column;
-    gap: 5px;
+    gap: 12px;
 }
-.buttonLink{
+button{
+    display: flex;
+    flex-direction: left;
+    position:relative;
+    top: 8%;
+    font-family: inter;
+    font-size: 25px;
+    padding: 8px;
+    background-color: transparent;
+}
+/* .buttonLink{
     display: flex;
     justify-content:baseline;
     font-weight: bold;
     width: 100%;
     font-size:medium;
     color: rgb(255, 255, 255);
-    background-color: #a8a8a8;
+    background-color: #ffffff;
     padding: 2em;
     outline: none;
-}
+} */
 #logo{
     position: relative;
-    top: -1%;
-    left: 10%;
+    top: 1%;
+    left: 7%;
     width: 14vh;
 }
+.graficoLinha, #chart1, #chart2{
+    position: relative;
+    top: 30%;
+    left: 50%;
+}
 #chart1{
-    position: absolute;
-    top: 25%;
-    left: 63%;
     width: 670px;
     background-color: rgb(246, 246, 246);
 }
 #chart2{
-    position: absolute;
-    top: 25%;
-    left: 17%;
     width: 670px;
     background-color: rgb(246, 246, 246);
 }
