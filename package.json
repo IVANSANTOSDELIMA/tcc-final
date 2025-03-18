@@ -1,4 +1,14 @@
 {
+  "name": "project-name",
+  "version": "1.0.0",
+  "description": "Project description",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
     "apexcharts": "^4.4.0"
   }
