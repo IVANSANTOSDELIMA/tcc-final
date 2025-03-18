@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="css/telaInicio.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="/website/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>CerealistaSolza</title>
     
@@ -15,15 +17,23 @@
         <div class="containerTotal">
             <div class="containerButtons">
                 <img src="/css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-                <i class="fi fi-rs-apps"></i><button type="button">Dashboard</button>
-                <button type="button">Funcionarios</button>
-                <i class="fi fi-ts-boxes"></i><button type="button">Estoque</button>
-                <i class="fi fi-tr-chart-line-up"></i><button type="button">Movimentações</button>
+                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button">Dashboard</button></div>
+                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button></div>
+                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button">Estoque</button></div>
+                <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button">Movimentações</button></div>  
             </div>
-            <header id="headersuperior"></header>
+            <header id="headersuperior">
+                <div class="config">
+                    <i class="fi fi-tc-settings"></i>
+                    <i class="fi fi-tr-interrogation"></i>
+                </div>
+            </header>
             <div class="container">
                 <div class="containertrafic">
-                    
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
                     <div class="craficosLinha">
                         <div id="chart1"></div>

@@ -43,16 +43,16 @@ body{
     height: 100vh;
     background-color: #ffffff;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
 }
 button{
     display: flex;
     flex-direction: left;
     position:relative;
-    top: 8%;
+    top: 10%;
     font-family: inter;
     font-size: 25px;
-    padding: 8px;
+    padding: 10px;
     background-color: transparent;
 }
 /* .buttonLink{
@@ -92,3 +92,17 @@ button{
     position: relative;
     left: 15%;
 } */
+
+.rowbutton{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 1vh;
+    position: relative;
+    left: 5%;
+    top: 5%;
+}
+.config{
+    display: flex;
+    flex-direction: column;
+    }
