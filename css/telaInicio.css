@@ -29,7 +29,7 @@ body{
 }
 .container{
     display: flex;
-    height: 150vh;
+    height: 180vh;
     width: 2000px;
     background-color: #e4e4e4;
 }
@@ -72,17 +72,28 @@ button{
     left: 7%;
     width: 14vh;
 }
-.graficoLinha, #chart1, #chart2{
+.graficoLinha, #chart1{
     position: relative;
-    top: 30%;
-    left: 50%;
+    top: 21%;
+    left: 38%;
 }
 #chart1{
-    width: 670px;
+    width: 900px;
     background-color: rgb(246, 246, 246);
 }
 #chart2{
-    width: 670px;
+    position: relative;
+    top:23%;
+    left: 38%;
+    width: 900px;
+    background-color: rgb(246, 246, 246);
+}
+#chart3{
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    top: 38%;
+    left: 67.3%;
     background-color: rgb(246, 246, 246);
 }
 /* #textos{
@@ -106,3 +117,46 @@ button{
     display: flex;
     flex-direction: column;
     }
+
+    #dadosEstoque{
+        width: 350px;
+        height: 130px;
+    }
+    .totalgreen{
+        background: linear-gradient(270deg, #6AD871,#5BB961,#38723C)
+    }
+    .baixoEstoqueRed{
+        background: linear-gradient(270deg, #E96569,#83393B)
+    }
+    .EntradasEstoqueBlue{
+        background: linear-gradient(270deg, #4AA0FE,#2c6098)
+    }
+    .saidaEstoquebluemarine{
+        background: linear-gradient(270deg, #44C4C1,#215E5D)
+    }
+.containertrafic{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+    top: 20%;
+    left: 18%;
+}
+.ajudasblue{
+    background-color: #152551;
+    position: relative;
+    width: 600px;
+    height: 350px;
+    top: 58%;
+    left: 20%;
+}
+
+#txtinicio{
+    color: #0F6C08;
+    position: absolute;
+    top: 7%;
+    left: 18%;
+    font-size: 37px;
+    width: 300px;
+    height: 10px;
+}
