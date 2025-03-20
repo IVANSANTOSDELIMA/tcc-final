@@ -160,3 +160,25 @@ button{
     width: 300px;
     height: 10px;
 }
+
+.imageUser{
+    position: absolute;
+    top: 17%;
+    left: 85%;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #0F6C08;
+}
+#txtEstoque{
+    position: relative;
+    color: white;
+    padding: 0px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.valoresEstoque{
+    padding: 0px 0px 0px 20px;
+    font-size:xx-large;
+    color: white;
+}
