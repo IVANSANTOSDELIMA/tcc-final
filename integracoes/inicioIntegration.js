@@ -130,10 +130,11 @@ const movimentacoes = await responseMovimentacoes.json();
     chart.render();
 
     // Aqui vai agrupar as saídas em cada mês
+    const saidasPorMes = Array(12).fill(0);
     movimentacoes.forEach(mov => {
         if (mov.id_tipo_movimentacao === 'S') {
             const mes = new Date(mov.data).getMonth();
-            entradasPorMes[mes]++;
+            saidasPorMes[mes]++;
         }
     });
     // Cria o gráfico de linha com as saídas mensais
@@ -144,7 +145,7 @@ const movimentacoes = await responseMovimentacoes.json();
         },
         series: [{
             name: "Saídas",
-            data: entradasPorMes
+            data: saidasPorMes
         }],
         xaxis: {
             categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']

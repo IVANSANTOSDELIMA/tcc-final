@@ -5,9 +5,10 @@
 @supports (font-variation-settings: normal) {
     :root { font-family: InterVariable, sans-serif; }
 }
-*{
+* {
     border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     display:contents;
@@ -17,38 +18,44 @@ body{
     position: fixed;
     background-color:#ffffff ;
     height: 6vh;
-    left: 15.7%;
-    width: 200vh;
+    left: 300px; /* Alinhado com o menu lateral */
+    width: calc(100% - 300px); /* Largura total menos o menu lateral */
     /* border: solid 2px #818181; */
     z-index: 1000; 
 }
 .containerTotal{
-    /* position: fixed; */
     display: flex;
-    height: 100vh; 
+    min-height: 100vh;
+    width: 100%;
+    background-color: #e4e4e4;
 }
 .container{
     display: flex;
-    height: 180vh;
-    width: 2000px;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 300px); /* Considerando o espaço do menu lateral */
     background-color: #e4e4e4;
+    margin-left: 300px; /* Space for sidebar */
+    padding: 6vh 20px 20px 20px; /* Top, right, bottom, left padding */
+    overflow-x: hidden;
 }
 .containerButtons{
     font-family: inter;
     font-size: 25px;
     position: fixed;
-    /* border: solid 2px #818181; */
     display: flex;
     width: 300px;
     height: 100vh;
     background-color: #ffffff;
     flex-direction: column;
     gap: 20px;
+    z-index: 1001; /* Ensure it stays above other content */
 }
 button{
     display: flex;
-    flex-direction: left;
-    position:relative;
+    align-items: center;
+    position: relative;
     top: 10%;
     font-family: inter;
     font-size: 25px;
@@ -72,29 +79,35 @@ button{
     left: 7%;
     width: 14vh;
 }
-.graficoLinha, #chart1{
-    position: relative;
-    top: 21%;
-    left: 38%;
+.craficosLinha{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
-#chart1{
-    width: 900px;
+.segundaLinha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    gap: 20px;
+}
+#chart1, #chart3{
+    width: calc(50% - 10px);
+    min-width: 400px;
+    max-width: 100%;
     background-color: rgb(246, 246, 246);
 }
 #chart2{
-    position: relative;
-    top:23%;
-    left: 38%;
-    width: 900px;
+    width: calc(50% - 10px);
+    min-width: 400px;
+    max-width: 100%;
     background-color: rgb(246, 246, 246);
-}
-#chart3{
-    position: absolute;
-    width: 600px;
-    height: 500px;
-    top: 38%;
-    left: 67.3%;
-    background-color: rgb(246, 246, 246);
+    /* margin-top: 20px; */
 }
 /* #textos{
     display: flex;
@@ -116,60 +129,73 @@ button{
 .config{
     display: flex;
     flex-direction: column;
-    }
+}
 
-    #dadosEstoque{
-        width: 350px;
-        height: 130px;
-    }
-    .totalgreen{
-        background: linear-gradient(270deg, #6AD871,#5BB961,#38723C)
-    }
-    .baixoEstoqueRed{
-        background: linear-gradient(270deg, #E96569,#83393B)
-    }
-    .EntradasEstoqueBlue{
-        background: linear-gradient(270deg, #4AA0FE,#2c6098)
-    }
-    .saidaEstoquebluemarine{
-        background: linear-gradient(270deg, #44C4C1,#215E5D)
-    }
-.containertrafic{
-    position: absolute;
+#dadosEstoque{
+    width: 350px;
+    height: 130px;
+    margin-bottom: 10px;
+}
+.totalgreen{
+    background: linear-gradient(270deg, #6AD871,#5BB961,#38723C)
+}
+.baixoEstoqueRed{
+    background: linear-gradient(270deg, #E96569,#83393B)
+}
+.EntradasEstoqueBlue{
+    background: linear-gradient(270deg, #4AA0FE,#2c6098)
+}
+.saidaEstoquebluemarine{
+    background: linear-gradient(270deg, #44C4C1,#215E5D)
+}
+.containertrafic {
     display: flex;
     flex-direction: row;
-    gap: 5vh;
-    top: 20%;
-    left: 18%;
+    gap: 20px;
+    margin-top: 20px;
+    z-index: 1;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px; /* Espaço para a barra de rolagem */
 }
+
 .ajudasblue{
+    width: calc(50% - 10px);
     background-color: #152551;
-    position: relative;
-    width: 600px;
-    height: 350px;
-    top: 58%;
-    left: 20%;
+    min-width: 400px;
+    max-width: 100%;
+    /* max-width: 800px;
+    height: 350px; */
+    margin-top: 0;
 }
 
 #txtinicio{
     color: #0F6C08;
-    position: absolute;
-    top: 7%;
-    left: 18%;
     font-size: 37px;
-    width: 300px;
-    height: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-self: flex-start;
+    margin-left: 20px;
 }
 
 .imageUser {
     position: absolute;
-    top: 17%;
-    left: 85%;
+    top: 50%;
+    right: 2%;
+    /* left: 85%; */
     width: 35px;
     height: 35px;
     border-radius: 100%;
     overflow: hidden;
     background-color: #0F6C08;
+    transform: translateY(-50%);
+}
+.fi-tc-settings {
+    position: absolute;
+    top: 58%;
+    right: 5.5%;
+    font-size: 30px;
+    transform: translateY(-50%);
 }
 
 .imageUser img {
@@ -189,4 +215,56 @@ button{
     padding: 0px 0px 0px 20px;
     font-size:xx-large;
     color: white;
+}
+@media screen and (min-width: 1920px) {
+    #dadosEstoque {
+        width: 500px;
+        height: 200px;
+    }
+
+    .containertrafic {
+        justify-content: center;
+        gap: 40px;
+    }
+
+    #chart1, #chart2, #chart3, .ajudasblue {
+        min-width: 900px;
+        width: calc(50% - 20px);
+        height: 600px;
+    }
+
+    .craficosLinha, .segundaLinha {
+        justify-content: center;
+        gap: 40px;
+    }
+
+    #txtinicio {
+        font-size: 52px;
+    }
+
+    .valoresEstoque {
+        font-size: 46px;
+    }
+
+    #txtEstoque {
+        font-size: 32px;
+    }
+    
+    .imageUser {
+        width: 50px;
+        height: 50px;
+    }
+
+    .fi-tc-settings {
+        font-size: 42px;
+    }
+
+    #chart1, #chart3 {
+        width: 45%;
+    }
+
+    #chart2, .ajudasblue {
+        min-width: 700px;
+        width: 45%;
+    }
 }
