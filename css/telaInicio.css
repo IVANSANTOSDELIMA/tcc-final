@@ -161,15 +161,23 @@ button{
     height: 10px;
 }
 
-.imageUser{
+.imageUser {
     position: absolute;
     top: 17%;
     left: 85%;
     width: 35px;
     height: 35px;
     border-radius: 100%;
+    overflow: hidden;
     background-color: #0F6C08;
 }
+
+.imageUser img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 #txtEstoque{
     position: relative;
     color: white;
