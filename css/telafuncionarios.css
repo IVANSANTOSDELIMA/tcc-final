@@ -1,0 +1,169 @@
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
+*{
+    border: 0;
+    padding: 0;
+}
+body{
+    display:contents;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#headersuperior{
+    position: fixed;
+    background-color:#ffffff ;
+    height: 6vh;
+    left: 15.7%;
+    width: 200vh;
+    /* border: solid 2px #818181; */
+    z-index: 1000; 
+}
+.containerTotal{
+    position: relative;
+    height: 100vh; 
+}
+.container{
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    width: 210.7vh;
+    background-color: #e4e4e4;
+}
+.containerButtons{
+    font-family: inter;
+    font-size: 25px;
+    position: fixed;
+    z-index: 1000;
+    /* border: solid 2px #818181; */
+    display: flex;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    gap: 20px;
+}
+button{
+    display: flex;
+    flex-direction: left;
+    position:relative;
+    top: 10%;
+    font-family: inter;
+    font-size: 25px;
+    padding: 10px;
+    background-color: transparent;
+}
+/* .buttonLink{
+    display: flex;
+    justify-content:baseline;
+    font-weight: bold;
+    width: 100%;
+    font-size:medium;
+    color: rgb(255, 255, 255);
+    background-color: #ffffff;
+    padding: 2em;
+    outline: none;
+} */
+#logo{
+    position: relative;
+    top: 1%;
+    left: 7%;
+    width: 14vh;
+}
+/* #textos{
+    display: flex;
+    flex-direction:row;
+    gap: 85vh;
+    position: relative;
+    left: 15%;
+} */
+
+.rowbutton{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 1vh;
+    position: relative;
+    left: 5%;
+    top: 5%;
+}
+.imageUser{
+    position: absolute;
+    top: 17%;
+    left: 85%;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #0F6C08;
+}
+#openButton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    width: 130px;
+    height: 20px;
+    top: 10%;
+    left: 85%;
+    background-color: #0F6C08;
+    color: white;
+}
+#modalDialog{
+    position: relative;
+    border: 0;
+    padding: 0;
+    width: 900px;
+    height: 600px;
+    background-color: rgb(186, 187, 187);
+    border-radius: 1em;
+}
+#ModalForm{
+    position:static;
+    top: 0%;
+    left: 0%;
+    /* width: 900px;
+    height: 700px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vh;
+    height: 30vh;
+}
+table{
+    background-color: blanchedalmond;
+    flex-direction: column;
+    align-items:start;
+    width: 113.8vh;
+    height:80.9vh;
+    border-radius: 1em;
+}
+thead{
+    justify-content: space-between;
+    flex-direction: row;
+}
+tr{
+    width: max-content;
+    height: 1vh;
+    /* display: flex; */
+    gap: 30px;
+    background-color: #0F6C08;
+
+}
+th{
+    width: max-content;
+    height: 1vh;
+    /* display: flex */
+    background-color: aqua;
+    gap: 30px;
+}
+td{
+    height: max-content;
+    /* width: max-content; */
+    background-color: #e4e4e4;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

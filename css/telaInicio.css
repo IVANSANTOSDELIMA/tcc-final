@@ -23,11 +23,11 @@ body{
     z-index: 1000; 
 }
 .containerTotal{
-    /* position: fixed; */
-    display: flex;
+    position: relative;
     height: 100vh; 
 }
 .container{
+    position: inherit;
     display: flex;
     height: 180vh;
     width: 2000px;
@@ -37,6 +37,7 @@ body{
     font-family: inter;
     font-size: 25px;
     position: fixed;
+    z-index: 1000;
     /* border: solid 2px #818181; */
     display: flex;
     width: 300px;
@@ -72,10 +73,10 @@ button{
     left: 7%;
     width: 14vh;
 }
-.graficoLinha, #chart1{
+.graficoLinha, #chart1{ 
     position: relative;
-    top: 21%;
-    left: 38%;
+    top: 26%;
+    left: -155.2%;
 }
 #chart1{
     width: 900px;
@@ -83,17 +84,17 @@ button{
 }
 #chart2{
     position: relative;
-    top:23%;
-    left: 38%;
+    top:27%;
+    left: -155.2%;
     width: 900px;
     background-color: rgb(246, 246, 246);
 }
 #chart3{
-    position: absolute;
+    position: relative;
     width: 600px;
     height: 500px;
-    top: 38%;
-    left: 67.3%;
+    top: 26%;
+    left: -68%;
     background-color: rgb(246, 246, 246);
 }
 /* #textos{
@@ -135,27 +136,27 @@ button{
         background: linear-gradient(270deg, #44C4C1,#215E5D)
     }
 .containertrafic{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 5vh;
-    top: 20%;
-    left: 18%;
+    top: 15%;
+    left: 7%;
 }
 .ajudasblue{
     background-color: #152551;
     position: relative;
-    width: 600px;
+    width: 200px;
     height: 350px;
-    top: 58%;
-    left: 20%;
+    top: 30%;
+    left: -100%;
 }
 
 #txtinicio{
     color: #0F6C08;
-    position: absolute;
-    top: 7%;
-    left: 18%;
+    position: relative ;
+    top: 5%;
+    left: 17%;
     font-size: 37px;
     width: 300px;
     height: 10px;
@@ -181,4 +182,10 @@ button{
     padding: 0px 0px 0px 20px;
     font-size:xx-large;
     color: white;
+}
+
+@media screen and (max-width: 1670px) {
+    .containertrafic{
+        width: 100px;
+    }
 }

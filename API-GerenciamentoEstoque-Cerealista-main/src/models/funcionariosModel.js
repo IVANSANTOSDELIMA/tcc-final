@@ -11,6 +11,7 @@ const conexao = await conectarAoBanco();
               SELECT 
                   id_funcionario,
                   nome_funcionario,
+                  email,
                   cargo,
                   data_admissao,
                   nivel_acesso,

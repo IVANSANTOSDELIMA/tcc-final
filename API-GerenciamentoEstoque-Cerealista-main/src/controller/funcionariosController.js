@@ -30,6 +30,7 @@ export async function adicionarFuncionarioController(req, res) {
     const senhaHash = bcrypt.hashSync(senha, 10);
     try {
         const resultado = await adicionarFuncionario(cpf, data_admissao, rua, numero, complemento, bairro, cidade, estado, cep, senhaHash, telefone_funcionario, nome_funcionario, nivel_acesso, cargo, imagem_funcionario, email);
+        console.log(resultado);
         res.status(201).json({ message: 'Funcionário adicionado com sucesso!', resultado });
     } catch (erro) {
         res.status(500).json({ message: 'Erro ao adicionar funcionário', erro: erro.message });

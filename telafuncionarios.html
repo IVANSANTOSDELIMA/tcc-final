@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/telaInicio.css">
+    <link rel="stylesheet" href="css/telafuncionarios.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
@@ -27,15 +27,141 @@
             </div>
             <header id="headersuperior">
                 <div class="config">
-                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 80%;"></i>
-                    <i class="fi fi-tr-interrogation" style="font-size: 30px; position: absolute; top: 20%; left: 85%;"></i>
-                    
+                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 82%;"></i>
+                    <div class="imageUser"><img src="" alt=""></div>
                 </div>
             </header>
             <div class="container">
-            
+                <button id="openButton">Adicionar funcionario</button>
             </div>
+            <dialog id="modalDialog">
+                <form id="ModalForm">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><h2>Adicionar Funcionário</h2></td>
+                                <td><button type="button" id="closeModal">Fechar</button></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <td><label for="name">Nome</label></td>
+                                    <td><input type="text" required placeholder="Nome"></td>
+                                </th>
+                                <th>
+                                    <td><label for="Nivel de acesso">Nivel de acesso</label></td>
+                                    <td><input type="number"></td>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <td><label for="Email">Email</label></td>
+                                    <td><input type="email" required placeholder="Email"></td>
+                                </th>
+                                <th>
+                                    <td><label for="Estadocivil">Estado civil</label></td>
+                                    <td><input type="text"></td>
+                                </th>
+                                <th>
+                                    <td><label for="cargo">Cargo</label></td>
+                                    <td><input type="text" required placeholder="Cargo"></td>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <td><label for="telefone">telefone</label></td>
+                                    <td><input type="tel"></td>
+                                </th>
+                                <th>
+                                    <td><label for="Cpf">CPF</label></td>
+                                    <td><input type="text" required placeholder="CPF"></td>
+                                </th>
+                                <th>
+                                    <td><label for="DataDeAdmissão">Data de admissão</label></td>
+                                    <td><input type="date"></td>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <td><label for="cep">Cep</label></td>
+                                    <td><input type="text" required placeholder="Cep"></td>
+                                <th>
+                                    <td><label for="cidade">Cidade</label></td>
+                                    <td><input type="text" required placeholder="Cidade"></td>
+                                </th>
+                                <th>
+                                    <td><label for="estado">Estado</label></td>
+                                    <td><input type="text" required placeholder="Estado"></td>
+                                </th>
+                                
+                            </tr>
+                            <tr>
+                                <th>
+                                    <td><label for="bairro">Bairro</label></td>
+                                    <td><input type="text" required placeholder="Bairro"></td>
+                                </th>
+                                <th>
+                                    <td><label for="complemento">complemento</label></td>
+                                    <td><input type="text" required placeholder="complemento"></td>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <td><label for="senha">Senha</label></td>
+                                    <td><input type="password" required placeholder="Senha"></td>
+                                    <td><label for="img">Imagem</label></td>
+                                    <td><input type="file" required placeholder="Imagem"></td>
+                                </th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td><button type="submit"id="">Enviar</button></td>
+                        </tfoot>
+                    </table>
+                    
+                    
+                </form>
+                
+            </dialog>
         </div>
-        
+        <script>
+            const dialog = document.querySelector("#modalDialog")
+            const openButton = document.querySelector("#openButton")
+            const closeModal = document.querySelector("#closeModal")
+
+            openButton.addEventListener("click", (e) =>{
+                dialog.showModal()
+            })
+            closeModal.addEventListener("click", (e) =>{
+                dialog.close()
+            })
+
+            const ModalForm = document.querySelector("#ModalForm")
+
+            ModalForm.addEventListener("submit", (e) => {
+                e.preventDefault()
+
+                console.log("Enviando dados")
+            })
+
+            // dialog.addEventListener("click", (e) => {
+            //     if (event.target == dialog) {
+            //         dialog.close()
+            //     }
+            // })
+
+            dialog.addEventListener("click", (event) => {
+                const rect = dialog.getBoundingClientRect()
+                if(
+                    event.clientX < rect.left ||
+                    event.clientX > rect.right ||
+                    event.clientY < rect.top ||
+                    event.clientY > rect.bottom
+                ) {
+                    dialog.close()
+                }
+            })
+        </script>
 </body>
 </html>
