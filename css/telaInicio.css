@@ -24,15 +24,10 @@ body{
     z-index: 1000; 
 }
 .containerTotal{
-<<<<<<< HEAD
-    position: relative;
-    height: 100vh; 
-=======
     display: flex;
     min-height: 100vh;
     width: 100%;
     background-color: #e4e4e4;
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
 }
 .container{
     position: inherit;
@@ -50,11 +45,6 @@ body{
     font-family: inter;
     font-size: 25px;
     position: fixed;
-<<<<<<< HEAD
-    z-index: 1000;
-    /* border: solid 2px #818181; */
-=======
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
     display: flex;
     width: 300px;
     height: 100vh;
@@ -90,12 +80,6 @@ button{
     left: 7%;
     width: 14vh;
 }
-<<<<<<< HEAD
-.graficoLinha, #chart1{ 
-    position: relative;
-    top: 26%;
-    left: -155.2%;
-=======
 .craficosLinha{
     display: flex;
     flex-direction: row;
@@ -104,7 +88,6 @@ button{
     width: 100%;
     margin-top: 20px;
     flex-wrap: wrap;
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
 }
 .segundaLinha {
     display: flex;
@@ -121,24 +104,9 @@ button{
     background-color: rgb(246, 246, 246);
 }
 #chart2{
-<<<<<<< HEAD
-    position: relative;
-    top:27%;
-    left: -155.2%;
-    width: 900px;
-    background-color: rgb(246, 246, 246);
-}
-#chart3{
-    position: relative;
-    width: 600px;
-    height: 500px;
-    top: 26%;
-    left: -68%;
-=======
     width: calc(50% - 10px);
     min-width: 400px;
     max-width: 100%;
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
     background-color: rgb(246, 246, 246);
     /* margin-top: 20px; */
 }
@@ -164,31 +132,6 @@ button{
     flex-direction: column;
 }
 
-<<<<<<< HEAD
-    #dadosEstoque{
-        width: 350px;
-        height: 130px;
-    }
-    .totalgreen{
-        background: linear-gradient(270deg, #6AD871,#5BB961,#38723C)
-    }
-    .baixoEstoqueRed{
-        background: linear-gradient(270deg, #E96569,#83393B)
-    }
-    .EntradasEstoqueBlue{
-        background: linear-gradient(270deg, #4AA0FE,#2c6098)
-    }
-    .saidaEstoquebluemarine{
-        background: linear-gradient(270deg, #44C4C1,#215E5D)
-    }
-.containertrafic{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 5vh;
-    top: 15%;
-    left: 7%;
-=======
 #dadosEstoque{
     width: 350px;
     height: 130px;
@@ -215,35 +158,20 @@ button{
     width: 100%;
     overflow-x: auto;
     padding-bottom: 10px; /* Espaço para a barra de rolagem */
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
 }
 
 .ajudasblue{
     width: calc(50% - 10px);
     background-color: #152551;
-<<<<<<< HEAD
-    position: relative;
-    width: 200px;
-    height: 350px;
-    top: 30%;
-    left: -100%;
-=======
     min-width: 400px;
     max-width: 100%;
     /* max-width: 800px;
     height: 350px; */
     margin-top: 0;
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
 }
 
 #txtinicio{
     color: #0F6C08;
-<<<<<<< HEAD
-    position: relative ;
-    top: 5%;
-    left: 17%;
-=======
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
     font-size: 37px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -289,12 +217,6 @@ button{
     font-size:xx-large;
     color: white;
 }
-<<<<<<< HEAD
-
-@media screen and (max-width: 1670px) {
-    .containertrafic{
-        width: 100px;
-=======
 @media screen and (min-width: 1920px) {
     #dadosEstoque {
         width: 500px;
@@ -345,6 +267,5 @@ button{
     #chart2, .ajudasblue {
         min-width: 700px;
         width: 45%;
->>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
     }
 }
