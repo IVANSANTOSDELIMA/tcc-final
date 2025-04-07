@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/telaInicio.css">
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <!-- <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'> -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <title>CerealistaSolza</title>
-    
-</head>
-<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="css/img/logoAtualizada.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/telaInicio.css">
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet"
+            href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
+        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
+        <link rel='stylesheet'
+            href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+        <link rel='stylesheet'
+            href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+        <!-- <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'> -->
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script type="module" src="integracoes/authMiddleware.js"></script> <!-- autentica o usuario --> 
+        <!-- se o token nao for valido vai voltar pro login -->
+        <title>CerealistaSouza</title>
+
+    </head>
+
+    <body>
         <div class="containerTotal">
             <div class="containerButtons">
-                <img src="/css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+                <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
                 <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button">Dashboard</button></div>
-                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button><i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
-                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button">Estoque</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i></div>
-                <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button">Movimentações</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i></div>  
+                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button><i
+                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
+                </div>
+                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button">Estoque</button><i
+                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
+                </div>
+                <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button">Movimentações</button><i
+                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i>
+                </div>
             </div>
             <header id="headersuperior">
-                <div class="config">
-                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 82%;"></i>
-                    <!-- <i class="fi fi-ts-interrogation" style="font-size: 30px; position: absolute; top: 20%; left: 80%;"></i> -->
-                    <div class="imageUser"><img src="" alt=""></div>
-                </div>
+                <i class="fi fi-tc-settings"></i>
+                <!-- <div class="config">
+                </div> -->
+                <div class="imageUser"><img src="" alt=""></div>
             </header>
             <div class="container">
                 <h1 id="txtinicio">Dashboard</h1>
                 <div class="containertrafic">
                     <div id="dadosEstoque" class="totalgreen">
                         <h2 id="txtEstoque">Estoque</h2>
-                        <p class="valoresEstoque" id="estoque"><strong>         </strong></p>
+                        <p class="valoresEstoque" id="estoque"><strong> </strong></p>
                     </div>
                     <div id="dadosEstoque" class="baixoEstoqueRed">
                         <h2 id="txtEstoque">Baixo Estoque</h2>
-                        <p class="valoresEstoque" id="B_Estoque"><strong>         </strong></p>
+                        <p class="valoresEstoque" id="B_Estoque"><strong> </strong></p>
                     </div>
                     <div id="dadosEstoque" class="EntradasEstoqueBlue">
                         <h2 id="txtEstoque">Entradas</h2>
-                        <p  class="valoresEstoque" id="E_Estoque"><strong>           </strong></p>
+                        <p class="valoresEstoque" id="E_Estoque"><strong> </strong></p>
                     </div>
                     <div id="dadosEstoque" class="saidaEstoquebluemarine">
                         <h2 id="txtEstoque">Saídas</h2>
-                        <p class="valoresEstoque" id="S_Estoque"><strong>          </strong></p>
+                        <p class="valoresEstoque" id="S_Estoque"><strong> </strong></p>
                     </div>
                 </div>
+<<<<<<< HEAD
                     <div class="craficosLinha">
                         <div id="chart1"></div>
                         <div id="chart2"></div>
@@ -59,73 +73,25 @@
                     </div>
                         <div id="chart3"></div>
 
+=======
+                <div class="craficosLinha">
+                    <div id="chart1"></div>
+                    <div id="chart3"></div>
+                </div>
+                <div class="segundaLinha">
+                    <div id="chart2"></div>
+                    <div class="ajudasblue"></div>
+                </div>
+>>>>>>> 2d7e0096939a418741514c2cc82fb93aae905848
             </div>
         </div>
-        
+
         <!-- <div id="footerinferior"></div>   -->
 
-        <!-- script -->
-        <script>
-            //grafico 1
-            var options = {
-        chart: {
-        type: 'line'
-        },
-        colors:['#F44336', '#E91E63', '#9C27B0'],
-        series: [{
-        name: 'Dados de saida',
-        data: [30,40,35,50,49,60,70,91,125,1,12,200]
-        }],
-        xaxis: {
-        categories: ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","novembro","Dezembro"]
-        }
-        }
+        <!-- Os graficos foram mudados para o arquivo integracoes/inicioIntegration.js :) -->
 
-        var chart = new ApexCharts(document.querySelector("#chart1"), options);
+        <script src="integracoes/inicioIntegration.js"></script> <!-- integracao com o backend -->
 
-        chart.render();
-        //grafico 2
-        var options = {
-        chart: {
-        type: 'line'
-        },
-        series: [{
-        name: 'Dados de saida',
-        data: [30,40,35,50,49,60,70,91,125,1,12,200]
-        }],
-        xaxis: {
-        categories: ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","novembro","Dezembro"]
-        }
-        }
+    </body>
 
-        var chart = new ApexCharts(document.querySelector("#chart2"), options);
-
-        chart.render();
-
-        //grafico em circulo
-        var options = {
-        series: [44, 55, 13, 43, 22],
-        chart: {
-        width: 600,
-        type: 'pie',
-        },
-        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-        responsive: [{
-        breakpoint: 480,
-        options: {
-            chart: {
-            width: 200
-            },
-            legend: {
-            position: 'bottom'
-            }
-        }
-        }]
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart3"), options);
-        chart.render();
-        </script>
-    
-</body>
 </html>
