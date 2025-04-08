@@ -115,8 +115,8 @@ button{
     position: relative;
     border: 0;
     padding: 0;
-    width: 900px;
-    height: 600px;
+    width: 1000px;
+    height: 900px;
     background-color: rgb(186, 187, 187);
     border-radius: 1em;
 }
@@ -132,38 +132,157 @@ button{
     width: 30vh;
     height: 30vh;
 }
-table{
-    background-color: blanchedalmond;
-    flex-direction: column;
-    align-items:start;
-    width: 113.8vh;
-    height:80.9vh;
-    border-radius: 1em;
-}
-thead{
-    justify-content: space-between;
-    flex-direction: row;
-}
-tr{
-    width: max-content;
-    height: 1vh;
-    /* display: flex; */
-    gap: 30px;
-    background-color: #0F6C08;
 
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
 }
-th{
-    width: max-content;
-    height: 1vh;
-    /* display: flex */
-    background-color: aqua;
-    gap: 30px;
+
+#cadastroForm {
+    width: 900px;
+    height: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-td{
-    height: max-content;
-    /* width: max-content; */
-    background-color: #e4e4e4;
+
+.form-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+.form-column{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+#nome{
+    width: 180%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#nivelAcesso{
+    width: 67%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#cpf{
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#cargo{
+    width: 79%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#dataAdmissao{
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#telefone{
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#email{
+    width: 171%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#estado{
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#cidade{
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#cep{
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#rua{
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#bairro{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#numero{
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#complemento{
+    width: 280%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#senha{
+    width: 140%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#line-0{
+    gap: 195px;
+}
+#line-1{
+    gap: 3px;
+}
+#line-2{
+    
+}
+#line-3{
+    
+}
+#line-4{
+gap: 30px;
+}
+#line-5{
+    gap: 400px;
+}
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+#submitform {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button#adicionar {
+    background-color: #28a745;
 }

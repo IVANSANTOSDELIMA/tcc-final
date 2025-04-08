@@ -29,7 +29,7 @@ export class Auth { // Classe pra lidar com autenticação
         const tokenValido = await this.verificarToken();// Verifica se o token é válido
         if (!tokenValido) {
             localStorage.clear();
-            window.location.href = '/login.html';
+            window.location.href = '/telalogin.html';
         } // Se o token não for bom ele limpa o localStorage e redireciona pra página de login
     }
 }
