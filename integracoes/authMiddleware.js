@@ -7,8 +7,8 @@ export class Auth { // Classe pra lidar com autenticação
     isPublicRoute() { // Checa se a página atual tá na lista de páginas públicas
         return this.publicRoutes.includes(window.location.pathname);
     }
-
-    async verificarToken() { // Valida se o token guardado ainda presta
+    // Valida se o token guardado ainda presta
+    async verificarToken() { 
         const token = localStorage.getItem('token');
         if (!token) return false;
 
