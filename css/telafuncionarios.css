@@ -1,3 +1,5 @@
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css');
+
 :root {
     font-family: Inter, sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
@@ -103,34 +105,81 @@ button{
     position: absolute;
     display: flex;
     align-items: center;
-    font-size: 10px;
-    width: 130px;
+    font-size: 50px;
+    width: 0px;
     height: 20px;
-    top: 10%;
-    left: 85%;
-    background-color: #0F6C08;
-    color: white;
+    top: 27%;
+    left: 18%;
+    background-color:transparent;
+    color: #0F6C08;
+}
+#closeModal{
+    position: absolute;
+    top: -0%;
+    left: 95%;
+    font-size: 22px;
+} 
+#headertable{
+    position: relative;
+    top: 27%;
+    left: 18%;
+    width: 1550px;
+    height: 60px;
+    background-color: #b5b5b5;
+}
+#toptable{
+    position: relative;
+    top: 27%;
+    left: 18%;
+    width: 1550px;
+    height: 60px;
+}
+#iconlixeira{
+    position: absolute;
+    font-size: 27px;
+    top: 130%;
+    left: 110%;
+}
+#buttonCategory{
+    width: 500px;
+    display: flex;
+    position: relative;
+    top: 20%;
+    left: 68%;
+    color: #0F6C08;
+    background-color:transparent;
+    z-index: 1000;
+    gap: 40px;
+}
+.inputCtg{
+    border: none;
+    outline: none;
+    position: relative;
+    border-radius: 5px;
+    font-size: large;
+    width: 200px;
+    height: 30px;
+    padding: 10px;
+    background-color: #c2c2c2;
+    z-index: 1000;
 }
 #modalDialog{
     position: relative;
     border: 0;
-    padding: 0;
-    width: 1000px;
-    height: 900px;
+    padding: 30px;
+    width: 900px;
+    height: 600px;
     background-color: rgb(186, 187, 187);
     border-radius: 1em;
 }
-#ModalForm{
-    position:static;
-    top: 0%;
-    left: 0%;
-    /* width: 900px;
-    height: 700px; */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30vh;
-    height: 30vh;
+#modalDialog-before {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    background: rgba(#000, 0.1);
+    z-index: 2;
 }
 
 body {
@@ -155,6 +204,9 @@ body {
 .form-column{
     display: flex;
     flex-direction: column;
+}
+input, textarea{
+    outline: none;
 }
 label {
     display: block;
@@ -227,13 +279,13 @@ label {
     border-radius: 4px;
 }
 #bairro{
-    width: 100%;
+    width: 113%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 #numero{
-    width: 40%;
+    width: 38%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -264,7 +316,11 @@ label {
     
 }
 #line-4{
-gap: 30px;
+gap: 0px;
+}
+#line-4-1{
+    display: flex;
+    gap: 60px;
 }
 #line-5{
     gap: 400px;
@@ -286,3 +342,62 @@ textarea {
 button#adicionar {
     background-color: #28a745;
 }
+
+.preview-imagem-container{
+    width: 0;
+    height: 0;
+    position: relative;
+    top: -8%;
+    left: 66%;
+}
+.preview{
+    background-color: #a0a0a0;
+    position: absolute;
+    width: 260px;
+    height: 250px;
+    top: 8%;
+    left: 65%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#preview-selected-image {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    object-fit:fill;
+}
+/* Tabela dos funcionarios */
+
+table{
+    border-collapse: collapse;
+    width: 1550px;
+    align-items: center;
+    background-color: #007bff;
+}
+
+th,td{
+    padding: 14px 20px;
+
+}
+#buttonEdit{
+    background-color: #28a745;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    align-items: center;
+    border-radius: 5px;
+}
+#buttonVisualizar{
+    background-color: #28a745;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+

@@ -2,16 +2,18 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <link rel="stylesheet" href="css/telafuncionarios.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-rounded/css/uicons-tdin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-chubby/css/uicons-tdin-chubby.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-rounded/css/uicons-tdin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>CerealistaSouza</title>
     
@@ -19,9 +21,9 @@
 <body>
         <div class="containerTotal">
             <div class="containerButtons">
-                <img src="/css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button">Dashboard</button></div>
-                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button><i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
+                <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button">Dashboard</button><i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
+                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button></div>
                 <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button">Estoque</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i></div>
                 <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button">Movimentações</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i></div>  
             </div>
@@ -31,18 +33,43 @@
                     <div class="imageUser"><img src="" alt=""></div>
                 </div>
             </header>
+            
             <div class="container">
-                <button id="openButton">Adicionar funcionario</button>
+                <button id="openButton">+</button>
             </div>
+            <div id="buttonCategory">
+                <div class="category-column">
+                    <label for="NomeCategoria"><strong>Nome</strong></label>
+                    <input type="search" name="NomeCategory" class="inputCtg">
+                </div>
+                <div class="category-column">
+                    <label for="categorias"><strong>categorias</strong></label>
+                    <input type="search" name="categorias" class="inputCtg">
+                </div>
+                <div class="category-column">
+                    <div id="iconlixeira"><i class="fi fi-rs-trash"></i></div>
+                </div>
+                
+            </div>
+            <div id="headertable"></div>
+            <div id="toptable">
+                <table id="table">
+                    <tr>
+                    </tr>
+                </table>
+                <!-- local onde vai aparecer os funcionarios registrados -->
+            </div>
+            
             <dialog id="modalDialog">
-                        <form id="cadastroForm">
+                        <button id="closeModal"><i class="fi fi-bs-cross"></i></button>
+                        <!-- <form id="cadastroForm"> -->
                             <div class="form-row"id="line-0">
                                 <div class="form-column">
                                     <label for="nome">Nome:</label>
                                     <input type="text" id="nome" name="nome">
                                 </div>
                                 <div class="form-column">
-                                    <label for="nivelAcesso">Nível de Acesso:</label>
+                                    <label for="nivelAcesso">Nível de acesso:</label>
                                     <input type="text" id="nivelAcesso" name="nivelAcesso">
                                 </div>
                             </div>
@@ -93,19 +120,23 @@
                                     <label for="rua">Rua:</label>
                                     <input type="text" id="rua" name="rua">
                                 </div>
-                                <div class="form-column">
-                                    <label for="bairro">Bairro:</label>
-                                    <input type="text" id="bairro" name="bairro">
+                                <div id="line-4-1">
+                                    <div class="form-column">
+                                        <label for="bairro">Bairro:</label>
+                                        <input type="text" id="bairro" name="bairro">
+                                    </div>
+                                    <div class="form-column">
+                                        <label for="numero">Número:</label>
+                                        <input type="text" id="numero" name="numero">
+                                    </div>
                                 </div>
-                                <div class="form-column">
-                                    <label for="numero">Número:</label>
-                                    <input type="text" id="numero" name="numero">
-                                </div>
-                                
-                                
-                                
                             </div>
-                
+                                <div class="preview">
+                                    <img id="preview-selected-image" />
+                                </div>
+                            <div class="preview-imagem-container">
+                                <input type="file" id="file-upload" name="file" accept="image/*" onchange="previewImage(event)"/>
+                            </div>
                             <div class="form-row"  id="line-5">
                                 <div class="form-column">
                                     <label for="complemento">Complemento:</label>
@@ -117,14 +148,19 @@
                                 </div>
                             </div>
                 
-                            <button type="submit" id="submitform">Confirmar</button>
-                        </form>
+                            <button id="submitform" onclick="submit()">Confirmar</button>
+                        <!-- </form> -->
             </dialog>
         </div>
+        <!-- script do modal -->
         <script>
             const dialog = document.querySelector("#modalDialog")
             const openButton = document.querySelector("#openButton")
             const closeModal = document.querySelector("#closeModal")
+            const submitModal = document.querySelector("#submitform")
+            const visualizarModal = document.querySelector("buttonVisualizar")
+            const editModal = document.querySelector("buttonEdit")
+
 
             openButton.addEventListener("click", (e) =>{
                 dialog.showModal()
@@ -132,14 +168,14 @@
             closeModal.addEventListener("click", (e) =>{
                 dialog.close()
             })
-
-            const ModalForm = document.querySelector("#ModalForm")
-
-            ModalForm.addEventListener("submit", (e) => {
-                e.preventDefault()
-
-                console.log("Enviando dados")
+            submitModal.addEventListener("click", (e) =>{
+                dialog.close()
             })
+            // submitModal.addEventListener("submit", (e) => {
+            //     e.preventDefault()
+
+            //     console.log("Enviando dados")
+            // })
 
             // dialog.addEventListener("click", (e) => {
             //     if (event.target == dialog) {
@@ -158,6 +194,19 @@
                     dialog.close()
                 }
             })
+
+
+            // script para aparecer a imagem na tela
+
+            const previewImage = (event) => {
+                const files = event.target.files
+                if(files.lengtd > 0){
+                    const imageUrl = URL.createObjectURL(files[0])
+                    const imageElement = document.getElementById("preview-selected-image")
+                    imageElement.src = imageUrl
+                }
+            }
         </script>
+        <script src="crud/crudFuncionarios.js"></script>
 </body>
 </html>
