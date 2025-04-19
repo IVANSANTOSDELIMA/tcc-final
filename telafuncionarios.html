@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-rounded/css/uicons-tdin-rounded.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-chubby/css/uicons-tdin-chubby.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-rounded/css/uicons-tdin-rounded.css'>
@@ -46,88 +46,80 @@
                     <label for="categorias"><strong>categorias</strong></label>
                     <input type="search" name="categorias" class="inputCtg">
                 </div>
-                <div class="category-column">
-                    <div id="iconlixeira"><i class="fi fi-rs-trash"></i></div>
-                </div>
-                
             </div>
             <div id="headertable"></div>
+            <!-- local onde vai aparecer os funcionarios registrados -->
             <div id="toptable">
-                <table id="table">
-                    <tr>
-                    </tr>
-                </table>
-                <!-- local onde vai aparecer os funcionarios registrados -->
+                <div id="table"></div>
             </div>
-            
             <dialog id="modalDialog">
                         <button id="closeModal"><i class="fi fi-bs-cross"></i></button>
                         <!-- <form id="cadastroForm"> -->
                             <div class="form-row"id="line-0">
                                 <div class="form-column">
                                     <label for="nome">Nome:</label>
-                                    <input type="text" id="nome" name="nome">
+                                    <input type="text" id="nome" name="nome" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="nivelAcesso">Nível de acesso:</label>
-                                    <input type="text" id="nivelAcesso" name="nivelAcesso">
+                                    <input type="text" id="nivelAcesso" name="nivelAcesso" required>
                                 </div>
                             </div>
                 
                             <div class="form-row" id="line-1">
                                 <div class="form-column">
                                     <label for="cpf">CPF:</label>
-                                    <input type="text" id="cpf" name="cpf">
+                                    <input type="text" id="cpf" name="cpf" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="cargo">Cargo:</label>
-                                    <input type="text" id="cargo" name="cargo">
+                                    <input type="text" id="cargo" name="cargo" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="dataAdmissao">Data de Admissão:</label>
-                                    <input type="date" id="dataAdmissao" name="dataAdmissao">
+                                    <input type="date" id="dataAdmissao" name="dataAdmissao" required>
                                 </div>
                             </div>
                 
                             <div class="form-row"  id="line-2">
                                 <div class="form-column">
                                     <label for="telefone">Telefone:</label>
-                                    <input type="tel" id="telefone" name="telefone">
+                                    <input type="tel" id="telefone" name="telefone" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email">
+                                    <input type="email" id="email" name="email" required>
                                 </div>
                             </div>
                 
                             <div class="form-row" id="line-3">
                                 <div class="form-column">
                                     <label for="estado">Estado:</label>
-                                    <input type="text" id="estado" name="estado">
+                                    <input type="text" id="estado" name="estado" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="cidade">Cidade:</label>
-                                    <input type="text" id="cidade" name="cidade">
+                                    <input type="text" id="cidade" name="cidade" required>
                                 </div>
                                 <div class="form-column">
                                     <label for="cep">CEP:</label>
-                                    <input type="text" id="cep" name="cep">
+                                    <input type="text" id="cep" name="cep" required>
                                 </div>
                             </div>
                 
                             <div class="form-row" id="line-4">
                                 <div class="form-column">
                                     <label for="rua">Rua:</label>
-                                    <input type="text" id="rua" name="rua">
+                                    <input type="text" id="rua" name="rua" required>
                                 </div>
                                 <div id="line-4-1">
                                     <div class="form-column">
                                         <label for="bairro">Bairro:</label>
-                                        <input type="text" id="bairro" name="bairro">
+                                        <input type="text" id="bairro" name="bairro" required>
                                     </div>
                                     <div class="form-column">
                                         <label for="numero">Número:</label>
-                                        <input type="text" id="numero" name="numero">
+                                        <input type="text" id="numero" name="numero" required>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +127,7 @@
                                     <img id="preview-selected-image" />
                                 </div>
                             <div class="preview-imagem-container">
-                                <input type="file" id="file-upload" name="file" accept="image/*" onchange="previewImage(event)"/>
+                                <input type="file" id="file-upload" name="file" accept="image/*" onchange="previewImage(event)" required/>
                             </div>
                             <div class="form-row"  id="line-5">
                                 <div class="form-column">
@@ -144,7 +136,7 @@
                                 </div>
                                 <div class="form-column">
                                     <label for="senha">Senha:</label>
-                                    <input type="password" id="senha" name="senha">
+                                    <input type="password" id="senha" name="senha" required>
                                 </div>
                             </div>
                 

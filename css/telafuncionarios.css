@@ -372,32 +372,61 @@ button#adicionar {
 }
 /* Tabela dos funcionarios */
 
-table{
+#table{
     border-collapse: collapse;
     width: 1550px;
-    align-items: center;
-    background-color: #007bff;
-}
-
-th,td{
-    padding: 14px 20px;
-
-}
-#buttonEdit{
-    background-color: #28a745;
-    width: 70px;
-    height: 30px;
+    background-color: #cfcfcf;
+    padding: none;
     font-size: 18px;
-    align-items: center;
-    border-radius: 5px;
 }
-#buttonVisualizar{
-    background-color: #28a745;
+#toptable{
+    height: 500px;
+    overflow-y: auto;
+    width: 1565px;
+}
+#rowfuncionarios{
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    grid-template-columns: repeat(10, auto);
+    grid-auto-columns: auto;
+    -ms-grid-row-align: center;
+    -ms-grid-row-align: center;
+    border: 1px solid #aaaaaa;
+}
+
+#visualizarButton{
+    background-color: orange;
     width: 100px;
     height: 30px;
+    border-radius: 15px;
     font-size: 18px;
+    color: white;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    padding: 3px;
 }
-
-
+#iconExcluir{
+    background-image: url(/css/img/trash.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+#editbutton{
+    background-color: #4CAF50;
+    border-radius: 15px;
+    font-size: 18px;
+    color: white;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+/* div{
+    border: 1px solid blue;
+} */

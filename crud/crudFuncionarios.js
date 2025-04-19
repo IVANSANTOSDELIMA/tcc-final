@@ -17,49 +17,51 @@ table.appendChild(data)
 }
 // funçao para criar a lista onde vai ficar as informações do funcionario
 function createList(name,nivelacesso,cpf,cargo,dataAdmissao,tel,email){
-    var row = document.createElement('tr')
+    var row = document.createElement('div')
+    row.setAttribute('id', 'rowfuncionarios')
 
-    var nametd = document.createElement('td')
+    var nametd = document.createElement('div')
     nametd.textContent = name
 
-    var nivelacessotd = document.createElement('td')
+    var nivelacessotd = document.createElement('div')
     nivelacessotd.textContent = nivelacesso
 
-    var cpftd = document.createElement('td')
+    var cpftd = document.createElement('div')
     cpftd.textContent = cpf
 
-    var cargotd = document.createElement('td')
+    var cargotd = document.createElement('div')
     cargotd.textContent = cargo
 
-    var dataAdmissaotd = document.createElement('td')
+    var dataAdmissaotd = document.createElement('div')
     dataAdmissaotd.textContent = dataAdmissao
 
-    var teltd = document.createElement('td')
+    var teltd = document.createElement('div')
     teltd.textContent = tel
 
-    var emailtd = document.createElement('td')
+    var emailtd = document.createElement('div')
     emailtd.textContent = email
 
-    var actionColumn =document.createElement('td')
 
-    var visualizar = document.createElement('button')
+    var visualizar = document.createElement('div')
+    visualizar.setAttribute('id', 'visualizarButton')
     visualizar.textContent = 'Visualizar'
     visualizar.addEventListener('click',function(){
         // fazer a parte de visualizar o modal com os atributos
     })
     
-    var editbutton = document.createElement('button')
+    var editbutton = document.createElement('div')
+    editbutton.setAttribute('id', 'editbutton')
     editbutton.textContent = 'Editar'
     editbutton.addEventListener('click',function(){
         // fazer a parte de editar o modal com os atributos
     })
 
-    var checkbox = document.createElement('button')
-    checkbox.textContent = ''
-
-    actionColumn.appendChild(visualizar)
-    actionColumn.appendChild(editbutton)
-    actionColumn.appendChild(checkbox)
+    var iconExcluir = document.createElement('div')
+    iconExcluir.setAttribute('id', 'iconExcluir')
+    iconExcluir.textContent = ''
+    iconExcluir.addEventListener('click',function(){
+        // fazer a parte de excluir o funcionario
+    })
 
     row.appendChild(nametd)
     row.appendChild(nivelacessotd)
@@ -70,6 +72,6 @@ function createList(name,nivelacesso,cpf,cargo,dataAdmissao,tel,email){
     row.appendChild(emailtd)
     row.appendChild(visualizar)
     row.appendChild(editbutton)
-
+    row.appendChild(iconExcluir)
     return row
 }
