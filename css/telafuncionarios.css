@@ -1,3 +1,4 @@
+
 @import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css');
 
 :root {
@@ -83,6 +84,100 @@ button{
     left: 15%;
 } */
 
+/* Removendo estilos antigos de grid para a tabela */
+#rowfuncionarios {
+    /* Removido display grid e propriedades relacionadas */
+}
+
+#table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #cfcfcf;
+    font-size: 18px;
+    overflow-y: auto;
+    max-height: 500px;
+    display: block;
+}
+
+#table thead tr {
+    background-color: #b5b5b5;
+    height: 60px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#table tbody {
+    display: block;
+    max-height: 500px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+#table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+#table th, #table td {
+    padding: 10px;
+    text-align: left;
+    border-right: 1px solid #aaaaaa;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#table td:last-child {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#table th:last-child, #table td:last-child {
+    border-right: none;
+}
+
+#visualizarButton {
+    background-color: orange;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    cursor: pointer;
+}
+
+#iconExcluir {
+    background-image: url(/css/img/trash.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#editbutton {
+    background-color: #4CAF50;
+    border-radius: 15px;
+    font-size: 18px;
+    color: white;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    cursor: pointer;
+}
+
+
 .rowbutton{
     display: flex;
     flex-direction: row;
@@ -113,7 +208,7 @@ button{
     background-color:transparent;
     color: #0F6C08;
 }
-#closeModal{
+#closeModal, #closeModalVisualizar, #closeModalEditar{
     position: absolute;
     top: -0%;
     left: 95%;
@@ -123,7 +218,8 @@ button{
     position: relative;
     top: 27%;
     left: 18%;
-    width: 1550px;
+    width: 100%;
+    max-width: 1550px;
     height: 60px;
     background-color: #b5b5b5;
 }
@@ -131,7 +227,8 @@ button{
     position: relative;
     top: 27%;
     left: 18%;
-    width: 1550px;
+    width: 100%;
+    max-width: 1550px;
     height: 60px;
 }
 #iconlixeira{
@@ -163,7 +260,7 @@ button{
     background-color: #c2c2c2;
     z-index: 1000;
 }
-#modalDialog{
+#modalDialog, #modalVisualizarDialog, #modalEditarDialog{
     position: relative;
     border: 0;
     padding: 30px;
@@ -212,117 +309,117 @@ label {
     display: block;
     margin-bottom: 5px;
 }
-#nome{
+#nome, #visualizar-nome, #editar-nome{
     width: 180%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#nivelAcesso{
+#nivelAcesso, #visualizar-nivelAcesso, #editar-nivelAcesso{
     width: 67%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#cpf{
+#cpf, #visualizar-cpf, #editar-cpf{
     width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#cargo{
+#cargo, #visualizar-cargo, #editar-cargo{
     width: 79%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#dataAdmissao{
+#dataAdmissao, #visualizar-dataAdmissao, #editar-dataAdmissao{
     width: 95%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#telefone{
+#telefone, #visualizar-telefone, #editar-telefone{
     width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#email{
+#email, #visualizar-email, #editar-email{
     width: 171%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#estado{
+#estado, #visualizar-estado, #editar-estado{
     width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#cidade{
+#cidade, #visualizar-cidade, #editar-cidade{
     width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#cep{
+#cep, #visualizar-cep, #editar-cep{
     width: 70%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#rua{
+#rua, #visualizar-rua, #editar-rua{
     width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#bairro{
+#bairro, #visualizar-bairro, #editar-bairro{
     width: 113%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#numero{
+#numero, #visualizar-numero, #editar-numero{
     width: 38%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#complemento{
+#complemento, #visualizar-complemento, #editar-complemento{
     width: 280%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-#senha{
+#senha, #editar-senha{
     width: 140%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-#line-0{
+#line-0, #line-0b, #line-0c{
     gap: 195px;
 }
-#line-1{
+#line-1, #line-1b, #line-1c{
     gap: 3px;
 }
-#line-2{
+#line-2, #line-2b, #line-2c{
     
 }
-#line-3{
+#line-3, #line-3b, #line-3c{
     
 }
-#line-4{
-gap: 0px;
+#line-4, #line-4b, #line-4c{
+    gap: 0px;
 }
-#line-4-1{
+#line-4-1, #line-4-1b, #line-4-1c{
     display: flex;
     gap: 60px;
 }
-#line-5{
+#line-5, #line-5b, #line-5c{
     gap: 400px;
 }
 textarea {
@@ -330,7 +427,7 @@ textarea {
     height: 100px;
 }
 
-#submitform {
+#submitform, #salvarEdicao {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
@@ -363,7 +460,7 @@ button#adicionar {
     justify-content: center;
 }
 
-#preview-selected-image {
+#preview-selected-image, #visualizar-imagem, #editar-imagem {
     border-radius: 10px;
     width: 100%;
     height: 100%;
@@ -374,7 +471,8 @@ button#adicionar {
 
 #table{
     border-collapse: collapse;
-    width: 1550px;
+    width: 100%;
+    max-width: 1550px;
     background-color: #cfcfcf;
     padding: none;
     font-size: 18px;
@@ -430,3 +528,21 @@ button#adicionar {
 /* div{
     border: 1px solid blue;
 } */
+
+#filtro-cargo, #filtro-nome {
+    border: none;
+    outline: none;
+    position: relative;
+    border-radius: 5px;
+    font-size: large;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    background-color: #c2c2c2;
+    z-index: 1000;
+}
+
+#filtro-cargo option {
+    padding: 10px;
+    font-size: large;
+}

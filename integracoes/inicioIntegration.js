@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const baseUrl = 'http://localhost:3000';
+
+    const token = localStorage.getItem('token');
+    const headers = {
+        'Authorization': `Bearer ${token}`
+    };
+
     // integração pra pegarr a imagem do funcionario
     const funcionario = JSON.parse(localStorage.getItem('funcionario'));
     const imgElement = document.querySelector('.imageUser img');
@@ -14,9 +20,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Integração para os Cards
     try {
         const responseProdutos = await fetch(`${baseUrl}/api/estoque/produtos`, {
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            }
+            headers: headers
         }); // Faz uma requisição para pegar os produtos do estoque
         const produtos = await responseProdutos.json();
         

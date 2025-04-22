@@ -1,7 +1,7 @@
 export class Auth { // Classe pra lidar com autenticação
     constructor() {
         this.baseUrl = 'http://localhost:3000';
-        this.publicRoutes = ['/login.html'];
+        this.publicRoutes = ['/telalogin.html'];
     }
 
     isPublicRoute() { // Checa se a página atual tá na lista de páginas públicas
@@ -10,6 +10,7 @@ export class Auth { // Classe pra lidar com autenticação
     // Valida se o token guardado ainda presta
     async verificarToken() { 
         const token = localStorage.getItem('token');
+        console.log('Token antes da verificação:', token);
         if (!token) return false;
 
         try {
@@ -17,6 +18,7 @@ export class Auth { // Classe pra lidar com autenticação
                 method: 'GET',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
+            console.log('Resposta da verificação:', response);
             return response.ok;
         } catch (error) {
             return false;
