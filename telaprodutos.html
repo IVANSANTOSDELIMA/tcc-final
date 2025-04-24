@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/telaInicio.css">
+    <link rel="shortcut icon" href="/tcc-final/css/img/logoAtualizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="/tcc-final/css/telaProdutos.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
@@ -11,31 +12,281 @@
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-rounded/css/uicons-tdin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <script type="module" src=""></script> <!-- alterar para o novo dos produtos -->
+    <script src=""></script>
     <title>CerealistaSouza</title>
     
 </head>
 <body>
         <div class="containerTotal">
             <div class="containerButtons">
-                <img src="/css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button">Dashboard</button></div>
-                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button><i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
-                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button">Estoque</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i></div>
+                <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button" onclick="window.location.href='telainicio.html'">Dashboard</button><i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
+                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
+                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button">Estoque</button></div>
                 <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button">Movimentações</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i></div>  
             </div>
             <header id="headersuperior">
                 <div class="config">
-                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 80%;"></i>
-                    <i class="fi fi-tr-interrogation" style="font-size: 30px; position: absolute; top: 20%; left: 85%;"></i>
-                    
+                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 82%;"></i>
+                    <div class="imageUser"><img src="" alt=""></div>
                 </div>
             </header>
-            <div class="container">
             
+            <div class="container">
+                <button id="openButton">+</button>
             </div>
+            <div id="buttonCategory">
+                <div class="category-column">
+                    <label for="NomeCategoria-produto"><strong>Nome</strong></label>
+                    <input type="search" name="NomeCategory" class="inputCtg-categoria" id="filtro-nome-produto" placeholder="Nome do produto">
+                </div>
+                <div class="category-column">
+                    <label for="Categoria"><strong>Categoria</strong></label>
+                    <!-- <input type="search" name="categorias" class="inputCtg"> -->
+                    <select name="cargos" class="inputCtg-categoria", id="filtro-categoria">
+                        <option value="">Todas as categorias</option>
+                    </select>
+                </div>
+            </div>
+            <div id="headertable-produtos">
+                <table id="table" cellspacing="0" cellpadding="5">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>quantidade</th>
+                            <th>Data de entrada</th>
+                            <th>codigo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linhas dos funcionários serão inseridas aqui -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- local onde vai aparecer os funcionarios registrados -->
+            <!-- removido div id="toptable" pois não é mais necessário -->
+            <dialog id="modalDialog-produtos">
+                        <button id="closeModal-produtos"><i class="fi fi-bs-cross"></i></button>
+                        <!-- <form id="formAdicionar"> -->
+                            <div class="form-row"id="line-0">
+                                <div class="form-column">
+                                    <label for="nome">Nome: *</label>
+                                    <input type="text" id="nome-produto" name="nome" required>
+                                </div>
+                                <div class="form-column">
+                                    <label for="codigo">Código: *</label>
+                                    <input type="text" id="codigo-produto" name="codigo" required>
+                                </div>
+                            </div>
+                
+                            <div class="form-row" id="line-1">
+                                <div class="form-column">
+                                    <label for="categoria">Categoria: *</label>
+                                    <input type="text" id="categoria-produto" name="categoria" required>
+                                </div>
+                                <!-- <div class="form-column">
+                                    <label for="cargo">Cargo: *</label>
+                                    <input type="text" id="cargo" name="cargo" required>
+                                </div> -->
+                                <div class="form-column">
+                                    <label for="dataEntrada">Data de entrada: *</label>
+                                    <input type="date" id="dataEntrada" name="dataEntrada" required>
+                                </div>
+                            </div>
+                
+                            <div class="form-row"  id="line-2">
+                                <div class="form-column">
+                                    <label for="preco-produto">Preço: *</label>
+                                    <input type="tel" id="preco-produto" name="preco-produto" required>
+                                </div>
+                                <div class="form-column">
+                                    <label for="codigo-participante-produto">Código do fornecedor: *</label>
+                                    <input type="email" id="codigo-participante-produto" name="codigo-participante-produto" required>
+                                </div>
+                            </div>
+                                <div class="preview">
+                                    <img id="-produto-produto" />
+                                </div>
+                            <div class="preview-imagem-container">
+                                <input type="file" id="file-upload-produto" name="file" accept="image/*" onchange="previewImage(event)" required/>
+                            </div>
+                            <div class="form-row"  id="line-5">
+                                <div class="form-column">
+                                    <label for="complemento-produto">Complemento: *</label>
+                                    <textarea id="complemento-produto" name="complemento-produto"></textarea>
+                                </div>
+                                <div class="form-column">
+                                    <label for="nome-senha-produto" id="nome-senha-produto">Senha: *</label>
+                                    <input type="password" id="senha-produto" name="senha-produto" required>
+                                </div>
+                            </div>
+                
+                            <button id="submitform" type="submit">Confirmar</button>
+                        <!-- </form> -->
+            </dialog>
+            <dialog id="modalVisualizarDialog-produtos">
+                <button id="closeModalVisualizar-produtos"><i class="fi fi-bs-cross"></i></button>
+                <div class="form-row" id="line-0b">
+                    <div class="form-column">
+                        <label>Nome:</label>
+                        <input type="text" id="visualizar-nome-produto" readonly>
+                    </div>
+                    <div class="form-column">
+                        <label>Código:</label>
+                        <input type="text" id="visualizar-codigo-produto" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row" id="line-1b">
+                    <div class="form-column">
+                        <label>Categoria:</label>
+                        <input type="text" id="visualizar-categoria-produto" readonly>
+                    </div>
+                    <div class="form-column">
+                        <label>Data de entrada:</label>
+                        <input type="date" id="visualizar-dataEntrada" readonly>
+                    </div>
+                </div>
+
+                <div class="form-row" id="line-2b">
+                    <div class="form-column">
+                        <label>preço:</label>
+                        <input type="tel" id="visualizar-preco-produto" readonly>
+                    </div>
+                    <div class="form-column">
+                        <label>Código do fornecedor</label>
+                        <input type="email" id="visualizar-participante-produto" readonly>
+                    </div>
+                </div>
+                <div class="preview">
+                    <img id="visualizar-imagem-produto" />
+                </div>
+
+                <div class="form-row" id="line-5b">
+                    <div class="form-column">
+                        <label>Complemento:</label>
+                        <textarea id="visualizar-complemento-produto" readonly></textarea>
+                    </div>
+                </div>
+            </dialog>
+            <dialog id="modalEditarDialog-produtos">
+                <button id="closeModalEditar-produtos"><i class="fi fi-bs-cross"></i></button>
+                <div class="form-row" id="line-0c">
+                    <div class="form-column">
+                        <label>Nome:</label>
+                        <input type="text" id="editar-nome-produto">
+                    </div>
+                    <div class="form-column">
+                        <label>Código:</label>
+                        <input type="text" id="editar-codigo-produto">
+                    </div>
+                </div>
+
+                <div class="form-row" id="line-1c">
+                    <div class="form-column">
+                        <label>Categoria:</label>
+                        <input type="text" id="editar-categoria-produto">
+                    </div>
+                    <div class="form-column">
+                        <label>Data de entrada:</label>
+                        <input type="date" id="editar-dataEntrada">
+                    </div>
+                </div>
+
+                <div class="form-row" id="line-2c">
+                    <div class="form-column">
+                        <label>Preço:</label>
+                        <input type="tel" id="editar-preco-produto">
+                    </div>
+                    <div class="form-column">
+                        <label>Código do fornecedor:</label>
+                        <input type="email" id="editar-participante-produto">
+                    </div>
+                </div>
+                <div class="preview">
+                    <img id="editar-imagem-produto" />
+                </div>
+
+                <div class="preview-imagem-container">
+                    <!-- <button type="button" class="botao-upload" id="botaoUploadEditar">Escolher Nova Imagem</button> -->
+                    <input type="file" id="editar-file-upload-produto" accept="image/*">
+                </div>
+
+                <div class="form-row" id="line-5c">
+                    <div class="form-column">
+                        <label>Complemento:</label>
+                        <textarea id="editar-complemento-produto"></textarea>
+                    </div>
+                    <div class="form-column">
+                        
+                        <!-- <h5>*Para alterar a senha, entre em contato com o administrador</h5> -->
+                        <h5>*Alteração da imagem está desabilitada por enquanto</h5>
+                    </div>
+                </div>
+                
+                <button id="salvarEdicao"style=>Salvar Alterações</button>
+            </dialog>
         </div>
-        
+        <!-- script do modal -->
+        <script>
+            const dialog = document.querySelector("#modalDialog-produtos")
+            const openButton = document.querySelector("#openButton")
+            const closeModal = document.querySelector("#closeModal-produtos")
+            const submitModal = document.querySelector("#submitform")
+            const visualizarModal = document.querySelector("buttonVisualizar")
+            const editModal = document.querySelector("buttonEdit")
+
+
+            openButton.addEventListener("click", (e) =>{
+                dialog.showModal()
+            })
+            closeModal.addEventListener("click", (e) =>{
+                document.querySelector('#nome-produto').value = '';
+                    document.querySelector('#codigo-produto').value = '';
+                    document.querySelector('#categoria-produto').value = '';
+                    document.querySelector('#dataEntrada').value = '';
+                    document.querySelector('#preco-produto').value = '';
+                    document.querySelector('#senha-produto').value = '';
+                    document.querySelector('#codigo-participante-produto').value = '';
+                    document.querySelector('#preview-selected-image-produto').src = '';
+                    document.querySelector('#file-upload-produto').value = '';
+                    document.querySelector('#complemento-produto').value = '';
+                dialog.close()
+            })/* 
+            submitModal.addEventListener("click", (e) =>{
+                dialog.close()
+            }) */
+            // submitModal.addEventListener("submit", (e) => {
+            //     e.preventDefault()
+
+            //     console.log("Enviando dados")
+            // })
+
+            // dialog.addEventListener("click", (e) => {
+            //     if (event.target == dialog) {
+            //         dialog.close()
+            //     }
+            // })
+
+            dialog.addEventListener("click", (event) => {
+                const rect = dialog.getBoundingClientRect()
+                if(
+                    event.clientX < rect.left ||
+                    event.clientX > rect.right ||
+                    event.clientY < rect.top ||
+                    event.clientY > rect.bottom
+                ) {
+                    dialog.close()
+                }
+            })
+
+            /* script para aparecer a imagem na tela */
+        </script>
+        <script src=""></script>
 </body>
 </html>
