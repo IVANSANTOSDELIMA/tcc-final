@@ -155,7 +155,7 @@ button{
 }
 
 #iconExcluir {
-    background-image: url(/css/img/trash.png);
+    background-image: url(/img/trash.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 30px;
