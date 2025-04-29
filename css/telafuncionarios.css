@@ -154,7 +154,7 @@ button{
     cursor: pointer;
 }
 
-#iconExcluir {
+#iconExcluir{
     background-image: url(/css/img/trash.png);
     background-repeat: no-repeat;
     background-size: contain;
