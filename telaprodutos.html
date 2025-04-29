@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/tcc-final/css/img/logoAtualizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="/tcc-final/css/telaProdutos.css">
+    <link rel="shortcut icon" href="/css/img/logoAtualizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/telaProdutos.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
@@ -89,10 +89,10 @@
                                     <label for="categoria">Categoria: *</label>
                                     <input type="text" id="categoria-produto" name="categoria" required>
                                 </div>
-                                <!-- <div class="form-column">
-                                    <label for="cargo">Cargo: *</label>
-                                    <input type="text" id="cargo" name="cargo" required>
-                                </div> -->
+                                <div class="form-column">
+                                    <label for="quantidadeProduto">Quantidade: *</label>
+                                    <input type="text" id="quantidadeProduto" name="quantidade" required>
+                                </div>
                                 <div class="form-column">
                                     <label for="dataEntrada">Data de entrada: *</label>
                                     <input type="date" id="dataEntrada" name="dataEntrada" required>
@@ -148,6 +148,10 @@
                         <input type="text" id="visualizar-categoria-produto" readonly>
                     </div>
                     <div class="form-column">
+                        <label for="quantidadeProduto">Quantidade: *</label>
+                        <input type="text" id="visualizar-quantidade" name="quantidade" required>
+                    </div>
+                    <div class="form-column">
                         <label>Data de entrada:</label>
                         <input type="date" id="visualizar-dataEntrada" readonly>
                     </div>
@@ -186,12 +190,16 @@
                         <input type="text" id="editar-codigo-produto">
                     </div>
                 </div>
-
+                <div class="form-column">
+                    <label for="quantidadeProduto">Quantidade:</label>
+                    <input type="text" id="editar-quantidade" name="quantidade" required>
+                </div>
                 <div class="form-row" id="line-1c">
                     <div class="form-column">
                         <label>Categoria:</label>
                         <input type="text" id="editar-categoria-produto">
                     </div>
+                    
                     <div class="form-column">
                         <label>Data de entrada:</label>
                         <input type="date" id="editar-dataEntrada">

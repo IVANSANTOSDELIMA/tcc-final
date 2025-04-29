@@ -316,25 +316,25 @@ label {
     border-radius: 4px;
 }
 #codigo-produto, #visualizar-codigo-produto, #editar-codigo-produto{
-    width: 68%;
+    width: 72%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 #categoria-produto, #visualizar-categoria-produto, #editar-categoria-produto{
-    width: 180%;
+    width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-/* #cargo, #visualizar-cargo, #editar-cargo{
+#quantidadeProduto, #visualizar-quantidade, #editar-quantidade{
     width: 79%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-} */
+}
 #dataEntrada, #visualizar-dataEntrada, #editar-dataEntrada{
-    width: 97%;
+    width: 103%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -378,10 +378,10 @@ label {
 }
 
 #line-0, #line-0b, #line-0c{
-    gap: 195px;
+    gap: 188px;
 }
 #line-1, #line-1b, #line-1c{
-    gap: 195px;
+    gap: 0px;
 }
 #line-2, #line-2b, #line-2c{
     
