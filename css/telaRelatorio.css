@@ -1,0 +1,213 @@
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:contents;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#headersuperior{
+    position: fixed;
+    background-color:#ffffff ;
+    height: 6vh;
+    left: 300px; /* Alinhado com o menu lateral */
+    width: calc(100% - 300px); /* Largura total menos o menu lateral */
+    /* border: solid 2px #818181; */
+    z-index: 1000; 
+}
+.containerTotal{
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #e4e4e4;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 300px); /* Considerando o espaço do menu lateral */
+    background-color: #e4e4e4;
+    margin-left: 300px; /* Space for sidebar */
+    padding: 6vh 20px 20px 20px; /* Top, right, bottom, left padding */
+    overflow-x: hidden;
+}
+.containerButtons{
+    font-family: inter;
+    font-size: 25px;
+    position: fixed;
+    display: flex;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1001; /* Ensure it stays above other content */
+}
+button{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10%;
+    font-family: inter;
+    font-size: 25px;
+    padding: 10px;
+    background-color: transparent;
+}
+#logo{
+    position: relative;
+    top: 1%;
+    left: 7%;
+    width: 14vh;
+}
+.rowbutton{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 1vh;
+    position: relative;
+    left: 5%;
+    top: 5%;
+}
+.config{
+    display: flex;
+    flex-direction: column;
+}
+#txtinicio{
+    color: #0F6C08;
+    font-size: 37px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+.imageUser {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    /* left: 85%; */
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: #0F6C08;
+    transform: translateY(-50%);
+}
+.fi-tc-settings {
+    position: absolute;
+    top: 58%;
+    right: 5.5%;
+    font-size: 30px;
+    transform: translateY(-50%);
+}
+.imageUser img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* table -------------------------------------------- */
+#table-dia{
+    top: 30%;
+    left: 20%;
+    width: 1450px;
+    position: absolute;
+    border-collapse: collapse;
+    font-size: 18px;
+    overflow-y: auto;
+    display: block;
+}
+#table-semana{
+    top: 36.5%;
+    left: 20%;
+    width: 1450px;
+    position: absolute;
+    border-collapse: collapse;
+    font-size: 18px;
+    overflow-y: auto;
+    display: block;
+
+}
+#table-mes{
+    top: 43%;
+    left: 20%;
+    width: 1450px;
+    position: absolute;
+    border-collapse: collapse;
+    font-size: 18px;
+    overflow-y: auto;
+    display: block;
+
+}
+#table-ano{
+    top: 49%;
+    left: 20%;
+    width: 1450px;
+    position: absolute;
+    border-collapse: collapse;
+    font-size: 18px;
+    overflow-y: auto;
+    display: block;
+
+}
+/* table thead ----------------------------------------*/
+#table-dia thead{
+    background-color: #b5b5b5;
+    height: 60px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+#table-semana thead{
+    background-color: #b5b5b5;
+    height: 60px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+#table-mes thead{
+    background-color: #b5b5b5;
+    height: 60px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+#table-ano thead{
+    background-color: #b5b5b5;
+    height: 60px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+/* table th td tr --------------------------------------- */
+th{
+    padding: 20px;
+}
+tr:last-child{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+/* table tbody-------------------------------------------- */
+#table-dia tbody{
+    display: block;
+    overflow-y: auto;
+    width: 100%;
+}
+/* --------------------------------------------------------- */
+h2{
+    display: flex;
+    position: absolute;
+    left: 18%;
+    top: 7%;
+    gap: 10px;
+}
