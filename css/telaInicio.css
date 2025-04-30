@@ -177,7 +177,7 @@ button{
     margin-left: 20px;
 }
 
-.imageUser {
+#imageUser {
     position: absolute;
     top: 50%;
     right: 2%;
@@ -266,4 +266,29 @@ button{
         min-width: 700px;
         width: 45%;
     }
+}
+#modalLogin{
+    width: 100px;
+    height: 60px;
+    top: -81.3%;
+    left: 94.8%;
+    z-index: 1000;
+    position: absolute;
+    display:flex ;
+    background-color: #e4e4e4;
+    transition: 1ms;
+    justify-content: center;
+}
+#sairLogin{
+    width: 100px;
+    height: 40px;
+    background-color: #858585;
+    color: white;
+    outline: none;
+    font-size: 18px;
+    justify-content: center;
+}
+
+#modalLogin::backdrop{
+    background-color: transparent;
 }

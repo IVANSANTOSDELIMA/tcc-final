@@ -32,7 +32,7 @@
             <header id="headersuperior">
                 <div class="config">
                     <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 82%;"></i>
-                    <div class="imageUser"><img src="" alt=""></div>
+                    <div id="imageUser"><img src="" alt=""></div>
                 </div>
             </header>
             
@@ -337,6 +337,12 @@
                 
                 <button id="salvarEdicao"style=>Salvar Alterações</button>
             </dialog>
+                <!-- Modal sair--------------------------------------------------------------------------------->
+                    <dialog id="modalLogin">
+                        <button id="sairLogin">Sair</button>
+                    </dialog>
+        
+                <!-- --------------------------------------------------------------------------------->
         </div>
         <!-- script do modal -->
         <script>
@@ -379,7 +385,27 @@
 
             //     console.log("Enviando dados")
             // })
+             // -------------------------------------------------------------------------------- modal sair login
+             const dialogLogin = document.querySelector("#modalLogin")
+            const openSair = document.querySelector("#imageUser")
 
+            openSair.addEventListener("click", (e) =>{
+                dialogLogin.showModal()
+            })
+
+            dialogLogin.addEventListener("click", (event) => {
+                const rectLogin = dialogLogin.getBoundingClientRect()
+                if(
+                    event.clientX < rectLogin.left ||
+                    event.clientX > rectLogin.right ||
+                    event.clientY < rectLogin.top ||
+                    event.clientY > rectLogin.bottom
+                ) {
+                    dialogLogin.close()
+                }
+            })
+
+            //--------------------------------------------------------------------------------------------------
             // dialog.addEventListener("click", (e) => {
             //     if (event.target == dialog) {
             //         dialog.close()

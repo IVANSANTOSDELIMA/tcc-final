@@ -85,7 +85,35 @@
                         </tbody>
                     </table>
                 </div>
+                        <!-- Modal sair--------------------------------------------------------------------------------->
+                            <dialog id="modalLogin">
+                                <button id="sairLogin">Sair</button>
+                            </dialog>
+                
+                        <!-- --------------------------------------------------------------------------------->
         </div>
-        
+        <script>
+            // -------------------------------------------------------------------------------- modal sair login
+            const dialogLogin = document.querySelector("#modalLogin")
+            const openSair = document.querySelector("#imageUser")
+
+            openSair.addEventListener("click", (e) =>{
+                dialogLogin.showModal()
+            })
+
+            dialogLogin.addEventListener("click", (event) => {
+                const rectLogin = dialogLogin.getBoundingClientRect()
+                if(
+                    event.clientX < rectLogin.left ||
+                    event.clientX > rectLogin.right ||
+                    event.clientY < rectLogin.top ||
+                    event.clientY > rectLogin.bottom
+                ) {
+                    dialogLogin.close()
+                }
+            })
+
+            //--------------------------------------------------------------------------------------------------
+        </script>
 </body>
 </html>

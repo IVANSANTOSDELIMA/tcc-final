@@ -32,7 +32,7 @@
             <header id="headersuperior">
                 <div class="config">
                     <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 82%;"></i>
-                    <div class="imageUser"><img src="" alt=""></div>
+                    <div id="imageUser"><img src="" alt=""></div>
                 </div>
             </header>
             
@@ -240,6 +240,12 @@
                 <button id="salvarEdicao"style=>Salvar Alterações</button>
             </dialog>
         </div>
+        <!-- Modal sair--------------------------------------------------------------------------------->
+            <dialog id="modalLogin">
+                <button id="sairLogin">Sair</button>
+            </dialog>
+
+        <!-- --------------------------------------------------------------------------------->
         <!-- script do modal -->
         <script>
             const dialog = document.querySelector("#modalDialog-produtos")
@@ -265,22 +271,28 @@
                     document.querySelector('#file-upload-produto').value = '';
                     document.querySelector('#complemento-produto').value = '';
                 dialog.close()
-            })/* 
-            submitModal.addEventListener("click", (e) =>{
-                dialog.close()
-            }) */
-            // submitModal.addEventListener("submit", (e) => {
-            //     e.preventDefault()
+            })
+            // -------------------------------------------------------------------------------- modal sair login
+            const dialogLogin = document.querySelector("#modalLogin")
+            const openSair = document.querySelector("#imageUser")
 
-            //     console.log("Enviando dados")
-            // })
+            openSair.addEventListener("click", (e) =>{
+                dialogLogin.showModal()
+            })
 
-            // dialog.addEventListener("click", (e) => {
-            //     if (event.target == dialog) {
-            //         dialog.close()
-            //     }
-            // })
+            dialogLogin.addEventListener("click", (event) => {
+                const rectLogin = dialogLogin.getBoundingClientRect()
+                if(
+                    event.clientX < rectLogin.left ||
+                    event.clientX > rectLogin.right ||
+                    event.clientY < rectLogin.top ||
+                    event.clientY > rectLogin.bottom
+                ) {
+                    dialogLogin.close()
+                }
+            })
 
+            //--------------------------------------------------------------------------------------------------
             dialog.addEventListener("click", (event) => {
                 const rect = dialog.getBoundingClientRect()
                 if(
