@@ -13,6 +13,7 @@
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
         <!-- <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'> -->
+        <link rel="stylesheet" href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script type="module" src="integracoes/authMiddleware.js"></script> <!-- autentica o usuario --> 
         <!-- se o token nao for valido vai voltar pro login -->
@@ -34,12 +35,15 @@
                 <div class="rowbutton" onclick="window.location.href='telarelatoriodeProdutos.html'"><i class="fi fi-tr-chart-line-up"></i><button type="button" style="cursor: pointer;">Movimentações</button><i
                         class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i>
                 </div>
+                <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button" onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
+                    <i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
+                </div>
             </div>
             <header id="headersuperior">
                 <i class="fi fi-tc-settings" ></i>
                 <!-- <div class="config">
                 </div> -->
-                <div class="imageUser"><img src="" alt=""></div>
+                <div id="imageUser"><img src="" alt=""></div>
             </header>
             <div class="container">
                 <h1 id="txtinicio">Dashboard</h1>
@@ -70,12 +74,41 @@
                     <div class="ajudasblue"></div>
                 </div>
             </div>
+                    <!-- Modal sair--------------------------------------------------------------------------------->
+                        <dialog id="modalLogin">
+                            <button id="sairLogin">Sair</button>
+                        </dialog>
+            
+                    <!-- --------------------------------------------------------------------------------->
         </div>
 
+            <!-- script do modal -->
         <!-- <div id="footerinferior"></div>   -->
 
         <!-- Os graficos foram mudados para o arquivo integracoes/inicioIntegration.js :) -->
+         <script>
+             // -------------------------------------------------------------------------------- modal sair login
+             const dialogLogin = document.querySelector("#modalLogin")
+            const openSair = document.querySelector("#imageUser")
 
+            openSair.addEventListener("click", (e) =>{
+                dialogLogin.showModal()
+            })
+
+            dialogLogin.addEventListener("click", (event) => {
+                const rectLogin = dialogLogin.getBoundingClientRect()
+                if(
+                    event.clientX < rectLogin.left ||
+                    event.clientX > rectLogin.right ||
+                    event.clientY < rectLogin.top ||
+                    event.clientY > rectLogin.bottom
+                ) {
+                    dialogLogin.close()
+                }
+            })
+
+            //--------------------------------------------------------------------------------------------------
+         </script>
         <script src="integracoes/inicioIntegration.js"></script> <!-- integracao com o backend -->
 
     </body>
