@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     };
 
     const funcionario = JSON.parse(localStorage.getItem('funcionario'));
-    const imgElement = document.querySelector('.imageUser img');
+    const imgElement = document.querySelector('#imageUser img');
     
     if (funcionario && funcionario.imagem_funcionario) {
         imgElement.src = `${baseUrl}/${funcionario.imagem_funcionario}`;

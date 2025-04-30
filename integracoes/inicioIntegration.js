@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // integração pra pegarr a imagem do funcionario
     const funcionario = JSON.parse(localStorage.getItem('funcionario'));
-    const imgElement = document.querySelector('.imageUser img');
+    const imgElement = document.querySelector('#imageUser img');
     
     if (funcionario && funcionario.imagem_funcionario) {
         imgElement.src = `${baseUrl}/${funcionario.imagem_funcionario}`;
