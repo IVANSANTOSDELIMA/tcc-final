@@ -163,6 +163,65 @@ document.addEventListener('DOMContentLoaded', async function () {
         document.querySelector('#preview-selected-image').src = '';
     }
 
+    
+    // Função pra visualizar produto - MEXER LOGO, BACK-END NAO SUPORTA GET POR ID AINDA
+/*     window.visualizarProduto = async (id) => {
+    try {
+        const response = await fetch(`${baseUrl}/api/estoque/produtos/${id}`, {
+            headers: headers
+        });
+
+        if (response.ok) {
+            const produto = await response.json();
+
+            document.querySelector('#visualizar-nome-produto').value = produto.nome;
+            document.querySelector('#visualizar-codigo-produto').value = produto.id_produto;
+            document.querySelector('#visualizar-categoria-produto').value = produto.nome_categoria;
+            document.querySelector('#visualizar-dataEntrada').value = produto.data_entrada;
+            document.querySelector('#visualizar-preco-produto').value = new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            }).format(produto.preco_produto);
+            document.querySelector('#visualizar-participante-produto').value = produto.nome_participante;
+            document.querySelector('#visualizar-complemento-produto').value = produto.descricao;
+
+            if (produto.imagem_produto) {
+                document.querySelector('#visualizar-imagem-produto').src = `${baseUrl}/${produto.imagem_produto}`;
+            }
+
+            document.querySelector('#modalVisualizarDialog-produtos').showModal();
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao carregar dados do produto');
+    }
+}
+
+    document.querySelector('#closeModalVisualizar-produtos').addEventListener('click', () => {
+    document.querySelector('#modalVisualizarDialog-produtos').close();
+}); */
+
+    // Função para excluir produto - funcionou só com o função global
+    window.excluirProduto = async (id) => {
+    if (confirm('Tem certeza que deseja excluir este produto?')) {
+        try {
+            const response = await fetch(`${baseUrl}/api/estoque/produtos:${id}`, {
+                method: 'DELETE',
+                headers: headers
+            });
+
+            if (response.ok) {
+                carregarProdutos();
+                alert('Produto excluído com sucesso!');
+            } else {
+                throw new Error('Erro ao excluir produto');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            alert('Erro ao excluir produto');
+        }
+    }
+}
     // Enviando os dados do novo produto
     document.querySelector('#submitform').addEventListener('click', async () => {
         const categoriaInput = document.querySelector('#categoria-produto');
@@ -353,6 +412,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             alert('Erro ao cadastrar categoria');
         }
     });
+
 
     const inputImagem = document.querySelector('#file-upload');
     const previewImagem = document.querySelector('#preview-selected-image');

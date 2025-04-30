@@ -538,13 +538,14 @@ button#adicionar {
     align-items: center;
     padding: 3px;
 }
-#iconExcluir{
-    background-image: url(/tcc-final/css/img/trash.png);
+
+/* Tá duplicado, nnão sei se vai ser usado */
+/* #iconExcluir{
     background-repeat: no-repeat;
     background-size: contain;
     width: 30px;
     height: 30px;
-}
+} */
 #editbutton{
     background-color: #4CAF50;
     border-radius: 15px;
