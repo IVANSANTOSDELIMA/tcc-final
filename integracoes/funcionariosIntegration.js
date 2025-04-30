@@ -5,6 +5,16 @@ document.addEventListener('DOMContentLoaded', async function() {
         'Authorization': `Bearer ${token}`
     };
 
+    const funcionario = JSON.parse(localStorage.getItem('funcionario'));
+    const imgElement = document.querySelector('.imageUser img');
+    
+    if (funcionario && funcionario.imagem_funcionario) {
+        imgElement.src = `${baseUrl}/${funcionario.imagem_funcionario}`;
+    } // Se a imagem do funcionário estiver disponível, atualiza o src da imagem
+    else {
+        imgElement.src = 'https://placecats.com/neo_banana/300/200'; // Define uma imagem padrão caso não haja imagem
+    }
+
     let funcionariosGlobal = [];
     
     // Carregar lista de funcionários

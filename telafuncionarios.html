@@ -15,7 +15,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-rounded/css/uicons-tdin-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
-    <script type="module" src="integracoes\authMiddleware.js"></script> 
+    <script type="module" src="integracoes\authMiddleware.js"></script>  <!-- autentica o usuario -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>CerealistaSouza</title>
     
@@ -23,17 +23,17 @@
 <body>
         <div class="containerTotal">
             <div class="containerButtons">
-                <img src="img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button" onclick="window.location.href='telainicio.html'">Dashboard</button><i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
-                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button">Funcionarios</button></div>
-                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button">Estoque</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i></div>
-                <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button">Movimentações</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i></div>  
+                <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+                <div class="rowbutton" onclick="window.location.href='telainicio.html'"><i class="fi fi-rs-apps"></i><button type="button" style="cursor: pointer;">Dashboard</button><i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
+                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button" style="cursor: not-allowed;">Funcionarios</button></div>
+                <div class="rowbutton" onclick="window.location.href='telaprodutos.html'"><i class="fi fi-tr-boxes"></i><button type="button" style="cursor: pointer;">Estoque</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i></div>
+                <div class="rowbutton" onclick="window.location.href='telarelatoriodeProdutos.html'"><i class="fi fi-tr-chart-line-up"></i><button type="button" style="cursor: pointer;">Movimentações</button><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i></div>  
             </div>
             <header id="headersuperior">
-                <div class="config">
-                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 82%;"></i>
-                    <div class="imageUser"><img src="" alt=""></div>
-                </div>
+                <!-- <div class="config">
+                </div> -->
+                <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 20%; left: 82%;"></i>
+                <div class="imageUser"><img src="" alt=""></div>
             </header>
             
             <div class="container">
