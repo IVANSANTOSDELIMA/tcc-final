@@ -292,3 +292,7 @@ button{
 #modalLogin::backdrop{
     background-color: transparent;
 }
+
+#sairLogin:hover{
+    background-color: #353434;
+}

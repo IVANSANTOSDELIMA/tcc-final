@@ -1,0 +1,458 @@
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:contents;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#headersuperior{
+    position: fixed;
+    background-color:#ffffff ;
+    height: 6vh;
+    left: 300px; /* Alinhado com o menu lateral */
+    width: calc(100% - 300px); /* Largura total menos o menu lateral */
+    /* border: solid 2px #818181; */
+    z-index: 1000; 
+}
+.containerTotal{
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #e4e4e4;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 300px); /* Considerando o espaço do menu lateral */
+    background-color: #e4e4e4;
+    margin-left: 300px; /* Space for sidebar */
+    padding: 6vh 20px 20px 20px; /* Top, right, bottom, left padding */
+    overflow-x: hidden;
+}
+.containerButtons{
+    font-family: inter;
+    font-size: 25px;
+    position: fixed;
+    display: flex;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1001; /* Ensure it stays above other content */
+}
+button{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10%;
+    font-family: inter;
+    font-size: 25px;
+    padding: 10px;
+    background-color: transparent;
+}
+#logo{
+    position: relative;
+    top: 1%;
+    left: 7%;
+    width: 14vh;
+}
+.rowbutton{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 1vh;
+    position: relative;
+    left: 5%;
+    top: 5%;
+}
+.config{
+    display: flex;
+    flex-direction: column;
+}
+#txtinicio{
+    color: #0F6C08;
+    font-size: 37px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+#imageUser {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    /* left: 85%; */
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: #0F6C08;
+    transform: translateY(-50%);
+}
+.fi-tc-settings {
+    position: absolute;
+    top: 58%;
+    right: 5.5%;
+    font-size: 30px;
+    transform: translateY(-50%);
+}
+#imageUser img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#modalLogin{
+    width: 100px;
+    height: 60px;
+    top: -81.3%;
+    left: 94.8%;
+    z-index: 1000;
+    position: absolute;
+    display:flex ;
+    background-color: #e4e4e4;
+    transition: 1ms;
+    justify-content: center;
+}
+#sairLogin{
+    width: 100px;
+    height: 40px;
+    background-color: #858585;
+    color: white;
+    outline: none;
+    font-size: 18px;
+    justify-content: center;
+}
+
+#modalLogin::backdrop{
+    background-color: transparent;
+}
+
+#sairLogin:hover{
+    background-color: #353434;
+}
+
+/* --------------------------------------------------------- */
+:root {
+    --primary-color: #4f7942;
+    --secondary-color: #8da47e;
+    --accent-color: #f5c13d;
+    --light-color: #f9f6f0;
+    --dark-color: #333;
+    --error-color: #d9534f;
+    --success-color: #5cb85c;
+}
+.container {
+    max-width: 1600px;
+    height: 865px;
+    left: 16%;
+    top: 5%;
+    position: absolute;
+    margin: 0 auto;
+    /* background-color: #0F6C08; */
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-container {
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    /* margin: 20px 0; */
+    padding: 25px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(79, 121, 66, 0.5);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.radio-option input[type="radio"] {
+    width: auto;
+}
+
+#button-salvar, #limparBtn, #addItemBtn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+}
+
+#button-salvar:hover {
+    background-color: var(--secondary-color);
+}
+
+#limparBtn.secondary {
+    background-color: #f0f0f0;
+    color: var(--dark-color);
+}
+
+#limparBtn.secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+table th {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.add-item-btn {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-item-btn:hover {
+    background-color: #e5b535;
+}
+
+.item-row td {
+    vertical-align: middle;
+}
+
+.action-cell {
+    display: flex;
+    gap: 5px;
+}
+
+.action-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.edit-btn {
+    color: var(--primary-color);
+}
+
+.delete-btn {
+    color: var(--error-color);
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+.autocomplete {
+    position: relative;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 4px 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-items div:hover {
+    background-color: #f1f1f1;
+}
+
+.item-action {
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.required::after {
+    content: '*';
+    color: var(--error-color);
+    margin-left: 3px;
+}
+
+.form-info {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-info span {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-group {
+        width: 100%;
+    }
+    
+    table thead {
+        display: none;
+    }
+    
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100%;
+    }
+    
+    table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+    }
+    
+    table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid #eee;
+    }
+    
+    table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    table td:last-child {
+        border-bottom: none;
+    }
+}
