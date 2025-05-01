@@ -113,3 +113,36 @@ body{
     top: 58.5%;
     font-size: 13px ;
 }
+@media screen and (min-width: 1024px) {
+    .login {
+        width: 40%;
+        height: auto;
+        left: 30%;
+        top: 20%;
+        padding: 2em;
+    }
+
+    .inputbutton1, .inputbutton2 {
+        width: 80%;
+        font-size: 22px;
+    }
+
+    #confirmar {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    #foto {
+        width: 200px;
+        height: 200px;
+    }
+
+    #titleLoginEmail, #titleLoginSenha {
+        font-size: 18px;
+        left: 10%;
+    }
+
+    .container {
+        background-size: contain;
+    }
+}
