@@ -36,6 +36,12 @@ export class Auth { // Classe pra lidar com autenticação
     }
 }
 
+document.querySelector('#sairLogin').addEventListener('click', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('funcionario');
+    window.location.href = 'telalogin.html';
+});
+
 // Roda a autenticação assim que o código carrega
 const auth = new Auth();
 auth.init();

@@ -1,215 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../css/img/logoAtualizada.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/telaAddPedido.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
-    <link rel="stylesheet" href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet"
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>CerealistaSouza</title>
-    
+
 </head>
+
 <body>
-        <div class="containerTotal">
-            <div class="containerButtons">
-                <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button" onclick="window.location.href='telaInicio.html'">Dashboard</button>
-                    <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 60%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button" onclick="window.location.href='telafuncionarios.html'">Funcionarios</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button" onclick="window.location.href='telaprodutos.html'">Estoque</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button" onclick="window.location.href='telarelatoriodeProdutos.html'">Movimentações</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button" onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
+    <div class="containerTotal">
+        <div class="containerButtons">
+            <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+            <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button"
+                    onclick="window.location.href='telaInicio.html'">Dashboard</button>
+                <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 60%;"></i>
+            </div>
+            <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button"
+                    onclick="window.location.href='telafuncionarios.html'">Funcionarios</button><i
+                    class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
+            </div>
+            <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button"
+                    onclick="window.location.href='telaprodutos.html'">Estoque</button><i class="fi fi-ss-angle-right"
+                    style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
+            </div>
+            <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button"
+                    onclick="window.location.href='telarelatoriodeProdutos.html'">Movimentações</button><i
+                    class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i>
+            </div>
+            <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button"
+                    onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
 
-                </div>
             </div>
-            <header id="headersuperior">
-                <div class="config">
-                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 55%; left: 93%;"></i>
-                    <div id="imageUser"><img src="" alt=""></div>
-                </div>
-            </header>
-            <!-- ------------------------------------------------------------------------------------- -->
-            <div class="container">
-                <div class="form-container">
-                    <div class="form-info">
-                        <span>Nota:</span> Os campos marcados com * são obrigatórios.
-                    </div>
-                    
-                    <form id="movimentacaoForm">
-                        <div class="form-section">
-                            <h2>Informações da Movimentação</h2>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="required">Tipo de Movimentação</label>
-                                    <div class="radio-group">
-                                        <div class="radio-option">
-                                            <input type="radio" id="entrada" name="id_tipo_movimentacao" value="E" checked>
-                                            <label for="entrada">Entrada</label>
-                                        </div>
-                                        <div class="radio-option">
-                                            <input type="radio" id="saida" name="id_tipo_movimentacao" value="S">
-                                            <label for="saida">Saída</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="data_movimentacao" class="required">Data</label>
-                                    <input type="date" id="data_movimentacao" name="data_movimentacao" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="hora_movimentacao">Hora</label>
-                                    <input type="time" id="hora_movimentacao" name="hora_movimentacao">
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="id_participante" class="required">Participante</label>
-                                    <div class="autocomplete">
-                                        <input type="text" id="participante_nome" placeholder="Buscar participante" required>
-                                        <input type="hidden" id="id_participante" name="id_participante">
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="id_funcionario" class="required">Funcionário Responsável</label>
-                                    <div class="autocomplete">
-                                        <input type="text" id="funcionario_nome" placeholder="Buscar funcionário" required>
-                                        <input type="hidden" id="id_funcionario" name="id_funcionario">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="numero_documento">Nº Documento/NF</label>
-                                    <input type="text" id="numero_documento" name="numero_documento">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="observacoes">Observações</label>
-                                    <textarea id="observacoes" name="observacoes" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-section">
-                            <h2>Itens da Movimentação</h2>
-                            
-                            <table id="itensTable">
-                                <thead>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Produto</th>
-                                        <th>Quantidade</th>
-                                        <th>Valor Unitário (R$)</th>
-                                        <th>Subtotal (R$)</th>
-                                        <th>Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr id="item-row-1" class="item-row">
-                                        <td data-label="Item">1</td>
-                                        <td data-label="Produto">
-                                            <div class="autocomplete">
-                                                <input type="text" class="produto-nome" placeholder="Buscar produto" required>
-                                                <input type="hidden" class="id-produto" name="itens[0][id_produto]">
-                                            </div>
-                                        </td>
-                                        <td data-label="Quantidade">
-                                            <input type="number" class="quantidade" name="itens[0][quantidade]" min="0.01" step="0.01" value="1" required>
-                                        </td>
-                                        <td data-label="Valor Unitário">
-                                            <input type="number" class="valor-unitario" name="itens[0][valor_unitario]" min="0.01" step="0.01" value="0.00" required>
-                                        </td>
-                                        <td data-label="Subtotal" class="subtotal">0.00</td>
-                                        <td data-label="Ações" class="action-cell">
-                                            <span class="item-action delete-btn" title="Remover item">🗑</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr class="total-row">
-                                        <td colspan="4" align="right">Total:</td>
-                                        <td id="total-value">0.00</td>
-                                        <td></td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            
-                            <button type="button" class="add-item-btn" id="addItemBtn">+ Adicionar Item</button>
-                        </div>
-                        
-                        <div class="btn-group">
-                            <button type="button" class="secondary" id="limparBtn">Limpar</button>
-                            <button type="submit" id="button-salvar">Salvar Movimentação</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Modal sair--------------------------------------------------------------------------------->
-                    <dialog id="modalLogin">
-                        <button id="sairLogin">Sair</button>
-                    </dialog>
-                
-            <!-- --------------------------------------------------------------------------------->
         </div>
-        <script>
-            // -------------------------------------------------------------------------------- modal sair login
-            const dialogLogin = document.querySelector("#modalLogin")
-            const openSair = document.querySelector("#imageUser")
+        <header id="headersuperior">
+            <div class="config">
+                <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 55%; left: 93%;"></i>
+                <div id="imageUser"><img src="" alt=""></div>
+            </div>
+        </header>
+        <!-- ------------------------------------------------------------------------------------- -->
+        <div class="container">
+            <div class="form-container">
+                <div class="form-info">
+                    <span>Nota:</span> Os campos marcados com * são obrigatórios.
+                </div>
 
-            openSair.addEventListener("click", (e) =>{
-                dialogLogin.showModal()
-            })
+                <form id="movimentacaoForm">
+                    <div class="form-section">
+                        <h2>Informações da Movimentação</h2>
 
-            dialogLogin.addEventListener("click", (event) => {
-                const rectLogin = dialogLogin.getBoundingClientRect()
-                if(
-                    event.clientX < rectLogin.left ||
-                    event.clientX > rectLogin.right ||
-                    event.clientY < rectLogin.top ||
-                    event.clientY > rectLogin.bottom
-                ) {
-                    dialogLogin.close()
-                }
-            })
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="required">Tipo de Movimentação</label>
+                                <div class="radio-group">
+                                    <div class="radio-option">
+                                        <input type="radio" id="entrada" name="id_tipo_movimentacao" value="E" checked>
+                                        <label for="entrada">Entrada</label>
+                                    </div>
+                                    <div class="radio-option">
+                                        <input type="radio" id="saida" name="id_tipo_movimentacao" value="S">
+                                        <label for="saida">Saída</label>
+                                    </div>
+                                </div>
+                            </div>
 
-            //--------------------------------------------------------------------------------------------------
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
+                            <div class="form-group">
+                                <label for="data_movimentacao" class="required">Data</label>
+                                <input type="date" id="data_movimentacao" name="data_movimentacao" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hora_movimentacao">Hora</label>
+                                <input type="time" id="hora_movimentacao" name="hora_movimentacao">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="id_participante" class="required">Participante</label>
+                                <div class="autocomplete">
+                                    <input type="text" id="participante_nome" placeholder="Buscar participante"
+                                        required>
+                                    <input type="hidden" id="id_participante" name="id_participante">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_funcionario" class="required">Funcionário Responsável</label>
+                                <div class="autocomplete">
+                                    <input type="text" id="funcionario_nome" placeholder="Buscar funcionário" required>
+                                    <input type="hidden" id="id_funcionario" name="id_funcionario">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="numero_documento">Nº Documento/NF</label>
+                                <input type="text" id="numero_documento" name="numero_documento">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="observacoes">Observações</label>
+                                <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Itens da Movimentação</h2>
+
+                        <table id="itensTable">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Produto</th>
+                                    <th>Quantidade</th>
+                                    <th>Valor Unitário (R$)</th>
+                                    <th>Subtotal (R$)</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="item-row-1" class="item-row">
+                                    <td data-label="Item">1</td>
+                                    <td data-label="Produto">
+                                        <div class="autocomplete">
+                                            <input type="text" class="produto-nome" placeholder="Buscar produto"
+                                                required>
+                                            <input type="hidden" class="id-produto" name="itens[0][id_produto]">
+                                        </div>
+                                    </td>
+                                    <td data-label="Quantidade">
+                                        <input type="number" class="quantidade" name="itens[0][quantidade]" min="0.01"
+                                            step="0.01" value="1" required>
+                                    </td>
+                                    <td data-label="Valor Unitário">
+                                        <input type="number" class="valor-unitario" name="itens[0][valor_unitario]"
+                                            min="0.01" step="0.01" value="0.00" required>
+                                    </td>
+                                    <td data-label="Subtotal" class="subtotal">0.00</td>
+                                    <td data-label="Ações" class="action-cell">
+                                        <span class="item-action delete-btn" title="Remover item">🗑</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="total-row">
+                                    <td colspan="4" align="right">Total:</td>
+                                    <td id="total-value">0.00</td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <button type="button" class="add-item-btn" id="addItemBtn">+ Adicionar Item</button>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="secondary" id="limparBtn">Limpar</button>
+                        <button type="submit" id="button-salvar">Salvar Movimentação</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal sair--------------------------------------------------------------------------------->
+        <dialog id="modalLogin">
+            <button id="sairLogin">Sair</button>
+        </dialog>
+
+        <!-- --------------------------------------------------------------------------------->
+    </div>
+    <script>
+        const dialogLogin = document.querySelector("#modalLogin");
+        const openSair = document.querySelector("#imageUser");
+
+        openSair.addEventListener("click", (e) => {
+            dialogLogin.showModal();
+        });
+
+        dialogLogin.addEventListener("click", (event) => {
+            const rectLogin = dialogLogin.getBoundingClientRect();
+            if (
+                event.clientX < rectLogin.left ||
+                event.clientX > rectLogin.right ||
+                event.clientY < rectLogin.top ||
+                event.clientY > rectLogin.bottom
+            ) {
+                dialogLogin.close();
+            }
+        });
+
+        //--------------------------------------------------------------------------------------------------
+        document.addEventListener('DOMContentLoaded', function () {
             // Simulando dados para o autocomplete
             const participantes = [
                 { id: 1, nome: "Fornecedor ABC Ltda" },
                 { id: 2, nome: "Cliente XYZ Comércio" },
                 { id: 3, nome: "Distribuidor Regional" }
             ];
-            
+
             const funcionarios = [
                 { id: 1, nome: "João Silva" },
                 { id: 2, nome: "Maria Oliveira" },
                 { id: 3, nome: "Carlos Santos" }
             ];
-            
+
             const produtos = [
                 { id: 1, nome: "Arroz Integral", unidade: "kg" },
                 { id: 2, nome: "Feijão Carioca", unidade: "kg" },
@@ -222,28 +236,28 @@
             const today = new Date();
             const formattedDate = today.toISOString().substr(0, 10);
             document.getElementById('data_movimentacao').value = formattedDate;
-            
+
             // Configurar autocomplete para participantes
             setupAutocomplete(document.getElementById('participante_nome'), participantes, 'id_participante');
-            
+
             // Configurar autocomplete para funcionários
             setupAutocomplete(document.getElementById('funcionario_nome'), funcionarios, 'id_funcionario');
-            
+
             // Configurar autocomplete para produtos na primeira linha
             setupAutocomplete(document.querySelector('.produto-nome'), produtos, document.querySelector('.id-produto').id);
-            
+
             // Adicionar evento para calcular subtotal quando a quantidade ou valor unitário mudar
             document.querySelector('.quantidade').addEventListener('input', updateSubtotal);
             document.querySelector('.valor-unitario').addEventListener('input', updateSubtotal);
-            
+
             // Função para adicionar um novo item
-            document.getElementById('addItemBtn').addEventListener('click', function() {
+            document.getElementById('addItemBtn').addEventListener('click', function () {
                 const itemsTable = document.getElementById('itensTable').getElementsByTagName('tbody')[0];
                 const itemCount = itemsTable.getElementsByClassName('item-row').length;
                 const newRow = document.createElement('tr');
-                newRow.id = item-row-${itemCount + 1};
+                newRow.id = `item-row-${itemCount + 1}`;
                 newRow.className = 'item-row';
-                
+
                 newRow.innerHTML = `
                     <td data-label="Item">${itemCount + 1}</td>
                     <td data-label="Produto">
@@ -263,18 +277,18 @@
                         <span class="item-action delete-btn" title="Remover item">🗑</span>
                     </td>
                 `;
-                
+
                 itemsTable.appendChild(newRow);
-                
+
                 // Configurar autocomplete para o novo produto
                 setupAutocomplete(newRow.querySelector('.produto-nome'), produtos, newRow.querySelector('.id-produto').id);
-                
+
                 // Adicionar eventos para calcular subtotal
                 newRow.querySelector('.quantidade').addEventListener('input', updateSubtotal);
                 newRow.querySelector('.valor-unitario').addEventListener('input', updateSubtotal);
-                
+
                 // Adicionar evento para remover item
-                newRow.querySelector('.delete-btn').addEventListener('click', function() {
+                newRow.querySelector('.delete-btn').addEventListener('click', function () {
                     if (itemsTable.getElementsByClassName('item-row').length > 1) {
                         newRow.remove();
                         updateItemNumbers();
@@ -284,9 +298,9 @@
                     }
                 });
             });
-            
+
             // Adicionar evento para remover item na primeira linha
-            document.querySelector('.delete-btn').addEventListener('click', function() {
+            document.querySelector('.delete-btn').addEventListener('click', function () {
                 const itemsTable = document.getElementById('itensTable').getElementsByTagName('tbody')[0];
                 if (itemsTable.getElementsByClassName('item-row').length > 1) {
                     document.getElementById('item-row-1').remove();
@@ -296,23 +310,23 @@
                     alert('É necessário pelo menos um item na movimentação.');
                 }
             });
-            
+
             // Botão limpar
-            document.getElementById('limparBtn').addEventListener('click', function() {
+            document.getElementById('limparBtn').addEventListener('click', function () {
                 if (confirm('Deseja realmente limpar todos os campos do formulário?')) {
                     document.getElementById('movimentacaoForm').reset();
-                    
+
                     // Definir data atual novamente
                     document.getElementById('data_movimentacao').value = formattedDate;
-                    
+
                     // Limpar tabela de itens exceto a primeira linha
                     const itemsTable = document.getElementById('itensTable').getElementsByTagName('tbody')[0];
                     const rows = itemsTable.getElementsByClassName('item-row');
-                    
+
                     while (rows.length > 1) {
                         rows[rows.length - 1].remove();
                     }
-                    
+
                     // Limpar a primeira linha
                     const firstRow = rows[0];
                     firstRow.querySelector('.produto-nome').value = '';
@@ -320,59 +334,59 @@
                     firstRow.querySelector('.quantidade').value = '1';
                     firstRow.querySelector('.valor-unitario').value = '0.00';
                     firstRow.querySelector('.subtotal').textContent = '0.00';
-                    
+
                     calculateTotal();
                 }
             });
-            
+
             // Enviar formulário
-            document.getElementById('movimentacaoForm').addEventListener('submit', function(e) {
+            document.getElementById('movimentacaoForm').addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 // Validação básica
                 const participanteId = document.getElementById('id_participante').value;
                 const funcionarioId = document.getElementById('id_funcionario').value;
-                
+
                 if (!participanteId) {
                     alert('Selecione um participante válido.');
                     return false;
                 }
-                
+
                 if (!funcionarioId) {
                     alert('Selecione um funcionário responsável.');
                     return false;
                 }
-                
+
                 // Validar itens
                 let invalid = false;
                 document.querySelectorAll('.item-row').forEach(row => {
                     const produtoId = row.querySelector('.id-produto').value;
                     const quantidade = parseFloat(row.querySelector('.quantidade').value);
                     const valorUnitario = parseFloat(row.querySelector('.valor-unitario').value);
-                    
+
                     if (!produtoId) {
                         alert('Selecione um produto válido para todos os itens.');
                         invalid = true;
                         return;
                     }
-                    
+
                     if (isNaN(quantidade) || quantidade <= 0) {
                         alert('A quantidade deve ser maior que zero para todos os itens.');
                         invalid = true;
                         return;
                     }
-                    
+
                     if (isNaN(valorUnitario) || valorUnitario <= 0) {
                         alert('O valor unitário deve ser maior que zero para todos os itens.');
                         invalid = true;
                         return;
                     }
                 });
-                
+
                 if (invalid) {
                     return false;
                 }
-                
+
                 // Criar objeto com os dados do formulário
                 const formData = {
                     id_tipo_movimentacao: document.querySelector('input[name="id_tipo_movimentacao"]:checked').value,
@@ -384,7 +398,7 @@
                     observacoes: document.getElementById('observacoes').value,
                     itens: []
                 };
-                
+
                 // Coletar os itens
                 document.querySelectorAll('.item-row').forEach((row, index) => {
                     formData.itens.push({
@@ -394,17 +408,17 @@
                         valor_unitario: parseFloat(row.querySelector('.valor-unitario').value)
                     });
                 });
-                
+
                 // Enviar os dados (simulação)
                 console.log('Dados do formulário:', formData);
                 alert('Movimentação registrada com sucesso!');
-                
+
                 // Aqui você adicionaria o código para enviar os dados para o servidor
-                
+
                 // Limpar o formulário após o envio
                 document.getElementById('limparBtn').click();
             });
-            
+
             // Funções auxiliares
             function updateSubtotal() {
                 const row = this.closest('tr');
@@ -414,7 +428,7 @@
                 row.querySelector('.subtotal').textContent = subtotal.toFixed(2);
                 calculateTotal();
             }
-            
+
             function calculateTotal() {
                 let total = 0;
                 document.querySelectorAll('.subtotal').forEach(cell => {
@@ -422,44 +436,44 @@
                 });
                 document.getElementById('total-value').textContent = total.toFixed(2);
             }
-            
+
             function updateItemNumbers() {
                 const rows = document.querySelectorAll('.item-row');
                 rows.forEach((row, index) => {
                     const itemNum = index + 1;
-                    row.id = item-row-${itemNum};
+                    row.id = `item-row-${itemNum}`;
                     row.querySelector('td:first-child').textContent = itemNum;
-                    
+
                     // Atualizar o índice nos nomes dos campos
                     const inputQuantidade = row.querySelector('.quantidade');
                     const inputValorUnitario = row.querySelector('.valor-unitario');
                     const inputIdProduto = row.querySelector('.id-produto');
-                    
-                    inputQuantidade.name = itens[${index}][quantidade];
-                    inputValorUnitario.name = itens[${index}][valor_unitario];
-                    inputIdProduto.name = itens[${index}][id_produto];
+
+                    inputQuantidade.name = `itens[${index}][quantidade]`;
+                    inputValorUnitario.name = `itens[${index}][valor_unitario]`;
+                    inputIdProduto.name = `itens[${index}][id_produto]`;
                 });
             }
-            
+
             function setupAutocomplete(input, items, targetId) {
                 let currentFocus;
-                
-                input.addEventListener("input", function() {
+
+                input.addEventListener("input", function () {
                     let a, b, i, val = this.value;
                     closeAllLists();
                     if (!val) { return false; }
                     currentFocus = -1;
-                    
+
                     a = document.createElement("div");
                     a.setAttribute("class", "autocomplete-items");
                     this.parentNode.appendChild(a);
-                    
+
                     for (i = 0; i < items.length; i++) {
                         if (items[i].nome.toLowerCase().includes(val.toLowerCase())) {
                             b = document.createElement("div");
                             b.innerHTML = items[i].nome;
                             b.innerHTML += "<input type='hidden' value='" + items[i].id + "'>";
-                            b.addEventListener("click", function() {
+                            b.addEventListener("click", function () {
                                 input.value = this.textContent;
                                 const idValue = this.getElementsByTagName("input")[0].value;
                                 if (targetId === 'id_participante' || targetId === 'id_funcionario') {
@@ -473,8 +487,8 @@
                         }
                     }
                 });
-                
-                input.addEventListener("keydown", function(e) {
+
+                input.addEventListener("keydown", function (e) {
                     let x = document.getElementsByClassName("autocomplete-items")[0];
                     if (x) x = x.getElementsByTagName("div");
                     if (e.keyCode == 40) { // seta para baixo
@@ -490,7 +504,7 @@
                         }
                     }
                 });
-                
+
                 function addActive(x) {
                     if (!x) return false;
                     removeActive(x);
@@ -498,13 +512,13 @@
                     if (currentFocus < 0) currentFocus = (x.length - 1);
                     x[currentFocus].classList.add("autocomplete-active");
                 }
-                
+
                 function removeActive(x) {
                     for (let i = 0; i < x.length; i++) {
                         x[i].classList.remove("autocomplete-active");
                     }
                 }
-                
+
                 function closeAllLists(elmnt) {
                     const x = document.getElementsByClassName("autocomplete-items");
                     for (let i = 0; i < x.length; i++) {
@@ -513,14 +527,12 @@
                         }
                     }
                 }
-                
-                document.addEventListener("click", function(e) {
+
+                document.addEventListener("click", function (e) {
                     closeAllLists(e.target);
                 });
             }
         });
     </script>
-        </script>
-</body>
-</html>
 
+</html>
