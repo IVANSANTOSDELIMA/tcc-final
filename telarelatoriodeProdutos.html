@@ -1,132 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href= "css/img/logoAtualizada.png" type="image/x-icon">
+    <link rel="shortcut icon" href="css/img/logoAtualizada.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/telaRelatorio.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
-    <link rel="stylesheet" href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet"
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>Cerealista Souza</title>
-    
+
 </head>
+
 <body>
-        <div class="containerTotal">
-            <div class="containerButtons">
-                <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button"onclick="window.location.href='telaInicio.html'">Dashboard</button>
-                    <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 60%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-tr-users"></i><button type="button" onclick="window.location.href='telafuncionarios.html'">Funcionarios</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button" onclick="window.location.href='telaprodutos.html'">Estoque</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button" onclick="window.location.href='telarelatoriodeProdutos.html'">Movimentações</button>
-                    
-                </div>
-                <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button" onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
-                    <i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-                </div>
+    <div class="containerTotal">
+        <div class="containerButtons">
+            <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
+            <div class="rowbutton" onclick="window.location.href='telaInicio.html'"><i class="fi fi-rs-apps"></i><button
+                    type="button" style="cursor: pointer;">Dashboard</button>
+                <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 60%;"></i>
             </div>
-            <header id="headersuperior">
-                <div class="config">
-                    <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 55%; left: 93%;"></i>
-                    <div class="imageUser"><img src="" alt=""></div>
-                </div>
-            </header>
-            <h2><i class="fi fi-tr-chart-line-up"></i>Movimentações</h2>
-                <div id="movimentacaoDia">
-                    <table id="table-dia" cellspacing="0" cellpadding="5">
-                        <thead>
-                            <tr>
-                                <th>Dia</th>
-                                <th><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 30%; left: 98%;"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Linhas das movimentações diarias serão inseridas aqui -->
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <table id="table-semana" cellspacing="0" cellpadding="5">
-                        <thead>
-                            <tr>
-                                <th>Semana</th>
-                                <th><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 30%; left: 98%;"></i></th>
+            <div class="rowbutton" onclick="window.location.href='telafuncionarios.html'"><i
+                    class="fi fi-tr-users"></i><button type="button" style="cursor: pointer;">Funcionarios</button><i
+                    class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
+            </div>
+            <div class="rowbutton" onclick="window.location.href='telaprodutos.html'"><i
+                    class="fi fi-tr-boxes"></i><button type="button" style="cursor: pointer;">Estoque</button><i
+                    class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
+            </div>
+            <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button"
+                    style="cursor:not-allowed;">Movimentações</button>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Linhas das movimentações diarias serão inseridas aqui -->
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <table id="table-mes" cellspacing="0" cellpadding="5">
-                        <thead>
-                            <tr>
-                                <th>Mês</th>
-                                <th><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 30%; left: 98%;"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Linhas das movimentações diarias serão inseridas aqui -->
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <table id="table-ano" cellspacing="0" cellpadding="5">
-                        <thead>
-                            <tr>
-                                <th>Ano</th>
-                                <th><i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 30%; left: 98%;"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Linhas das movimentações diarias serão inseridas aqui -->
-                        </tbody>
-                    </table>
-                </div>
-                        <!-- Modal sair--------------------------------------------------------------------------------->
-                            <dialog id="modalLogin">
-                                <button id="sairLogin">Sair</button>
-                            </dialog>
-                
-                        <!-- --------------------------------------------------------------------------------->
+            </div>
+            <div class="rowbutton" onclick="window.location.href='telaAddPedido.html'"><i
+                    class="fi fi-rr-shopping-bag"></i><button type="button" style="cursor: pointer;">Pedidos</button>
+                <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
+            </div>
         </div>
-        <script>
-            // -------------------------------------------------------------------------------- modal sair login
-            const dialogLogin = document.querySelector("#modalLogin")
-            const openSair = document.querySelector("#imageUser")
+        <header id="headersuperior">
+            <div class="config">
+                <i class="fi fi-tc-settings" style="font-size: 30px; position: absolute; top: 55%; left: 93%;"></i>
+                <div id="imageUser"><img src="" alt=""></div>
+            </div>
+        </header>
+        <h2><i class="fi fi-tr-chart-line-up"></i>Movimentações</h2>
+        <div id="movimentacaoDia">
+            <table id="table-dia" cellspacing="0" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th><i class="fi fi-rr-angle-right"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas das movimentações de hoje serão inseridas aqui -->
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table id="table-semana" cellspacing="0" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th>Semana</th>
+                        <th><i class="fi fi-rr-angle-right"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas das movimentações diarias serão inseridas aqui -->
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table id="table-mes" cellspacing="0" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th>Mês</th>
+                        <th><i class="fi fi-rr-angle-right"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas das movimentações mensais serão inseridas aqui -->
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table id="table-ano" cellspacing="0" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th><i class="fi fi-rr-angle-right"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas das movimentações anuais serão inseridas aqui -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Modal sair--------------------------------------------------------------------------------->
+        <dialog id="modalLogin">
+            <button id="sairLogin">Sair</button>
+        </dialog>
 
-            openSair.addEventListener("click", (e) =>{
-                dialogLogin.showModal()
-            })
+        <!-- --------------------------------------------------------------------------------->
+    </div>
+    <script>
+        // -------------------------------------------------------------------------------- modal sair login
+        const dialogLogin = document.querySelector("#modalLogin")
+        const openSair = document.querySelector("#imageUser")
 
-            dialogLogin.addEventListener("click", (event) => {
-                const rectLogin = dialogLogin.getBoundingClientRect()
-                if(
-                    event.clientX < rectLogin.left ||
-                    event.clientX > rectLogin.right ||
-                    event.clientY < rectLogin.top ||
-                    event.clientY > rectLogin.bottom
-                ) {
-                    dialogLogin.close()
-                }
-            })
+        openSair.addEventListener("click", (e) => {
+            dialogLogin.showModal()
+        })
 
-            //--------------------------------------------------------------------------------------------------
-        </script>
+        dialogLogin.addEventListener("click", (event) => {
+            const rectLogin = dialogLogin.getBoundingClientRect()
+            if (
+                event.clientX < rectLogin.left ||
+                event.clientX > rectLogin.right ||
+                event.clientY < rectLogin.top ||
+                event.clientY > rectLogin.bottom
+            ) {
+                dialogLogin.close()
+            }
+        })
+
+        //--------------------------------------------------------------------------------------------------
+    </script>
+    <script src="integracoes/relatorioIntegration.js"></script>
 </body>
+
 </html>
