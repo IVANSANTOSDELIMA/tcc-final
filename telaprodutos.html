@@ -8,15 +8,21 @@
     <link rel="stylesheet" href="../css/telaProdutos.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-tdin-rounded/css/uicons-tdin-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
-    <link rel="stylesheet" href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel="stylesheet"
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <script type="module" src="integracoes/authMiddleware.js"></script> <!-- autentica o usuario -->
     <!-- se o token nao for valido vai voltar pro login -->
     <title>CerealistaSouza</title>
@@ -36,12 +42,14 @@
             </div>
             <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button"
                     style="cursor:not-allowed;">Estoque</button></div>
-            <div class="rowbutton" onclick="window.location.href='telarelatoriodeProdutos.html'"><i class="fi fi-tr-chart-line-up"></i><button type="button"
+            <div class="rowbutton" onclick="window.location.href='telarelatoriodeProdutos.html'"><i
+                    class="fi fi-tr-chart-line-up"></i><button type="button"
                     style="cursor: pointer;">Movimentações</button><i class="fi fi-ss-angle-right"
                     style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i>
             </div>
-            <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button" onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
-                <i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
+            <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button"
+                    onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
+                <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
             </div>
         </div>
         <header id="headersuperior">
@@ -138,7 +146,9 @@
             <div class="form-row" id="line-5">
                 <div class="form-column">
                     <label for="complemento-produto">Descrição: *</label>
-                    <textarea id="complemento-produto" name="complemento-produto"></textarea>
+                    <textarea id="complemento-produto" name="complemento-produto" maxlength="1000"
+                        placeholder="Descrição do produto (Maximo 1000 caracteres)"></textarea>
+                    <div id="contador-caracteres">0/1000</div>
                 </div>
             </div>
 
@@ -218,10 +228,14 @@
                 <div class="form-column">
                     <label>Nome:</label>
                     <input type="text" id="visualizar-nome-produto" readonly>
-                </div>
+                </div><!-- 
                 <div class="form-column">
                     <label>Código:</label>
                     <input type="text" id="visualizar-codigo-produto" readonly>
+                </div> -->
+                <div class="form-column">
+                    <label>Data de entrada:</label>
+                    <input type="date" id="visualizar-dataEntrada" readonly>
                 </div>
             </div>
 
@@ -231,19 +245,15 @@
                     <input type="text" id="visualizar-categoria-produto" readonly>
                 </div>
                 <div class="form-column">
-                    <label>Data de entrada:</label>
-                    <input type="date" id="visualizar-dataEntrada" readonly>
+                    <label>preço:</label>
+                    <input type="tel" id="visualizar-preco-produto" readonly>
                 </div>
             </div>
 
             <div class="form-row" id="line-2b">
                 <div class="form-column">
-                    <label>preço:</label>
-                    <input type="tel" id="visualizar-preco-produto" readonly>
-                </div>
-                <div class="form-column">
-                    <label>Código do fornecedor</label>
-                    <input type="email" id="visualizar-participante-produto" readonly>
+                    <label>Fornecedor</label>
+                    <input type="text" id="visualizar-participante-produto" readonly>
                 </div>
             </div>
             <div class="preview">
@@ -252,7 +262,7 @@
 
             <div class="form-row" id="line-5b">
                 <div class="form-column">
-                    <label>Complemento:</label>
+                    <label>Descrição:</label>
                     <textarea id="visualizar-complemento-produto" readonly></textarea>
                 </div>
             </div>
@@ -339,6 +349,18 @@
             dialog.showModal();
         });
 
+        const textareaDescricao = document.querySelector('#complemento-produto');
+        const contadorCaracteres = document.querySelector('#contador-caracteres');
+
+        textareaDescricao.addEventListener('input', () => {
+            const caracteresDigitados = textareaDescricao.value.length;
+            contadorCaracteres.textContent = `${caracteresDigitados}/1000`;
+        });
+
+        document.querySelector('#closeModal-produtos').addEventListener('click', () => {
+            document.querySelector('#modalDialog-produtos').close();
+        });
+
 
 
         openButton.addEventListener("click", (e) => {
@@ -346,15 +368,14 @@
         })
         closeModal.addEventListener("click", (e) => {
             document.querySelector('#nome-produto').value = '';
-            document.querySelector('#codigo-produto').value = '';
             document.querySelector('#categoria-produto').value = '';
             document.querySelector('#dataEntrada').value = '';
             document.querySelector('#preco-produto').value = '';
-            document.querySelector('#senha-produto').value = '';
             document.querySelector('#codigo-participante-produto').value = '';
-            document.querySelector('#preview-selected-image-produto').src = '';
-            document.querySelector('#file-upload-produto').value = '';
+            document.querySelector('#preview-selected-image').src = '';
+            document.querySelector('#file-upload').value = '';
             document.querySelector('#complemento-produto').value = '';
+            document.querySelector('#contador-caracteres').textContent = '0/1000';
             dialog.close()
         })
         /* 

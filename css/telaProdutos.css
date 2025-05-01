@@ -732,3 +732,6 @@ button#adicionar {
     justify-content: space-evenly;
     align-content: center;
 }
+#visualizar-categoria-produto{
+    width: 100%;
+}
