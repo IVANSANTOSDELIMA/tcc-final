@@ -10,43 +10,52 @@
 *{
     border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     display:contents;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 #headersuperior{
     position: fixed;
-    background-color:#ffffff ;
+    background: #ffffff;
     height: 6vh;
-    left: 15.7%;
-    width: 200vh;
-    /* border: solid 2px #818181; */
-    z-index: 1000; 
+    left: 300px;
+    width: calc(100% - 300px);
+    z-index: 1000;
 }
 .containerTotal{
-    position: relative;
-    height: 100vh; 
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #e4e4e4;
 }
 .container{
-    position: absolute;
     display: flex;
-    height: 100vh;
-    width: 210.7vh;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 300px);
     background-color: #e4e4e4;
+    margin-left: 300px;
+    padding: 60px 20px 20px 20px;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 .containerButtons{
     font-family: inter;
     font-size: 25px;
     position: fixed;
-    z-index: 1000;
-    /* border: solid 2px #818181; */
     display: flex;
     width: 300px;
     height: 100vh;
     background-color: #ffffff;
     flex-direction: column;
     gap: 20px;
+    z-index: 1001;
+    /* align-items: flex-start;
+    padding-top: 28px; */
 }
 button{
     display: flex;
@@ -54,8 +63,8 @@ button{
     position:relative;
     top: 10%;
     font-family: inter;
-    font-size: 25px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 6px 10px;
     background-color: transparent;
 }
 /* .buttonLink{
@@ -74,6 +83,7 @@ button{
     top: 1%;
     left: 7%;
     width: 14vh;
+    
 }
 /* #textos{
     display: flex;
@@ -89,13 +99,11 @@ button{
 }
 
 #table {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: #cfcfcf;
-    font-size: 18px;
-    overflow-y: auto;
-    max-height: 500px;
-    display: block;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 #table thead tr {
@@ -121,11 +129,12 @@ button{
 }
 
 #table th, #table td {
-    padding: 10px;
+    padding: 7px 8px;
     text-align: left;
     border-right: 1px solid #aaaaaa;
     vertical-align: middle;
     white-space: nowrap;
+    font-size: 14px;
 }
 
 #table td:last-child {
@@ -141,15 +150,15 @@ button{
 
 #visualizarButton {
     background-color: orange;
-    width: 100px;
-    height: 30px;
+    width: 70px;
+    height: 24px;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 15px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px;
+    padding: 2px;
     cursor: pointer;
 }
 
@@ -157,27 +166,26 @@ button{
     background-image: url(/css/img/trash.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
 }
 
 #editbutton {
     background-color: #4CAF50;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 15px;
     color: white;
     width: 70px;
-    height: 30px;
+    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px;
+    padding: 2px;
     cursor: pointer;
 }
 
-
-.rowbutton{
+.rowbutton {
     display: flex;
     flex-direction: row;
     align-items: end;
@@ -186,31 +194,52 @@ button{
     left: 5%;
     top: 5%;
 }
+
+.rowbutton i {
+    font-size: 28px;
+    display: flex;
+    min-width: 28px;
+    padding-right: 0.5em;
+}
+
+.rowbutton button {
+    font-size: 25px;
+    padding: 10px 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
 #imageUser{
     position: absolute;
     top: 17%;
     left: 85%;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
     background-color: #0F6C08;
     overflow: hidden;
+    margin-left: 24px;
 }
+
 #imageUser img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-#openButton{
-    position: absolute;
+#openButton {
     display: flex;
     align-items: center;
-    font-size: 50px;
-    width: 0px;
-    height: 20px;
-    top: 27%;
-    left: 18%;
-    background-color:transparent;
+    justify-content: center;
+    font-size: 2.2em;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0;
+    background-color: transparent;
     cursor: pointer;
     color: #0F6C08;
 }
@@ -219,15 +248,13 @@ button{
     top: -0%;
     left: 95%;
     font-size: 22px;
-} 
-#headertable-produtos{
-    position: relative;
-    top: 27%;
-    left: 18%;
-    width: 100%;
-    max-width: 1550px;
-    height: 60px;
+}
+
+#headertable-produtos {
+    max-width: 1100px;
     background-color: #b5b5b5;
+    overflow-x: auto;
+    margin: 0 auto;
 }
 #toptable{
     position: relative;
@@ -243,16 +270,9 @@ button{
     top: 130%;
     left: 110%;
 }
-#buttonCategory{
-    width: 500px;
+#buttonCategory {
     display: flex;
-    position: relative;
-    top: 20%;
-    left: 68%;
-    color: #0F6C08;
-    background-color:transparent;
-    z-index: 1000;
-    gap: 40px;
+    gap: 24px;
 }
 .inputCtg-categoria{
     border: none;
@@ -275,6 +295,7 @@ button{
     background-color: rgb(186, 187, 187);
     border-radius: 1em;
 }
+
 #modalDialog-produtos-before {
     position: fixed;
     top: 0;
@@ -304,59 +325,70 @@ body {
     display: flex;
     margin-bottom: 10px;
 }
+
 .form-column{
     display: flex;
     flex-direction: column;
 }
+
 input, textarea{
     outline: none;
 }
+
 label {
     display: block;
     margin-bottom: 5px;
 }
+
 #nome-produto, #visualizar-nome-produto, #editar-nome-produto{
     width: 180%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #codigo-produto, #visualizar-codigo-produto, #editar-codigo-produto{
     width: 72%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #categoria-produto, #visualizar-categoria-produto, #editar-categoria-produto{
     width: 125px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #quantidadeProduto, #visualizar-quantidade, #editar-quantidade{
     width: 79%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #dataEntrada, #visualizar-dataEntrada, #editar-dataEntrada{
     width: 103%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #preco-produto, #visualizar-preco-produto, #editar-preco-produto{
     width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #codigo-participante-produto, #visualizar-participante-produto, #editar-participante-produto{
     width: 171%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 #complemento-produto, #visualizar-complemento-produto, #editar-complemento-produto{
     width: 280%;
     height: 200px;
@@ -364,6 +396,7 @@ label {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .input-with-button {
     display: flex;
     gap: 8px;
@@ -392,6 +425,7 @@ label {
     justify-content: center;
     margin-top: 0;
 }
+
 datalist {
     width: 100%;
     background-color: white;
@@ -413,6 +447,7 @@ datalist option:hover {
 #codigo-participante-produto {
     width: 100%;
 }
+
 #senha-produto{
     position: relative;
     width: 140%;
@@ -421,10 +456,12 @@ datalist option:hover {
     border-radius: 4px;
     top: 76%;
 }
+
 #nome-senha-produto{
     position: relative;
     top: 75%;
 }
+
 #editar-senha-produto{
     width: 140%;
     padding: 8px;
@@ -435,25 +472,32 @@ datalist option:hover {
 #line-0, #line-0b, #line-0c, #line-0f{
     gap: 195px;
 }
+
 #line-1, #line-1b, #line-1c, #line-1f{
     gap: 195px;
 }
+
 #line-2, #line-2b, #line-2c, #line-2f{
     
 }
+
 #line-3, #line-3b, #line-3c, #line-3f{
     
 }
+
 #line-4, #line-4b, #line-4c, #line-4f{
     gap: 0px;
 }
+
 #line-4-1, #line-4-1b, #line-4-1c{
     display: flex;
     gap: 60px;
 }
+
 #line-5, #line-5b, #line-5c, #line-5f{
     gap: 400px;
 }
+
 textarea {
     width: 100%;
     height: 100px;
@@ -479,6 +523,7 @@ button#adicionar {
     top: 13%;
     left: 66%;
 }
+
 .preview{
     background-color: #a0a0a0;
     position: absolute;
@@ -496,7 +541,6 @@ button#adicionar {
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    /* object-fit: cover; */
     object-fit:fill;
 }
 /* Tabela dos funcionarios */
@@ -584,7 +628,7 @@ button#adicionar {
     width: 100px;
     height: 60px;
     top: -81.3%;
-    left: 94.8%;
+    left: 93%;
     z-index: 1000;
     position: absolute;
     display:flex ;
@@ -592,6 +636,7 @@ button#adicionar {
     transition: 1ms;
     justify-content: center;
 }
+
 #sairLogin{
     width: 100px;
     height: 40px;
@@ -610,12 +655,31 @@ button#adicionar {
     background-color: #353434;
 }
 
-.estoque-baixo {
-    background-color: #e4822c6b;
+.containerButtons .rowbutton:nth-child(5) button {
+    font-size: 23px;
 }
-.indisponivel{
-    background-color: #f35a716b;
+
+#headersuperior .config {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    position: static;
 }
+
+#headersuperior .fi-tc-settings {
+    font-size: 30px;
+    position: static !important;
+    left: unset;
+    top: unset;
+}
+
+#imageUser {
+    margin: 0 25px 0 0;
+    position: static;
+}
+
+/* Mantendo os estilos específicos dos modais de fornecedor e categoria */
 #modalFornecedor input {
     width: 300px;
     height: 30px;
@@ -658,6 +722,7 @@ button#adicionar {
     text-align: center;
     line-height: 24px;
 }
+
 .categoria-icon{
     font-size: 80px;
     color: #4CAF50;
@@ -732,6 +797,7 @@ button#adicionar {
     justify-content: space-evenly;
     align-content: center;
 }
+
 #visualizar-categoria-produto{
     width: 100%;
 }

@@ -1,10 +1,20 @@
 *{
     border: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 body{
-    display:contents;
+    min-height: 100vh;
+    min-width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow: hidden;
 }
 /* #headersuperior{
         background-color: rgb(255, 255, 255) ;
@@ -20,85 +30,94 @@ body{
     
 } */
 .container{
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url(img/Flux_Dev_Create_an_image_with_a_pristine_white_background_wher_0.jpeg);  
     /* background-color: #c2c2c2; */
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    background-position: center center;
+    overflow: hidden;
 }
 .login{
     display: flex;
     flex-direction: column;
-    gap: 80px;
-    width: 580px;
-    height: 730px;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 480px;
+    min-width: 260px;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 0, 0, 0.3);
-    border-radius: 3em;
-    padding: 1em;
-    align-items: center;
-    position:absolute;
-    top: 10%;
-    left: 34%;
-    box-shadow: 0px 0px 100px 1px #d2d2d2
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 2em;
+    padding: 2em 1.5em;
+    box-shadow: 0px 0px 40px 1px #d2d2d2;
+    position: relative;
+    overflow: hidden;
 }
 .inputbutton1,.inputbutton2{
-    font-size: 20px;
-
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 400px;
-    height: 60px;
-    padding: 5px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 350px;
+    min-width: 120px;
+    height: 2.8em;
+    padding: 0.5em;
     outline: none;
     background-color: transparent; 
     /* border: 1px solid white; */
     border-bottom: 1px solid white;
-
-    
+    color: #fff;
 }
 #confirmar{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: larger;
-    width: 230px;
-    height: 50px;
-    padding: 5px;
+    font-size: 1.1rem;
+    width: 60%;
+    min-width: 120px;
+    max-width: 220px;
+    height: 2.5em;
+    padding: 0.5em;
     outline: none;
     border-radius: 1em;
     background-color: black;
     color: white;
     transition: 0.3s;
+    margin-top: 0.5em;
 }
 #confirmar:hover{
-    background-color: rgb(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 #foto{
-    width:250px;
-    height: 250px;
+    width: clamp(120px, 30vw, 180px);
+    height: clamp(120px, 30vw, 180px);
 }
 .bottons{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 1.2em;
+    width: 100%;
+    align-items: center;
 }
 #titleLoginEmail{
     color: white;
-    position:absolute;
-    height: 40px;
-    top: 63.5%;
-    left: 17%;
-    font-size: large;
+    position: static;
+    font-size: 1rem;
+    margin-bottom: -0.8em;
+    margin-left: 0.2em;
+    align-self: flex-start;
     transition: 0.5s;
 }
 
 #titleLoginSenha{
     color: white;
-    position:absolute;
-    font-size: large;
-    left: 17%;
-    top: 73.5%;
+    position: static;
+    font-size: 1rem;
+    margin-bottom: -0.8em;
+    margin-left: 0.2em;
+    align-self: flex-start;
     transition: 0.5s;
 }
 
@@ -113,6 +132,7 @@ body{
     top: 58.5%;
     font-size: 13px ;
 }
+<<<<<<< HEAD
 @media screen and (min-width: 2600px) {
     .login {
         width: 40%;
@@ -142,7 +162,65 @@ body{
         left: 10%;
     }
 
+=======
+@media (max-width: 600px) {
+>>>>>>> 7567a5b6d786c32a6e7707884173005e665a3c31
     .container {
-        background-size: contain;
+        padding: 0 0.5em;
+    }
+    .login {
+        max-width: 98vw;
+        padding: 1em 0.5em;
+        gap: 1.5rem;
+    }
+    #foto {
+        width: 100px;
+        height: 100px;
+    }
+    .inputbutton1, .inputbutton2 {
+        font-size: 1em;
+        max-width: 95vw;
+    }
+    #confirmar {
+        font-size: 1em;
+        width: 90%;
+    }
+}
+@media (min-width: 601px) and (max-width: 1023px) {
+    .login {
+        max-width: 70vw;
+        padding: 2em 1em;
+    }
+    #foto {
+        width: 120px;
+        height: 120px;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1919px) {
+    .login {
+        max-width: 480px;
+        padding: 2.5em 2em;
+    }
+    #foto {
+        width: 160px;
+        height: 160px;
+    }
+}
+@media (min-width: 1920px) {
+    .login {
+        max-width: 600px;
+        padding: 3em 2.5em;
+    }
+    #foto {
+        width: 220px;
+        height: 220px;
+    }
+    .inputbutton1, .inputbutton2 {
+        font-size: 1.3rem;
+        max-width: 500px;
+    }
+    #confirmar {
+        font-size: 1.2rem;
+        max-width: 300px;
     }
 }

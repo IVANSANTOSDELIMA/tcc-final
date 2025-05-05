@@ -20,7 +20,7 @@
     <link rel="stylesheet"
         href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <title>CerealistaSouza</title>
+    <title>Cerealista Souza</title>
 
 </head>
 
@@ -158,7 +158,7 @@
                                     </td>
                                     <td data-label="Subtotal" class="subtotal">0.00</td>
                                     <td data-label="Ações" class="action-cell">
-                                        <span class="item-action delete-btn" title="Remover item">🗑</span>
+                                        <span class="item-action delete-btn" title="Remover item">🗑️</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -212,7 +212,7 @@
         //--------------------------------------------------------------------------------------------------
         document.addEventListener('DOMContentLoaded', function () {
             // Simulando dados para o autocomplete
-            const participantes = [
+            /* const participantes = [
                 { id: 1, nome: "Fornecedor ABC Ltda" },
                 { id: 2, nome: "Cliente XYZ Comércio" },
                 { id: 3, nome: "Distribuidor Regional" }
@@ -230,7 +230,7 @@
                 { id: 3, nome: "Milho para Pipoca", unidade: "kg" },
                 { id: 4, nome: "Trigo para Kibe", unidade: "kg" },
                 { id: 5, nome: "Lentilha", unidade: "kg" }
-            ];
+            ]; */
 
             // Inicializar data com data atual
             const today = new Date();
@@ -251,7 +251,7 @@
             document.querySelector('.valor-unitario').addEventListener('input', updateSubtotal);
 
             // Função para adicionar um novo item
-            document.getElementById('addItemBtn').addEventListener('click', function () {
+            /* document.getElementById('addItemBtn').addEventListener('click', function () {
                 const itemsTable = document.getElementById('itensTable').getElementsByTagName('tbody')[0];
                 const itemCount = itemsTable.getElementsByClassName('item-row').length;
                 const newRow = document.createElement('tr');
@@ -274,7 +274,7 @@
                     </td>
                     <td data-label="Subtotal" class="subtotal">0.00</td>
                     <td data-label="Ações" class="action-cell">
-                        <span class="item-action delete-btn" title="Remover item">🗑</span>
+                        <span class="item-action delete-btn" title="Remover item">🗑️</span>
                     </td>
                 `;
 
@@ -297,7 +297,7 @@
                         alert('É necessário pelo menos um item na movimentação.');
                     }
                 });
-            });
+            }); */
 
             // Adicionar evento para remover item na primeira linha
             document.querySelector('.delete-btn').addEventListener('click', function () {
@@ -534,5 +534,6 @@
             }
         });
     </script>
+    <script src="integracoes/addProdutoIntegration.js"></script>
 
 </html>
