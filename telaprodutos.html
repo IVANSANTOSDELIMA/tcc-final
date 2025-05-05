@@ -33,24 +33,11 @@
     <div class="containerTotal">
         <div class="containerButtons">
             <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-            <div class="rowbutton" onclick="window.location.href='telainicio.html'"><i class="fi fi-rs-apps"></i><button
-                    type="button" style="cursor: pointer;">Dashboard</button><i class="fi fi-ss-angle-right"
-                    style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i></div>
-            <div class="rowbutton" onclick="window.location.href='telafuncionarios.html'"><i
-                    class="fi fi-tr-users"></i><button type="button" style="cursor: pointer;">Funcionarios</button><i
-                    class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
-            </div>
-            <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button"
-                    style="cursor:not-allowed;">Estoque</button></div>
-            <div class="rowbutton" onclick="window.location.href='telarelatoriodeProdutos.html'"><i
-                    class="fi fi-tr-chart-line-up"></i><button type="button"
-                    style="cursor: pointer;">Movimentações</button><i class="fi fi-ss-angle-right"
-                    style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i>
-            </div>
-            <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button"
-                    onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
-                <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-            </div>
+            <div class="rowbutton" onclick="window.location.href='telainicio.html'"><i class="fi fi-rs-apps"></i><button type="button" style="cursor: pointer;">Dashboard</button><i class="fi fi-ss-angle-right"></i></div>
+            <div class="rowbutton" onclick="window.location.href='telafuncionarios.html'"><i class="fi fi-tr-users"></i><button type="button" style="cursor: pointer;">Funcionarios</button><i class="fi fi-ss-angle-right"></i></div>
+            <div class="rowbutton"><i class="fi fi-tr-boxes"></i><button type="button" style="cursor:not-allowed;">Estoque</button></div>
+            <div class="rowbutton" onclick="window.location.href='telarelatoriodeProdutos.html'"><i class="fi fi-tr-chart-line-up"></i><button type="button" style="cursor: pointer;">Movimentações</button><i class="fi fi-ss-angle-right"></i></div>
+            <div class="rowbutton" onclick="window.location.href='telaAddPedido.html'"><i class="fi fi-rr-shopping-bag"></i><button type="button">Pedidos</button><i class="fi fi-ss-angle-right"></i></div>
         </div>
         <header id="headersuperior">
             <div class="config">
@@ -58,43 +45,43 @@
                 <div id="imageUser"><img src="" alt=""></div>
             </div>
         </header>
-
         <div class="container">
-            <button id="openButton">+</button>
-        </div>
-        <div id="buttonCategory">
-            <div class="category-column">
-                <label for="NomeCategoria-produto"><strong>Nome</strong></label>
-                <input type="search" name="NomeCategory" class="inputCtg-categoria" id="filtro-nome-produto"
-                    placeholder="Nome do produto">
+            <div class="filtros-bloco" style="display: flex; justify-content: space-between; align-items: flex-end; max-width: 1100px; width: 100%; margin: 32px auto 16px auto;">
+                <div id="buttonCategory" style="display: flex; gap: 24px;">
+                    <div class="category-column" style="margin-right: 610px; display: flex;">
+                        <button id="openButton" style="font-size: 2.2em; height: 44px; width: 44px; margin-bottom: 0;">+</button>
+                    </div>
+                    <div class="category-column">
+                        <label for="NomeCategoria-produto"><strong>Nome</strong></label>
+                        <input type="search" name="NomeCategory" class="inputCtg-categoria" id="filtro-nome-produto" placeholder="Nome do produto">
+                    </div>
+                    <div class="category-column">
+                        <label for="Categoria"><strong>Categoria</strong></label>
+                        <select name="categorias" class="inputCtg-categoria" id="filtro-categoria">
+                            <option value="">Todas as categorias</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="category-column">
-                <label for="Categoria"><strong>Categoria</strong></label>
-                <!-- <input type="search" name="categorias" class="inputCtg"> -->
-                <select name="categorias" class="inputCtg-categoria" , id="filtro-categoria">
-                    <option value="">Todas as categorias</option>
-                </select>
+            <div id="headertable-produtos" style="max-width: 1100px; margin: 0 auto;">
+                <table id="table" cellspacing="0" cellpadding="5">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>quantidade</th>
+                            <th>Data de entrada</th>
+                            <th>Preço</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linhas do estoque serão inseridas aqui -->
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div id="headertable-produtos">
-            <table id="table" cellspacing="0" cellpadding="5">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Categoria</th>
-                        <th>quantidade</th>
-                        <th>Data de entrada</th>
-                        <th>Preço</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Linhas do estoque serão inseridas aqui -->
-                </tbody>
-            </table>
-        </div>
-        <!-- removido div id="toptable" pois não é mais necessário -->
         <dialog id="modalDialog-produtos">
             <button id="closeModal-produtos"><i class="fi fi-bs-cross"></i></button>
             <!-- <form id="formAdicionar"> -->

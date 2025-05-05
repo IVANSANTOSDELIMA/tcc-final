@@ -1,4 +1,3 @@
-
 @import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css');
 
 :root {
@@ -11,43 +10,48 @@
 *{
     border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     display:contents;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 #headersuperior{
     position: fixed;
-    background-color:#ffffff ;
+    background: #ffffff;
     height: 6vh;
-    left: 15.7%;
-    width: 200vh;
-    /* border: solid 2px #818181; */
-    z-index: 1000; 
+    left: 300px;
+    width: calc(100% - 300px);
+    z-index: 1000;
 }
 .containerTotal{
     position: relative;
     height: 100vh; 
 }
 .container{
-    position: absolute;
     display: flex;
-    height: 100vh;
-    width: 210.7vh;
-    background-color: #e4e4e4;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 300px);
+    background: #e4e4e4;
+    margin-left: 300px;
+    padding: 60px 20px 20px 20px;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
-.containerButtons{
+.containerButtons {
     font-family: inter;
     font-size: 25px;
     position: fixed;
-    z-index: 1000;
-    /* border: solid 2px #818181; */
     display: flex;
     width: 300px;
     height: 100vh;
     background-color: #ffffff;
     flex-direction: column;
     gap: 20px;
+    z-index: 1001;
 }
 button{
     display: flex;
@@ -55,50 +59,26 @@ button{
     position:relative;
     top: 10%;
     font-family: inter;
-    font-size: 25px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 6px 10px;
     background-color: transparent;
 }
-/* .buttonLink{
-    display: flex;
-    justify-content:baseline;
-    font-weight: bold;
-    width: 100%;
-    font-size:medium;
-    color: rgb(255, 255, 255);
-    background-color: #ffffff;
-    padding: 2em;
-    outline: none;
-} */
 #logo{
     position: relative;
     top: 1%;
     left: 7%;
     width: 14vh;
 }
-/* #textos{
-    display: flex;
-    flex-direction:row;
-    gap: 85vh;
-    position: relative;
-    left: 15%;
-} */
-
-/* Removendo estilos antigos de grid para a tabela */
 #rowfuncionarios {
     /* Removido display grid e propriedades relacionadas */
 }
-
 #table {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: #cfcfcf;
-    font-size: 18px;
-    overflow-y: auto;
-    max-height: 500px;
-    display: block;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
-
 #table thead tr {
     background-color: #b5b5b5;
     height: 60px;
@@ -106,113 +86,121 @@ button{
     width: 100%;
     table-layout: fixed;
 }
-
 #table tbody {
     display: block;
     max-height: 500px;
     overflow-y: auto;
     width: 100%;
 }
-
 #table tbody tr {
     display: table;
     width: 100%;
     table-layout: fixed;
     border-bottom: 1px solid #aaaaaa;
 }
-
 #table th, #table td {
-    padding: 10px;
+    padding: 7px 8px;
     text-align: left;
     border-right: 1px solid #aaaaaa;
     vertical-align: middle;
     white-space: nowrap;
+    font-size: 14px;
 }
-
 #table td:last-child {
     display: flex;
     gap: 10px;
     justify-content: flex-start;
     align-items: center;
 }
-
 #table th:last-child, #table td:last-child {
     border-right: none;
 }
-
 #visualizarButton {
     background-color: orange;
-    width: 100px;
-    height: 30px;
+    width: 70px;
+    height: 24px;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 15px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px;
+    padding: 2px;
     cursor: pointer;
 }
-
 #iconExcluir{
     background-image: url(/css/img/trash.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     cursor: pointer;
 }
-
 #editbutton {
     background-color: #4CAF50;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 15px;
     color: white;
     width: 70px;
-    height: 30px;
+    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px;
+    padding: 2px;
     cursor: pointer;
 }
-
-
-.rowbutton{
+.rowbutton {
     display: flex;
     flex-direction: row;
     align-items: end;
     gap: 1vh;
     position: relative;
-    left: 5%;
     top: 5%;
+    left: 5%;
+}
+.rowbutton i {
+    font-size: 28px;
+    display: flex;
+    min-width: 28px;
+    padding-right: 0.5em;
+}
+.rowbutton button {
+    font-size: 25px;
+    padding: 10px 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 #imageUser{
     position: absolute;
     top: 17%;
     left: 85%;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
     background-color: #0F6C08;
     overflow: hidden;
+    margin-left: 24px;
 }
 #imageUser img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-#openButton{
-    position: absolute;
+#openButton {
+    font-size: 2.4em;
+    height: 52px;
+    width: 52px;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
-    font-size: 50px;
-    width: 0px;
-    height: 20px;
-    top: 27%;
-    left: 18%;
-    background-color:transparent;
+    justify-content: center;
     color: #0F6C08;
+    background-color: transparent;
 }
 #closeModal, #closeModalVisualizar, #closeModalEditar{
     position: absolute;
@@ -220,21 +208,19 @@ button{
     left: 95%;
     font-size: 22px;
 } 
-#headertable{
-    position: relative;
-    top: 27%;
-    left: 18%;
-    width: 100%;
-    max-width: 1550px;
-    height: 60px;
+#headertable {
+    max-width: 1100px;
     background-color: #b5b5b5;
+    overflow-x: auto;
+    margin: 0 auto;
+    /* Removido position e qualquer margin extra */
 }
 #toptable{
     position: relative;
     top: 27%;
     left: 18%;
     width: 100%;
-    max-width: 1550px;
+    max-width: 1100px;
     height: 60px;
 }
 #iconlixeira{
@@ -243,28 +229,16 @@ button{
     top: 130%;
     left: 110%;
 }
-#buttonCategory{
-    width: 500px;
-    display: flex;
-    position: relative;
-    top: 20%;
-    left: 68%;
-    color: #0F6C08;
-    background-color:transparent;
-    z-index: 1000;
-    gap: 40px;
+#buttonCategory label {
+    font-size: 15px;
+    margin-bottom: 2px;
 }
-.inputCtg{
-    border: none;
-    outline: none;
-    position: relative;
-    border-radius: 5px;
-    font-size: large;
-    width: 200px;
-    height: 30px;
-    padding: 10px;
-    background-color: #c2c2c2;
-    z-index: 1000;
+.inputCtg {
+    font-size: 14px;
+    height: 26px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: 160px;
 }
 #modalDialog, #modalVisualizarDialog, #modalEditarDialog{
     position: relative;
@@ -284,12 +258,10 @@ button{
     background: rgba(#000, 0.1);
     z-index: 2;
 }
-
 body {
     font-family: sans-serif;
     background-color: #f0f0f0;
 }
-
 #cadastroForm {
     width: 900px;
     height: 800px;
@@ -299,7 +271,6 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .form-row {
     display: flex;
     margin-bottom: 10px;
@@ -411,7 +382,6 @@ label {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
 #line-0, #line-0b, #line-0c{
     gap: 195px;
 }
@@ -438,7 +408,6 @@ textarea {
     width: 100%;
     height: 100px;
 }
-
 #submitform, #salvarEdicao {
     padding: 10px 20px;
     background-color: #007bff;
@@ -447,11 +416,9 @@ textarea {
     border-radius: 4px;
     cursor: pointer;
 }
-
 button#adicionar {
     background-color: #28a745;
 }
-
 .preview-imagem-container{
     width: 0;
     height: 0;
@@ -471,7 +438,6 @@ button#adicionar {
     align-items: center;
     justify-content: center;
 }
-
 #preview-selected-image, #visualizar-imagem, #editar-imagem {
     border-radius: 10px;
     width: 100%;
@@ -479,8 +445,6 @@ button#adicionar {
     /* object-fit: cover; */
     object-fit:fill;
 }
-/* Tabela dos funcionarios */
-
 #table{
     border-collapse: collapse;
     width: 100%;
@@ -505,7 +469,6 @@ button#adicionar {
     -ms-grid-row-align: center;
     border: 1px solid #aaaaaa;
 }
-
 #visualizarButton{
     background-color: orange;
     width: 100px;
@@ -537,10 +500,6 @@ button#adicionar {
     align-items: center;
     padding: 3px;
 }
-/* div{
-    border: 1px solid blue;
-} */
-
 #filtro-cargo, #filtro-nome {
     border: none;
     outline: none;
@@ -553,7 +512,6 @@ button#adicionar {
     background-color: #c2c2c2;
     z-index: 1000;
 }
-
 #filtro-cargo option {
     padding: 10px;
     font-size: large;
@@ -562,7 +520,7 @@ button#adicionar {
     width: 100px;
     height: 60px;
     top: -81.3%;
-    left: 94.8%;
+    left: 93%;
     z-index: 1000;
     position: absolute;
     display:flex ;
@@ -579,11 +537,30 @@ button#adicionar {
     font-size: 18px;
     justify-content: center;
 }
-
 #modalLogin::backdrop{
     background-color: transparent;
 }
-
 #sairLogin:hover{
     background-color: #353434;
+}
+/* Diminuir apenas o texto do botão Movimentações (4º item do menu) */
+.containerButtons .rowbutton:nth-child(5) button {
+    font-size: 23px;
+}
+#headersuperior .config {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    position: static;
+}
+#headersuperior .fi-tc-settings {
+    font-size: 30px;
+    position: static !important;
+    left: unset;
+    top: unset;
+}
+#imageUser {
+    margin: 0 25px 0 0;
+    position: static;
 }
