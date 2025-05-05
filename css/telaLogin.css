@@ -113,7 +113,7 @@ body{
     top: 58.5%;
     font-size: 13px ;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 2600px) {
     .login {
         width: 40%;
         height: auto;

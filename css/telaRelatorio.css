@@ -234,3 +234,13 @@ h2{
 #sairLogin:hover{
     background-color: #353434;
 }
+
+#table-dia {
+    /* display: none; */
+    z-index: 10;
+    /* position: absolute; */
+
+}
+.table-total{
+    
+}
