@@ -1,71 +1,80 @@
-@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css");
 
 :root {
-    font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
 }
 @supports (font-variation-settings: normal) {
-    :root { font-family: InterVariable, sans-serif; }
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
 }
-*{
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    display:contents;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+body {
+  display: contents;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
-#headersuperior{
-    position: fixed;
-    background: #ffffff;
-    height: 6vh;
-    left: 300px;
-    width: calc(100% - 300px);
-    z-index: 1000;
+#headersuperior {
+  position: fixed;
+  background: #ffffff;
+  height: 6vh;
+  left: 300px;
+  width: calc(100% - 300px);
+  z-index: 1000;
 }
-.containerTotal{
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    background-color: #e4e4e4;
+#headersuperior .config {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  position: static;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: calc(100% - 300px);
-    background-color: #e4e4e4;
-    margin-left: 300px;
-    padding: 60px 20px 20px 20px;
-    overflow-x: hidden;
-    min-height: 100vh;
+.containerTotal {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #e4e4e4;
 }
-.containerButtons{
-    font-family: inter;
-    font-size: 25px;
-    position: fixed;
-    display: flex;
-    width: 300px;
-    height: 100vh;
-    background-color: #ffffff;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 1001;
-    /* align-items: flex-start;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: calc(100% - 300px);
+  background-color: #e4e4e4;
+  margin-left: 300px;
+  padding: 60px 20px 20px 20px;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+.containerButtons {
+  font-family: inter;
+  font-size: 25px;
+  position: fixed;
+  display: flex;
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1001;
+  /* align-items: flex-start;
     padding-top: 28px; */
 }
-button{
-    display: flex;
-    flex-direction: left;
-    position:relative;
-    top: 10%;
-    font-family: inter;
-    font-size: 16px;
-    padding: 6px 10px;
-    background-color: transparent;
+button {
+  display: flex;
+  flex-direction: left;
+  position: relative;
+  top: 10%;
+  font-family: inter;
+  font-size: 16px;
+  padding: 6px 10px;
+  background-color: transparent;
 }
 /* .buttonLink{
     display: flex;
@@ -78,12 +87,11 @@ button{
     padding: 2em;
     outline: none;
 } */
-#logo{
-    position: relative;
-    top: 1%;
-    left: 7%;
-    width: 14vh;
-    
+#logo {
+  position: relative;
+  top: 1%;
+  left: 7%;
+  width: 14vh;
 }
 /* #textos{
     display: flex;
@@ -95,492 +103,537 @@ button{
 
 /* Removendo estilos antigos de grid para a tabela */
 #rowfuncionarios {
-    /* Removido display grid e propriedades relacionadas */
+  /* Removido display grid e propriedades relacionadas */
 }
 
 #table {
-    max-width: 1100px;
-    margin: 0 auto;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 #table thead tr {
-    background-color: #b5b5b5;
-    height: 60px;
-    display: table;
-    width: 100%;
-    table-layout: fixed;
+  background-color: #b5b5b5;
+  height: 60px;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
 #table tbody {
-    display: block;
-    max-height: 500px;
-    overflow-y: auto;
-    width: 100%;
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+  width: 100%;
 }
 
 #table tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    border-bottom: 1px solid #aaaaaa;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid #aaaaaa;
 }
 
-#table th, #table td {
-    padding: 7px 8px;
-    text-align: left;
-    border-right: 1px solid #aaaaaa;
-    vertical-align: middle;
-    white-space: nowrap;
-    font-size: 14px;
+#table th,
+#table td {
+  padding: 7px 8px;
+  text-align: left;
+  border-right: 1px solid #aaaaaa;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-size: 18px;
 }
 
 #table td:last-child {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-#table th:last-child, #table td:last-child {
-    border-right: none;
+#table th:last-child,
+#table td:last-child {
+  border-right: none;
 }
 
 #visualizarButton {
-    background-color: orange;
-    width: 70px;
-    height: 24px;
-    border-radius: 15px;
-    font-size: 15px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    cursor: pointer;
+  background-color: orange;
+  width: 70px;
+  height: 24px;
+  border-radius: 15px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
 }
 
 #iconExcluir {
-    background-image: url(/css/img/trash.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
+  background-image: url(/css/img/trash.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
 }
 
 #editbutton {
-    background-color: #4CAF50;
-    border-radius: 15px;
-    font-size: 15px;
-    color: white;
-    width: 70px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    cursor: pointer;
+  background-color: #4caf50;
+  border-radius: 15px;
+  font-size: 15px;
+  color: white;
+  width: 70px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
 }
 
 .rowbutton {
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    gap: 1vh;
-    position: relative;
-    left: 5%;
-    top: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 1vh;
+  position: relative;
+  left: 5%;
+  top: 5%;
 }
 
 .rowbutton i {
-    font-size: 28px;
-    display: flex;
-    min-width: 28px;
-    padding-right: 0.5em;
+  font-size: 28px;
+  display: flex;
+  min-width: 28px;
+  padding-right: 0.5em;
 }
 
 .rowbutton button {
-    font-size: 25px;
-    padding: 10px 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    margin: 0;
-    display: flex;
-    align-items: center;
+  font-size: 25px;
+  padding: 10px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
-#imageUser{
-    position: absolute;
-    top: 17%;
-    left: 85%;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: #0F6C08;
-    overflow: hidden;
-    margin-left: 24px;
+#imageUser {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  /* left: 85%; */
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #0f6c08;
+  transform: translateY(30%);
 }
-
 #imageUser img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #openButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2em;
-    width: 44px;
-    height: 44px;
-    margin-bottom: 0;
-    background-color: transparent;
-    cursor: pointer;
-    color: #0F6C08;
+  font-size: 3.2em;
+  height: 44px;
+  width: 44px;
+  margin-bottom: 0;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f6c08;
+  background-color: transparent;
+  overflow: hidden;
 }
 #closeModal-produtos, #closeModalVisualizar-produtos, #closeModalEditar-produtos, #closeModalFornecedor/* , #closeModalCategoria */ {
-    position: absolute;
-    top: -0%;
-    left: 95%;
-    font-size: 22px;
+  position: absolute;
+  top: -0%;
+  left: 95%;
+  font-size: 22px;
 }
 
 #headertable-produtos {
-    max-width: 1100px;
-    background-color: #b5b5b5;
-    overflow-x: auto;
-    margin: 0 auto;
+  max-width: 1500px;
+  background-color: #b5b5b5;
+  overflow-x: auto;
+  margin: 0 auto;
 }
-#toptable{
-    position: relative;
-    top: 27%;
-    left: 18%;
-    width: 100%;
-    max-width: 1550px;
-    height: 60px;
+#toptable {
+  position: relative;
+  top: 27%;
+  left: 18%;
+  width: 100%;
+  max-width: 1550px;
+  height: 60px;
 }
-#iconlixeira{
-    position: absolute;
-    font-size: 27px;
-    top: 130%;
-    left: 110%;
+#iconlixeira {
+  position: absolute;
+  font-size: 27px;
+  top: 130%;
+  left: 110%;
 }
 #buttonCategory {
-    display: flex;
-    gap: 24px;
+  max-width: 1800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
 }
-.inputCtg-categoria{
-    border: none;
-    outline: none;
-    position: relative;
-    border-radius: 5px;
-    font-size: large;
-    width: 200px;
-    height: 50px;
-    padding: 10px;
-    background-color: #c2c2c2;
-    z-index: 1000;
+.inputCtg-categoria {
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+  font-size: large;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  background-color: #c2c2c2;
+  z-index: 1000;
 }
-#modalDialog-produtos, #modalVisualizarDialog-produtos, #modalEditarDialog-produtos, #modalFornecedor/* , #modalCategoria */{
-    position: relative;
-    border: 0;
-    padding: 30px;
-    width: 900px;
-    height: 560px;
-    background-color: rgb(186, 187, 187);
-    border-radius: 1em;
+#modalDialog-produtos, #modalVisualizarDialog-produtos, #modalEditarDialog-produtos, #modalFornecedor/* , #modalCategoria */ {
+  position: relative;
+  border: 0;
+  padding: 30px;
+  width: 900px;
+  height: 560px;
+  background-color: rgb(186, 187, 187);
+  border-radius: 1em;
 }
 
 #modalDialog-produtos-before {
-    position: fixed;
-    top: 0;
-    right: 0; 
-    bottom: 0; 
-    left: 0;
-    background: rgba(#000, 0.1);
-    z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(#000, 0.1);
+  z-index: 2;
 }
 
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
 }
 
 #cadastroForm {
-    width: 900px;
-    height: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 900px;
+  height: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
-    display: flex;
-    margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 10px;
 }
 
-.form-column{
-    display: flex;
-    flex-direction: column;
+.form-column {
+  display: flex;
+  flex-direction: column;
 }
 
-input, textarea{
-    outline: none;
+input,
+textarea {
+  outline: none;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
-#nome-produto, #visualizar-nome-produto, #editar-nome-produto{
-    width: 180%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#nome-produto,
+#visualizar-nome-produto,
+#editar-nome-produto {
+  width: 180%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#codigo-produto, #visualizar-codigo-produto, #editar-codigo-produto{
-    width: 72%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#codigo-produto,
+#visualizar-codigo-produto,
+#editar-codigo-produto {
+  width: 72%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#categoria-produto, #visualizar-categoria-produto, #editar-categoria-produto{
-    width: 125px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#categoria-produto,
+#visualizar-categoria-produto,
+#editar-categoria-produto {
+  width: 125px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#quantidadeProduto, #visualizar-quantidade, #editar-quantidade{
-    width: 79%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#quantidadeProduto,
+#visualizar-quantidade,
+#editar-quantidade {
+  width: 79%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#dataEntrada, #visualizar-dataEntrada, #editar-dataEntrada{
-    width: 103%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#dataEntrada,
+#visualizar-dataEntrada,
+#editar-dataEntrada {
+  width: 103%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#preco-produto, #visualizar-preco-produto, #editar-preco-produto{
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#preco-produto,
+#visualizar-preco-produto,
+#editar-preco-produto {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#codigo-participante-produto, #visualizar-participante-produto, #editar-participante-produto{
-    width: 171%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#codigo-participante-produto,
+#visualizar-participante-produto,
+#editar-participante-produto {
+  width: 171%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#complemento-produto, #visualizar-complemento-produto, #editar-complemento-produto{
-    width: 280%;
-    height: 200px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#complemento-produto,
+#visualizar-complemento-produto,
+#editar-complemento-produto {
+  width: 280%;
+  height: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .input-with-button {
-    display: flex;
-    gap: 8px;
-    width: 171%;
+  display: flex;
+  gap: 8px;
+  width: 171%;
 }
 
 .input-with-button input {
-    flex: 1;
-    height: 16px;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+  flex: 1;
+  height: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 .add-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
 }
 
 datalist {
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    max-height: 150px;
-    overflow-y: auto;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 datalist option {
-    padding: 8px;
-    cursor: pointer;
+  padding: 8px;
+  cursor: pointer;
 }
 
 datalist option:hover {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 #codigo-participante-produto {
-    width: 100%;
+  width: 100%;
 }
 
-#senha-produto{
-    position: relative;
-    width: 140%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    top: 76%;
+#senha-produto {
+  position: relative;
+  width: 140%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  top: 76%;
 }
 
-#nome-senha-produto{
-    position: relative;
-    top: 75%;
+#nome-senha-produto {
+  position: relative;
+  top: 75%;
 }
 
-#editar-senha-produto{
-    width: 140%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#editar-senha-produto {
+  width: 140%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#line-0, #line-0b, #line-0c, #line-0f{
-    gap: 195px;
+#line-0,
+#line-0b,
+#line-0c,
+#line-0f {
+  gap: 195px;
 }
 
-#line-1, #line-1b, #line-1c, #line-1f{
-    gap: 195px;
+#line-1,
+#line-1b,
+#line-1c,
+#line-1f {
+  gap: 195px;
 }
 
-#line-2, #line-2b, #line-2c, #line-2f{
-    
+#line-2,
+#line-2b,
+#line-2c,
+#line-2f {
 }
 
-#line-3, #line-3b, #line-3c, #line-3f{
-    
+#line-3,
+#line-3b,
+#line-3c,
+#line-3f {
 }
 
-#line-4, #line-4b, #line-4c, #line-4f{
-    gap: 0px;
+#line-4,
+#line-4b,
+#line-4c,
+#line-4f {
+  gap: 0px;
 }
 
-#line-4-1, #line-4-1b, #line-4-1c{
-    display: flex;
-    gap: 60px;
+#line-4-1,
+#line-4-1b,
+#line-4-1c {
+  display: flex;
+  gap: 60px;
 }
 
-#line-5, #line-5b, #line-5c, #line-5f{
-    gap: 400px;
+#line-5,
+#line-5b,
+#line-5c,
+#line-5f {
+  gap: 400px;
 }
 
 textarea {
-    width: 100%;
-    height: 100px;
+  width: 100%;
+  height: 100px;
 }
 
-#submitform, #salvarEdicao, #salvarFornecedor{
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+#submitform,
+#salvarEdicao,
+#salvarFornecedor {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button#adicionar {
-    background-color: #28a745;
+  background-color: #28a745;
 }
 
-.preview-imagem-container{
-    width: 0;
-    height: 0;
-    position: relative;
-    top: 13%;
-    left: 66%;
+.preview-imagem-container {
+  width: 0;
+  height: 0;
+  position: relative;
+  top: 13%;
+  left: 66%;
 }
 
-.preview{
-    background-color: #a0a0a0;
-    position: absolute;
-    width: 260px;
-    height: 250px;
-    top: 8%;
-    left: 65%;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.preview {
+  background-color: #a0a0a0;
+  position: absolute;
+  width: 260px;
+  height: 250px;
+  top: 8%;
+  left: 65%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#preview-selected-image, #visualizar-imagem-produto, #editar-imagem-produto {
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    object-fit:fill;
+#preview-selected-image,
+#visualizar-imagem-produto,
+#editar-imagem-produto {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 /* Tabela dos funcionarios */
 
-#table{
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 1550px;
-    background-color: #cfcfcf;
-    padding: none;
-    font-size: 18px;
+#table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1550px;
+  background-color: #cfcfcf;
+  padding: none;
+  font-size: 18px;
 }
-#toptable{
-    height: 500px;
-    overflow-y: auto;
-    width: 1565px;
+#toptable {
+  height: 500px;
+  overflow-y: auto;
+  width: 1565px;
 }
-#rowfuncionarios{
-    display: grid;
-    gap: 10px;
-    padding: 10px;
-    align-items: center;
-    grid-template-columns: repeat(10, auto);
-    grid-auto-columns: auto;
-    -ms-grid-row-align: center;
-    -ms-grid-row-align: center;
-    border: 1px solid #aaaaaa;
+#rowfuncionarios {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  grid-template-columns: repeat(10, auto);
+  grid-auto-columns: auto;
+  -ms-grid-row-align: center;
+  -ms-grid-row-align: center;
+  border: 1px solid #aaaaaa;
 }
 
-#visualizarButton{
-    background-color: orange;
-    width: 100px;
-    height: 30px;
-    border-radius: 15px;
-    font-size: 18px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
+#visualizarButton {
+  background-color: orange;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
 }
 
 /* Tá duplicado, nnão sei se vai ser usado */
@@ -590,214 +643,256 @@ button#adicionar {
     width: 30px;
     height: 30px;
 } */
-#editbutton{
-    background-color: #4CAF50;
-    border-radius: 15px;
-    font-size: 18px;
-    color: white;
-    width: 70px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3px;
+#editbutton {
+  background-color: #4caf50;
+  border-radius: 15px;
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
 }
 /* div{
     border: 1px solid blue;
 } */
 
-#filtro-cargo, #filtro-nome {
-    border: none;
-    outline: none;
-    position: relative;
-    border-radius: 5px;
-    font-size: large;
-    width: 200px;
-    height: 50px;
-    padding: 10px;
-    background-color: #c2c2c2;
-    z-index: 1000;
+#filtro-cargo,
+#filtro-nome {
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+  font-size: large;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  background-color: #c2c2c2;
+  z-index: 1000;
 }
 
 #filtro-cargo option {
-    padding: 10px;
-    font-size: large;
+  padding: 10px;
+  font-size: large;
 }
 
-#modalLogin{
-    width: 100px;
-    height: 60px;
-    top: -81.3%;
-    left: 93%;
-    z-index: 1000;
-    position: absolute;
-    display:flex ;
-    background-color: #e4e4e4;
-    transition: 1ms;
-    justify-content: center;
+#modalLogin {
+  width: 100px;
+  height: 60px;
+  top: -81.3%;
+  left: 93%;
+  z-index: 1000;
+  position: absolute;
+  display: flex;
+  background-color: #e4e4e4;
+  transition: 1ms;
+  justify-content: center;
 }
 
-#sairLogin{
-    width: 100px;
-    height: 40px;
-    background-color: #858585;
-    color: white;
-    outline: none;
-    font-size: 18px;
-    justify-content: center;
+#sairLogin {
+  width: 100px;
+  height: 40px;
+  background-color: #858585;
+  color: white;
+  outline: none;
+  font-size: 18px;
+  justify-content: center;
 }
 
-#modalLogin::backdrop{
-    background-color: transparent;
+#modalLogin::backdrop {
+  background-color: transparent;
 }
 
-#sairLogin:hover{
-    background-color: #353434;
+#sairLogin:hover {
+  background-color: #353434;
 }
 
 .containerButtons .rowbutton:nth-child(5) button {
-    font-size: 23px;
+  font-size: 23px;
 }
 
 #headersuperior .config {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-    position: static;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  position: static;
 }
 
 #headersuperior .fi-tc-settings {
-    font-size: 30px;
-    position: static !important;
-    left: unset;
-    top: unset;
+  font-size: 30px;
+  position: static !important;
+  left: unset;
+  top: unset;
 }
 
 #imageUser {
-    margin: 0 25px 0 0;
-    position: static;
+  margin: 0 25px 0 0;
+  position: static;
 }
 
 /* Mantendo os estilos específicos dos modais de fornecedor e categoria */
 #modalFornecedor input {
-    width: 300px;
-    height: 30px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
 }
 
 #modalFornecedor label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
 }
 
 #modalFornecedor .form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
 }
 
 #modalFornecedor .form-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #salvarFornecedor {
-    display: block;
-    margin: 20px auto 0;
-    width: 200px;
-    height: 40px;
-    font-size: 16px;
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 24px;
+  display: block;
+  margin: 20px auto 0;
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 24px;
 }
 
-.categoria-icon{
-    font-size: 80px;
-    color: #4CAF50;
-    margin: 20px 0;
+.categoria-icon {
+  font-size: 80px;
+  color: #4caf50;
+  margin: 20px 0;
 }
 
 #modalCategoria {
-    display: flex;
-    position: relative;
-    border: 0;
-    padding: 20px;
-    width: 400px;
-    height: 300px;
-    background-color: rgb(186, 187, 187);
-    border-radius: 1em;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  position: relative;
+  border: 0;
+  padding: 20px;
+  width: 400px;
+  height: 300px;
+  background-color: rgb(186, 187, 187);
+  border-radius: 1em;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
 
 #modalCategoria:not([open]) {
-    display: none;
+  display: none;
 }
 
 #modalCategoria input {
-    width: 110%;
-    text-align: center;
-    height: 20px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    margin: 5px 0 25px;
+  width: 110%;
+  text-align: center;
+  height: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin: 5px 0 25px;
 }
 
 #closeModalCategoria {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 22px;
-    cursor: pointer;
-    background: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  background: none;
 }
 
 #modalCategoria label {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #salvarCategoria {
-    width: 150px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: -30px;
+  width: 150px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: -30px;
 }
 
 #salvarCategoria:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
-#line-categoria{
-    text-align: center;
+#line-categoria {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+#visualizar-categoria-produto {
+  width: 100%;
+}
+.filtros-bloco {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1100px;
+  width: 100%;
+  margin: 32px auto 16px auto;
+}
+#headertable-produtos {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.category-column-1 {
+  max-width: 1500px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+@media (max-width: 1993px), (max-width: 2177px) {
+  #headertable-produtos {
+    max-width: 1800px;
+    background-color: #b5b5b5;
+    overflow-x: auto;
+    margin: 0 auto;
+    /* Removido position e qualquer margin extra */
+  }
+  #table {
+    max-width: 1800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+  .filtros-bloco {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    align-content: center;
-}
-
-#visualizar-categoria-produto{
+    max-width: 1800px;
     width: 100%;
+    margin: 50px auto 50px auto;
+  }
 }

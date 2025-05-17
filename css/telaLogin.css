@@ -1,20 +1,21 @@
-*{
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-body{
-    min-height: 100vh;
-    min-width: 100vw;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff;
-    overflow: hidden;
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  overflow: hidden;
 }
 /* #headersuperior{
         background-color: rgb(255, 255, 255) ;
@@ -29,111 +30,122 @@ body{
     height: 1em;
     
 } */
-.container{
-    min-height: 100vh;
-    min-width: 100vw;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(img/Flux_Dev_Create_an_image_with_a_pristine_white_background_wher_0.jpeg);  
-    /* background-color: #c2c2c2; */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    overflow: hidden;
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(img/Flux_Dev_Create_an_image_with_a_pristine_white_background_wher_0.jpeg);
+  /* background-color: #c2c2c2; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
 }
-.login{
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    width: 100%;
-    max-width: 480px;
-    min-width: 260px;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 2em;
-    padding: 2em 1.5em;
-    box-shadow: 0px 0px 40px 1px #d2d2d2;
-    position: relative;
-    overflow: hidden;
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  min-width: 260px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 2em;
+  padding: 2em 1.5em;
+  box-shadow: 0px 0px 40px 1px #d2d2d2;
+  position: relative;
+  overflow: hidden;
 }
-.inputbutton1,.inputbutton2{
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 350px;
-    min-width: 120px;
-    height: 2.8em;
-    padding: 0.5em;
-    outline: none;
-    background-color: transparent; 
-    /* border: 1px solid white; */
-    border-bottom: 1px solid white;
-    color: #fff;
+.inputbutton1,
+.inputbutton2 {
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 350px;
+  min-width: 120px;
+  height: 2.8em;
+  padding: 0.5em;
+  outline: none;
+  background-color: transparent;
+  /* border: 1px solid white; */
+  border-bottom: 1px solid white;
+  color: #fff;
 }
-#confirmar{
-    font-size: 1.1rem;
-    width: 60%;
-    min-width: 120px;
-    max-width: 220px;
-    height: 2.5em;
-    padding: 0.5em;
-    outline: none;
-    border-radius: 1em;
-    background-color: black;
-    color: white;
-    transition: 0.3s;
-    margin-top: 0.5em;
+#confirmar {
+  font-size: 1.1rem;
+  width: 60%;
+  min-width: 120px;
+  max-width: 220px;
+  height: 2.5em;
+  padding: 0.5em;
+  outline: none;
+  border-radius: 1em;
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+  margin-top: 0.5em;
 }
-#confirmar:hover{
-    background-color: rgba(0, 0, 0, 0.7);
+#confirmar:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
-#foto{
-    width: clamp(120px, 30vw, 180px);
-    height: clamp(120px, 30vw, 180px);
+#foto {
+  width: clamp(120px, 30vw, 180px);
+  height: clamp(120px, 30vw, 180px);
 }
-.bottons{
-    display: flex;
-    flex-direction: column;
-    gap: 1.2em;
-    width: 100%;
-    align-items: center;
+.bottons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  width: 100%;
+  align-items: center;
 }
-#titleLoginEmail{
-    color: white;
-    position: static;
-    font-size: 1rem;
-    margin-bottom: -0.8em;
-    margin-left: 0.2em;
-    align-self: flex-start;
-    transition: 0.5s;
-}
-
-#titleLoginSenha{
-    color: white;
-    position: static;
-    font-size: 1rem;
-    margin-bottom: -0.8em;
-    margin-left: 0.2em;
-    align-self: flex-start;
-    transition: 0.5s;
+#titleLoginEmail {
+  color: white;
+  position: absolute;
+  left: 13%;
+  top: 54%;
+  font-size: 1rem;
+  margin-bottom: -0.8em;
+  margin-left: 0.2em;
+  align-self: flex-start;
+  transition: 0.5s;
 }
 
-.inputbutton1:focus~#titleLoginSenha,
-.inputbutton1:valid~#titleLoginSenha
-{
-    top: 69.3%;
-    font-size: 13px ;
+#titleLoginSenha {
+  color: white;
+  position: absolute;
+  left: 13%;
+  top: 67%;
+  font-size: 1rem;
+  margin-bottom: -0.8em;
+  margin-left: 0.2em;
+  align-self: flex-start;
+  transition: 0.5s;
 }
-.inputbutton2:focus~#titleLoginEmail,
-.inputbutton2:valid~#titleLoginEmail{
-    top: 58.5%;
-    font-size: 13px ;
+
+.inputbutton1:focus ~ #titleLoginSenha,
+.inputbutton1:valid ~ #titleLoginSenha {
+  top: 63%;
+  font-size: 13px;
 }
-<<<<<<< HEAD
-@media screen and (min-width: 2600px) {
+.inputbutton2:focus ~ #titleLoginEmail,
+.inputbutton2:valid ~ #titleLoginEmail {
+  top: 49%;
+  font-size: 13px;
+}
+
+a{
+  color: rgb(110, 152, 194);
+  font-size: 13px;
+  align-self: flex-end;
+  padding: 0px 50px;
+}
+/* <<<<<<< HEAD */
+/* @media screen and (min-width: 2600px) {
     .login {
         width: 40%;
         height: auto;
@@ -161,10 +173,11 @@ body{
         font-size: 18px;
         left: 10%;
     }
+} */
+/* ======= */
+/* >>>>>>> 7567a5b6d786c32a6e7707884173005e665a3c31 */
+/* @media (max-width: 600px) {
 
-=======
-@media (max-width: 600px) {
->>>>>>> 7567a5b6d786c32a6e7707884173005e665a3c31
     .container {
         padding: 0 0.5em;
     }
@@ -223,4 +236,4 @@ body{
         font-size: 1.2rem;
         max-width: 300px;
     }
-}
+} */
