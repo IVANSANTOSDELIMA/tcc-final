@@ -5,57 +5,36 @@ document.addEventListener('DOMContentLoaded', async function() {
         'Authorization': `Bearer ${token}`
     };
 
-    // Configurar comportamento de acordeão para as tabelas
-    const tabelaDia = document.querySelector('#table-dia');
-    const tabelaSemana = document.querySelector('#table-semana');
-    const tabelaMes = document.querySelector('#table-mes');
-    const tabelaAno = document.querySelector('#table-ano');
-
-    // Inicializar classes de ícones para mostrar estado correto
-    document.querySelectorAll('table thead tr th i').forEach(icon => {
-        icon.classList.remove('fi-ss-angle-down');
-        icon.classList.add('fi-rr-angle-right');
-    });
-
-    // Função para alternar visibilidade e ícone
-    function toggleTabela(tabela) {
-        const tbody = tabela.querySelector('tbody');
-        const icone = tabela.querySelector('thead tr th i');
-        
-        if (tbody.style.display === 'none' || !tbody.style.display) {
-            // Fechar todas as outras tabelas primeiro
-            document.querySelectorAll('table tbody').forEach(body => {
-                body.style.display = 'none';
-            });
-            document.querySelectorAll('table thead tr th i').forEach(icon => {
-                icon.classList.remove('fi-rr-angle-down');
-                icon.classList.add('fi-rr-angle-right');
-            });
-            
-            // Abrir a tabela clicada
-            tbody.style.display = 'table-row-group';
-            icone.classList.remove('fi-rr-angle-right');
-            icone.classList.add('fi-rr-angle-down');
-        } else {
-            // Fechar a tabela atual
-            tbody.style.display = 'none';
-            icone.classList.remove('fi-rr-angle-down');
-            icone.classList.add('fi-rr-angle-right');
-        }
+    const funcionario = JSON.parse(localStorage.getItem('funcionario'));
+    const imgElement = document.querySelector('#imageUser img');
+    
+    if (funcionario && funcionario.imagem_funcionario) {
+        imgElement.src = `${baseUrl}/${funcionario.imagem_funcionario}`;
+    } // Se a imagem do funcionário estiver disponível, atualiza o src da imagem
+    else {
+        imgElement.src = 'https://placecats.com/neo_banana/300/200'; // Define uma imagem padrão caso não haja imagem
     }
 
-    // Adicionar eventos de clique aos cabeçalhos das tabelas
-    tabelaDia.querySelector('thead').addEventListener('click', () => toggleTabela(tabelaDia));
-    tabelaSemana.querySelector('thead').addEventListener('click', () => toggleTabela(tabelaSemana));
-    tabelaMes.querySelector('thead').addEventListener('click', () => toggleTabela(tabelaMes));
-    tabelaAno.querySelector('thead').addEventListener('click', () => toggleTabela(tabelaAno));
+    // checagem de token
+    if (!token) {
+        alert('Sua sessão expirou. Por favor, faça login novamente.');
+        window.location.href = 'telalogin.html';
+        return;
+    }
 
-    // Inicializar todas as tabelas como fechadas
-    document.querySelectorAll('table tbody').forEach(tbody => {
-        tbody.style.display = 'none';
-    });
+    // botões do acordeão
+    const accDia = document.getElementById('acc-dia');
+    const accSemana = document.getElementById('acc-semana');
+    const accMes = document.getElementById('acc-mes');
+    const accAno = document.getElementById('acc-a');
 
-    // Função para carregar movimentações diárias
+    // containers de conteúdo
+    const containerDia = accDia.nextElementSibling; // Pegando a div que tem depois do button referente
+    const containerSemana = accSemana.nextElementSibling; // Pegando a div que tem depois do button referente
+    const containerMes = accMes.nextElementSibling; // Pegando a div que tem depois do button referente
+    const containerAno = accAno.nextElementSibling; // Pegando a div que tem depois do button referente
+
+    // busca de movimentações do dia
     async function carregarMovimentacoesDiarias() {
         try {
             const hoje = new Date().toISOString().split('T')[0];
@@ -63,255 +42,304 @@ document.addEventListener('DOMContentLoaded', async function() {
                 headers: headers
             });
             
+            if (!response.ok) {
+                throw new Error(`Erro ao carregar movimentações: ${response.status}`);
+            }
+            
             const movimentacoes = await response.json();
             console.log('dia: ', movimentacoes);
-            preencherTabelaDia(movimentacoes);
+            preencherConteudoDia(movimentacoes);
         } catch (error) {
             console.error('Erro ao carregar movimentações diárias:', error);
-            // Criar linha de erro mesmo se a API falhar
-            const tbody = document.querySelector('#table-dia tbody');
-            tbody.innerHTML = '<tr><td colspan="2">Erro ao carregar movimentações</td></tr>';
+            containerDia.innerHTML = '<p>Erro ao carregar movimentações</p>';
+            
+            if (error.message.includes('401')) {
+                alert('Sua sessão expirou. Por favor, faça login novamente.');
+                window.location.href = 'telalogin.html';
+            }
         }
     }
 
-    // Função para carregar movimentações semanais
+    // busca de movimentações da semana
     async function carregarMovimentacoesSemanais() {
         try {
             const hoje = new Date();
             const inicioSemana = new Date(hoje);
-            inicioSemana.setDate(hoje.getDate() - hoje.getDay()); // Domingo da semana atual
+            inicioSemana.setDate(hoje.getDate() - 6); // Últimos 7 dias (incluindo hoje)
             
             const response = await fetch(`${baseUrl}/api/estoque/movimentacao?dataInicio=${inicioSemana.toISOString().split('T')[0]}&dataFim=${hoje.toISOString().split('T')[0]}`, {
                 headers: headers
             });
             
+            if (!response.ok) {
+                throw new Error(`Erro ao carregar movimentações: ${response.status}`);
+            }
+            
             const movimentacoes = await response.json();
             console.log('semana: ', movimentacoes);
-            preencherTabelaSemana(movimentacoes);
+            preencherConteudoSemana(movimentacoes);
         } catch (error) {
             console.error('Erro ao carregar movimentações semanais:', error);
-            // Criar linha de erro mesmo se a API falhar
-            const tbody = document.querySelector('#table-semana tbody');
-            tbody.innerHTML = '<tr><td colspan="2">Erro ao carregar movimentações</td></tr>';
+            containerSemana.innerHTML = '<p>Erro ao carregar movimentações</p>';
         }
     }
 
-    // Função para carregar movimentações mensais
+    // busca de movimentações do mês
     async function carregarMovimentacoesMensais() {
         try {
             const hoje = new Date();
-            const inicioMes = new Date(hoje.getFullYear(), hoje.getMonth(), 1);
+            const inicioMes = new Date(hoje.getFullYear(), hoje.getMonth(), 1); // dia 1 do mês
             
             const response = await fetch(`${baseUrl}/api/estoque/movimentacao?dataInicio=${inicioMes.toISOString().split('T')[0]}&dataFim=${hoje.toISOString().split('T')[0]}`, {
                 headers: headers
             });
             
+            if (!response.ok) {
+                throw new Error(`Erro ao carregar movimentações: ${response.status}`);
+            }
+            
             const movimentacoes = await response.json();
             console.log('mes: ', movimentacoes);
-            preencherTabelaMes(movimentacoes);
+            preencherConteudoMes(movimentacoes);
         } catch (error) {
             console.error('Erro ao carregar movimentações mensais:', error);
-            // Criar linha de erro mesmo se a API falhar
-            const tbody = document.querySelector('#table-mes tbody');
-            tbody.innerHTML = '<tr><td colspan="2">Erro ao carregar movimentações</td></tr>';
+            containerMes.innerHTML = '<p>Erro ao carregar movimentações</p>';
         }
     }
 
-    // Função para carregar movimentações anuais
+    // busca de movimentações do ano
     async function carregarMovimentacoesAnuais() {
         try {
             const hoje = new Date();
-            const inicioAno = new Date(hoje.getFullYear(), 0, 1);
+            const inicioAno = new Date(hoje.getFullYear(), 0, 1); // dia 1 do ano
             
             const response = await fetch(`${baseUrl}/api/estoque/movimentacao?dataInicio=${inicioAno.toISOString().split('T')[0]}&dataFim=${hoje.toISOString().split('T')[0]}`, {
                 headers: headers
             });
             
+            if (!response.ok) {
+                throw new Error(`Erro ao carregar movimentações: ${response.status}`);
+            }
+            
             const movimentacoes = await response.json();
             console.log('ano: ', movimentacoes);
-            preencherTabelaAno(movimentacoes);
+            preencherConteudoAno(movimentacoes);
         } catch (error) {
             console.error('Erro ao carregar movimentações anuais:', error);
-            // Criar linha de erro mesmo se a API falhar
-            const tbody = document.querySelector('#table-ano tbody');
-            tbody.innerHTML = '<tr><td colspan="2">Erro ao carregar movimentações</td></tr>';
+            containerAno.innerHTML = '<p>Erro ao carregar movimentações</p>';
         }
     }
 
-    // Funções para preencher as tabelas
-    function preencherTabelaDia(movimentacoes) {
-        const tbody = document.querySelector('#table-dia tbody');
-        tbody.innerHTML = '';
-        
+    // Funções para preencher os conteúdos
+    function preencherConteudoDia(movimentacoes) {
         if (!movimentacoes || movimentacoes.length === 0) {
-            const row = document.createElement('tr');
-            row.innerHTML = '<td colspan="2">Nenhuma movimentação encontrada</td>';
-            tbody.appendChild(row);
+            containerDia.innerHTML = '<p>Nenhuma movimentação encontrada</p>';
             return;
         }
         
-        // Calcular totais
-        const totalEntradas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'E')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+        // html da tabela
+        let html = `
+            <h3>Detalhes das Movimentações</h3>
+            <div class="tabela-container">
+                <table class="tabela-movimentacoes">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Tipo</th>
+                            <th>Quantidade</th>
+                            <th>Valor Total</th>
+                            <th>Participante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+        
+        // linhas da tabela
+        for (let i = 0; i < movimentacoes.length; i++) {
+            const m = movimentacoes[i];
+            const data = new Date(m.data).toLocaleDateString('pt-BR');
+            const tipo = m.id_tipo_movimentacao === 'E' ? 'Entrada' : 'Saída';
+            const valor = formatarMoeda(m.preco_total || 0);
             
-        const totalSaidas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'S')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+            html += `
+                <tr>
+                    <td>${data}</td>
+                    <td>${m.nome_produto || 'N/A'}</td>
+                    <td>${tipo}</td>
+                    <td>${m.quantidade || 0}</td>
+                    <td>${valor}</td>
+                    <td>${m.nome_participante || 'N/A'}</td>
+                </tr>
+            `;
+        }
         
-        // Criar linhas
-        const rowEntradas = document.createElement('tr');
-        rowEntradas.innerHTML = `
-            <td>Entradas</td>
-            <td>${formatarMoeda(totalEntradas)}</td>
+        html += `
+                    </tbody>
+                </table>
+            </div>
         `;
-        tbody.appendChild(rowEntradas);
         
-        const rowSaidas = document.createElement('tr');
-        rowSaidas.innerHTML = `
-            <td>Saídas</td>
-            <td>${formatarMoeda(totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaidas);
-        
-        const rowSaldo = document.createElement('tr');
-        rowSaldo.innerHTML = `
-            <td>Saldo</td>
-            <td>${formatarMoeda(totalEntradas - totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaldo);
+        containerDia.innerHTML = html;
     }
 
-    function preencherTabelaSemana(movimentacoes) {
-        const tbody = document.querySelector('#table-semana tbody');
-        tbody.innerHTML = '';
-        
+    function preencherConteudoSemana(movimentacoes) {
         if (!movimentacoes || movimentacoes.length === 0) {
-            const row = document.createElement('tr');
-            row.innerHTML = '<td colspan="2">Nenhuma movimentação encontrada</td>';
-            tbody.appendChild(row);
+            containerSemana.innerHTML = '<p>Nenhuma movimentação encontrada</p>';
             return;
         }
         
-        // Calcular totais
-        const totalEntradas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'E')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+        // html da tabela
+        let html = `
+            <h3>Detalhes das Movimentações</h3>
+            <div class="tabela-container">
+                <table class="tabela-movimentacoes">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Tipo</th>
+                            <th>Quantidade</th>
+                            <th>Valor Total</th>
+                            <th>Participante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+        
+        // linhas da tabela
+        for (let i = 0; i < movimentacoes.length; i++) {
+            const m = movimentacoes[i];
+            const data = new Date(m.data).toLocaleDateString('pt-BR');
+            const tipo = m.id_tipo_movimentacao === 'E' ? 'Entrada' : 'Saída';
+            const valor = formatarMoeda(m.preco_total || 0);
             
-        const totalSaidas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'S')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+            html += `
+                <tr>
+                    <td>${data}</td>
+                    <td>${m.nome_produto || 'N/A'}</td>
+                    <td>${tipo}</td>
+                    <td>${m.quantidade || 0}</td>
+                    <td>${valor}</td>
+                    <td>${m.nome_participante || 'N/A'}</td>
+                </tr>
+            `;
+        }
         
-        // Criar linhas
-        const rowEntradas = document.createElement('tr');
-        rowEntradas.innerHTML = `
-            <td>Entradas</td>
-            <td>${formatarMoeda(totalEntradas)}</td>
+        html += `
+                    </tbody>
+                </table>
+            </div>
         `;
-        tbody.appendChild(rowEntradas);
         
-        const rowSaidas = document.createElement('tr');
-        rowSaidas.innerHTML = `
-            <td>Saídas</td>
-            <td>${formatarMoeda(totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaidas);
-        
-        const rowSaldo = document.createElement('tr');
-        rowSaldo.innerHTML = `
-            <td>Saldo</td>
-            <td>${formatarMoeda(totalEntradas - totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaldo);
+        containerSemana.innerHTML = html;
     }
 
-    function preencherTabelaMes(movimentacoes) {
-        const tbody = document.querySelector('#table-mes tbody');
-        tbody.innerHTML = '';
-        
+    function preencherConteudoMes(movimentacoes) {
         if (!movimentacoes || movimentacoes.length === 0) {
-            const row = document.createElement('tr');
-            row.innerHTML = '<td colspan="2">Nenhuma movimentação encontrada</td>';
-            tbody.appendChild(row);
+            containerMes.innerHTML = '<p>Nenhuma movimentação encontrada</p>';
             return;
         }
         
-        // Calcular totais
-        const totalEntradas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'E')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+        // html da tabela
+        let html = `
+            <h3>Detalhes das Movimentações</h3>
+            <div class="tabela-container">
+                <table class="tabela-movimentacoes">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Tipo</th>
+                            <th>Quantidade</th>
+                            <th>Valor Total</th>
+                            <th>Participante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+        
+        // linhas da tabela
+        for (let i = 0; i < movimentacoes.length; i++) {
+            const m = movimentacoes[i];
+            const data = new Date(m.data).toLocaleDateString('pt-BR');
+            const tipo = m.id_tipo_movimentacao === 'E' ? 'Entrada' : 'Saída';
+            const valor = formatarMoeda(m.preco_total || 0);
             
-        const totalSaidas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'S')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+            html += `
+                <tr>
+                    <td>${data}</td>
+                    <td>${m.nome_produto || 'N/A'}</td>
+                    <td>${tipo}</td>
+                    <td>${m.quantidade || 0}</td>
+                    <td>${valor}</td>
+                    <td>${m.nome_participante || 'N/A'}</td>
+                </tr>
+            `;
+        }
         
-        // Criar linhas
-        const rowEntradas = document.createElement('tr');
-        rowEntradas.innerHTML = `
-            <td>Entradas</td>
-            <td>${formatarMoeda(totalEntradas)}</td>
+        html += `
+                    </tbody>
+                </table>
+            </div>
         `;
-        tbody.appendChild(rowEntradas);
         
-        const rowSaidas = document.createElement('tr');
-        rowSaidas.innerHTML = `
-            <td>Saídas</td>
-            <td>${formatarMoeda(totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaidas);
-        
-        const rowSaldo = document.createElement('tr');
-        rowSaldo.innerHTML = `
-            <td>Saldo</td>
-            <td>${formatarMoeda(totalEntradas - totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaldo);
+        containerMes.innerHTML = html;
     }
 
-    function preencherTabelaAno(movimentacoes) {
-        const tbody = document.querySelector('#table-ano tbody');
-        tbody.innerHTML = '';
-        
+    function preencherConteudoAno(movimentacoes) {
         if (!movimentacoes || movimentacoes.length === 0) {
-            const row = document.createElement('tr');
-            row.innerHTML = '<td colspan="2">Nenhuma movimentação encontrada</td>';
-            tbody.appendChild(row);
+            containerAno.innerHTML = '<p>Nenhuma movimentação encontrada</p>';
             return;
         }
         
-        // Calcular totais
-        const totalEntradas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'E')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+        // html da tabela
+        let html = `
+            <h3>Detalhes das Movimentações</h3>
+            <div class="tabela-container">
+                <table class="tabela-movimentacoes">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Produto</th>
+                            <th>Tipo</th>
+                            <th>Quantidade</th>
+                            <th>Valor Total</th>
+                            <th>Participante</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+        
+        // linhas da tabela
+        for (let i = 0; i < movimentacoes.length; i++) {
+            const m = movimentacoes[i];
+            const data = new Date(m.data).toLocaleDateString('pt-BR');
+            const tipo = m.id_tipo_movimentacao === 'E' ? 'Entrada' : 'Saída';
+            const valor = formatarMoeda(m.preco_total || 0);
             
-        const totalSaidas = movimentacoes
-            .filter(m => m.id_tipo_movimentacao === 'S')
-            .reduce((sum, m) => sum + parseFloat(m.preco_total || 0), 0);
+            html += `
+                <tr>
+                    <td>${data}</td>
+                    <td>${m.nome_produto || 'N/A'}</td>
+                    <td>${tipo}</td>
+                    <td>${m.quantidade || 0}</td>
+                    <td>${valor}</td>
+                    <td>${m.nome_participante || 'N/A'}</td>
+                </tr>
+            `;
+        }
         
-        // Criar linhas
-        const rowEntradas = document.createElement('tr');
-        rowEntradas.innerHTML = `
-            <td>Entradas</td>
-            <td>${formatarMoeda(totalEntradas)}</td>
+        html += `
+                    </tbody>
+                </table>
+            </div>
         `;
-        tbody.appendChild(rowEntradas);
         
-        const rowSaidas = document.createElement('tr');
-        rowSaidas.innerHTML = `
-            <td>Saídas</td>
-            <td>${formatarMoeda(totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaidas);
-        
-        const rowSaldo = document.createElement('tr');
-        rowSaldo.innerHTML = `
-            <td>Saldo</td>
-            <td>${formatarMoeda(totalEntradas - totalSaidas)}</td>
-        `;
-        tbody.appendChild(rowSaldo);
+        containerAno.innerHTML = html;
     }
 
-    // Função para formatar valores monetários
+    // Função pra formatar valores monetários
     function formatarMoeda(valor) {
         return new Intl.NumberFormat('pt-BR', {
             style: 'currency',
@@ -319,13 +347,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         }).format(valor);
     }
 
-    // Carregar dados ao iniciar
+    // carrega os dados iniciais
     carregarMovimentacoesDiarias();
     carregarMovimentacoesSemanais();
     carregarMovimentacoesMensais();
     carregarMovimentacoesAnuais();
 
-    // Implementar logout
+    // botão de logout
     document.querySelector('#sairLogin').addEventListener('click', () => {
         localStorage.removeItem('token');
         localStorage.removeItem('funcionario');

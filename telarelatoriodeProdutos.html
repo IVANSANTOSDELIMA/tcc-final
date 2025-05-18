@@ -53,38 +53,38 @@
                 <div id="imageUser"><img src="" alt=""></div>
             </div>
         </header>
-    <div class="container">
-        <h2>Movimentações</h2>
-        <div style="width: 100%;">
-            <button class="acc_total" id="acc-dia"> Dia <i class="fi fi-rr-angle-right "></i></button>
+        <div class="container">
+            <h2>Movimentações</h2>
+            <div style="width: 100%;">
+                <button class="acc_total" id="acc-dia"> Dia <i class="fi fi-rr-angle-right "></i></button>
                 <div class="container_acc">
                     <!-- Linhas das movimentações de hoje serão inseridas aqui -->
                     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 </div>
-            <button class="acc_total" id="acc-semana">Semana <i class="fi fi-rr-angle-right "></i></button>
+                <button class="acc_total" id="acc-semana">Semana <i class="fi fi-rr-angle-right "></i></button>
                 <div class="container_acc">
                     <!-- Linhas das movimentações diarias serão inseridas aqui -->
                     aaaaaaaaaaaaaaaaaaaaaaaaaa
                 </div>
-            <button class="acc_total" id="acc-mes">Mês <i class="fi fi-rr-angle-right "></i></button>
+                <button class="acc_total" id="acc-mes">Mês <i class="fi fi-rr-angle-right "></i></button>
                 <div class="container_acc">
                     <!-- Linhas das movimentações mensais serão inseridas aqui -->
                     ddddddddddddddddddddddddddddddddddd
                 </div>
-            <button class="acc_total" id="acc-a">Ano <i class="fi fi-rr-angle-right "></i></button>
+                <button class="acc_total" id="acc-a">Ano <i class="fi fi-rr-angle-right "></i></button>
                 <div class="container_acc">
                     <!-- Linhas das movimentações anuais serão inseridas aqui -->
                     ddddddddddddddddddddddddddddddddddd
                 </div>
+            </div>
         </div>
+        <!-- Modal sair--------------------------------------------------------------------------------->
+        <dialog id="modalLogin">
+            <button id="sairLogin">Sair</button>
+        </dialog>
+
+        <!-- --------------------------------------------------------------------------------->
     </div>
-            <!-- Modal sair--------------------------------------------------------------------------------->
-            <dialog id="modalLogin">
-                <button id="sairLogin">Sair</button>
-            </dialog>
-    
-            <!-- --------------------------------------------------------------------------------->
-</div>
     <script>
         // -------------------------------------------------------------------------------- modal sair login
         const dialogLogin = document.querySelector("#modalLogin")
@@ -106,38 +106,30 @@
             }
         })
 
-        //--------------------------------------------------------------------------------------------------
-        function fecharAcordeao(acc) {
-            acc.parentNode.querySelector('.acc_total').style.display = 'none';
-            acc.classList.remove('active'); // Adicionar classe para indicar estado aberto
-            }
-        var acc = document.getElementsByClassName("acc_total")
-        var i
+        //-------------------------------------------------------------------------------------------------
+        var acc = document.getElementsByClassName("acc_total");
+        var i;
 
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                this.classList.toggle("active")
-                var container_acc = this.nextElementSibling
-                if (container_acc.style.display === "block") {
-                    container_acc.style.display = "none"
-                } else {
-                    container_acc.style.display = "block"
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                // Verifica se este painel já está aberto
+                var isActive = this.classList.contains("active");
+
+                // Fecha todos os painéis e remove a classe active de todos os botões
+                for (var j = 0; j < acc.length; j++) {
+                    acc[j].classList.remove("active");
+                    var panel = acc[j].nextElementSibling;
+                    panel.style.display = "none";
                 }
-                })
-            }
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-                accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            // Fechar todos os outros
-            const allContents = document.querySelectorAll('.accordion-content');
-            allContents.forEach(content => content.classList.remove('active'));
-
-            // Abrir o item clicado
-            const content = header.nextElementSibling;
-            content.classList.add('active');
-        });
-    });
+                // Se o painel clicado não estava aberto, abre-o
+                if (!isActive) {
+                    this.classList.add("active");
+                    var container_acc = this.nextElementSibling;
+                    container_acc.style.display = "block";
+                }
+            });
+        }
     </script>
     <script src="integracoes/relatorioIntegration.js"></script>
 </body>

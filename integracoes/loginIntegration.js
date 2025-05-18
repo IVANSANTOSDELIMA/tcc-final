@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const data = await response.json();
 
             if (response.ok) {
-                alert('Login realizado com sucesso!');
+                //alert('Login realizado com sucesso!');
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('funcionario', JSON.stringify(data.funcionario));
                 window.location.href = '/telainicio.html';
@@ -49,4 +49,75 @@ document.addEventListener("DOMContentLoaded", async function () {
             alert('Erro na comunicação com o servidor');
         }
     });
+
+    const modal = document.getElementById('recuperarSenhaModal');
+    const btnRecuperar = document.getElementById('recuperarSenha'); // Adicione id="recuperarSenha" ao link de recuperar senha
+    const span = document.getElementsByClassName('close')[0];
+    const form = document.getElementById('recuperarSenhaForm');
+    const mensagem = document.getElementById('mensagemRecuperacao');
+    
+    // Abrir modal quando clicar em "Recuperar a senha"
+    btnRecuperar.onclick = function(e) {
+        e.preventDefault();
+        modal.style.display = "block";
+    }
+    
+    // Fechar modal quando clicar no X
+    span.onclick = function() {
+        modal.style.display = "none";
+        form.reset();
+        mensagem.style.display = "none";
+        mensagem.className = "";
+    }
+    
+    // Fechar modal quando clicar fora dele
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            form.reset();
+            mensagem.style.display = "none";
+            mensagem.className = "";
+        }
+    }
+    
+    // Enviar formulário
+    form.onsubmit = async function(e) {
+        e.preventDefault();
+        
+        const email = document.getElementById('emailRecuperacao').value;
+        
+        try {
+            const response = await fetch('http://localhost:3000/api/auth/forgot-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+            
+            const data = await response.json();
+            
+            mensagem.style.display = "block";
+            
+            if (response.ok) {
+                mensagem.className = "sucesso";
+                mensagem.textContent = "Email de recuperação enviado! Verifique sua caixa de entrada.";
+                form.reset();
+                
+                // Fechar o modal após 3 segundos
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    mensagem.style.display = "none";
+                }, 3000);
+            } else {
+                mensagem.className = "erro";
+                mensagem.textContent = data.message || "Erro ao enviar email de recuperação.";
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            mensagem.style.display = "block";
+            mensagem.className = "erro";
+            mensagem.textContent = "Erro de conexão. Tente novamente mais tarde.";
+        }
+    }
 });

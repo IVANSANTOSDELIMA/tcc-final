@@ -22,7 +22,7 @@
                 <label for="email" id="titleLoginEmail">Email</label>
                 <input type="password" class="inputbutton1" id="senha" required>
                 <label for="senha" id="titleLoginSenha">Senha</label>
-                <a href="">Recuperar a senha</a>
+                <a href="" id="recuperarSenha">Recuperar a senha</a>
                 <input type="submit" name="acao_login" value="Entrar" id="confirmar">
                 </form>
             </div>
@@ -33,5 +33,20 @@
     <footer>
         
     </footer>
+
+    <!-- Adicione este HTML ao final do body, antes do fechamento da tag </body> -->
+<div id="recuperarSenhaModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Recuperar Senha</h2>
+        <p>Informe seu email para receber instruções de recuperação de senha.</p>
+        <form id="recuperarSenhaForm">
+            <input type="email" id="emailRecuperacao" placeholder="Seu email" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="mensagemRecuperacao" style="display: none;"></div>
+    </div>
+</div>
+
 </body>
 </html>

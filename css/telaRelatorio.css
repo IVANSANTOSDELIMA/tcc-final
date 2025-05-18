@@ -197,3 +197,40 @@ h2 {
     overflow: hidden;
   }
 }
+
+
+/* --------------------------------------------------------- */
+/* Adicione ao seu arquivo CSS */
+.tabela-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.tabela-movimentacoes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-movimentacoes th, 
+.tabela-movimentacoes td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabela-movimentacoes th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+}
+
+.tabela-movimentacoes tr:hover {
+    background-color: #f5f5f5;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
