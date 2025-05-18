@@ -163,7 +163,7 @@ button {
   width: 70px;
   height: 24px;
   border-radius: 15px;
-  font-size: 15px;
+  font-size: 18px;
   color: white;
   display: flex;
   justify-content: center;
@@ -304,8 +304,8 @@ button {
   position: relative;
   border: 0;
   padding: 30px;
-  width: 900px;
-  height: 560px;
+  width: 1000px;
+  height: 600px;
   background-color: rgb(186, 187, 187);
   border-radius: 1em;
 }
@@ -362,6 +362,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;
 }
 
 #codigo-produto,
@@ -371,6 +372,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;
 }
 
 #categoria-produto,
@@ -378,8 +380,10 @@ label {
 #editar-categoria-produto {
   width: 125px;
   padding: 8px;
+  height: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;
 }
 
 #quantidadeProduto,
@@ -389,6 +393,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;
 }
 
 #dataEntrada,
@@ -398,6 +403,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;
 }
 
 #preco-produto,
@@ -407,6 +413,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;
 }
 
 #codigo-participante-produto,
@@ -414,18 +421,21 @@ label {
 #editar-participante-produto {
   width: 171%;
   padding: 8px;
+  height: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;
 }
 
 #complemento-produto,
 #visualizar-complemento-produto,
 #editar-complemento-produto {
-  width: 280%;
+  width: 270%;
   height: 200px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+    font-size: 18px;  
 }
 
 .input-with-button {
@@ -809,7 +819,7 @@ button#adicionar {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 18px;
   margin: 5px 0 25px;
 }
 
