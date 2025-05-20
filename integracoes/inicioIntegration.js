@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       labels: Object.keys(produtosPorCategoria),
       responsive: [
         {
-          breakpoint: 480,
+          breakpoint: 1480,
           options: {
             chart: {
-              width: 200,
+              width: 500,
             },
             legend: {
               position: "bottom",

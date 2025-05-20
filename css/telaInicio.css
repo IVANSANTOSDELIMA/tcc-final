@@ -114,6 +114,7 @@ button {
   min-width: 400px;
   max-width: 100%;
   background-color: rgb(246, 246, 246);
+  overflow: hidden;
 }
 
 /* ======== BOTÕES DE NAVEGAÇÃO ======== */
