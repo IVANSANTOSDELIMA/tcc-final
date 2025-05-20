@@ -1,36 +1,80 @@
+/* ======== CONFIGURAÇÕES GERAIS ======== */
 :root {
+  /* Configurações de fonte principal */
   font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  font-feature-settings: "liga" 1, "calt" 1;
+  /* Correção para o Chrome */
+
+  /* Definição do esquema de cores */
+  --primary-color: #4f7942;
+  --secondary-color: #8da47e;
+  --accent-color: #f5c13d;
+  --light-color: #f9f6f0;
+  --dark-color: #333;
+  --error-color: #d9534f;
+  --success-color: #5cb85c;
 }
+
+/* Suporte para fontes variáveis */
 @supports (font-variation-settings: normal) {
   :root {
     font-family: InterVariable, sans-serif;
   }
 }
+
+/* Reset de estilos para todos os elementos */
 * {
   border: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Estilo do corpo da página */
 body {
   display: contents;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ======== HEADER E NAVEGAÇÃO ======== */
+/* Cabeçalho superior fixo */
 #headersuperior {
   position: fixed;
   background-color: #ffffff;
   height: 6vh;
-  left: 300px; /* Alinhado com o menu lateral */
-  width: calc(100% - 300px); /* Largura total menos o menu lateral */
+  left: 300px;
+  /* Alinhado com o menu lateral */
+  width: calc(100% - 300px);
+  /* Largura total menos o menu lateral */
   /* border: solid 2px #818181; */
   z-index: 1000;
+  /* Garante que fique sobre outros elementos */
 }
+
+/* Estilo de cabeçalho geral */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Título dentro do cabeçalho */
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ======== ESTRUTURA DE LAYOUT ======== */
+/* Container principal que envolve toda a página */
 .containerTotal {
   display: flex;
   min-height: 100vh;
   width: 100%;
   background-color: #e4e4e4;
 }
+
+/* Container de conteúdo principal */
 .container {
   display: flex;
   flex-direction: column;
@@ -39,12 +83,15 @@ body {
   width: calc(100% - 300px);
   background-color: #e4e4e4;
   margin-left: 300px;
+  /* Espaço para o menu lateral */
   padding: 60px 20px 20px 20px;
   overflow-x: hidden;
   overflow-y: auto;
   min-height: 100vh;
   max-height: 150vh;
 }
+
+/* Container para os botões do menu lateral */
 .containerButtons {
   font-family: inter;
   font-size: 25px;
@@ -55,8 +102,20 @@ body {
   background-color: #ffffff;
   flex-direction: column;
   gap: 20px;
-  z-index: 1001; /* Ensure it stays above other content */
+  z-index: 1001;
+  /* Garante que fique acima de outros conteúdos */
 }
+
+/* Container para formulários */
+.form-container {
+  background-color: rgb(214, 214, 214);
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* ======== ELEMENTOS DE INTERFACE ======== */
+/* Estilo geral para botões */
 button {
   display: flex;
   align-items: center;
@@ -67,12 +126,16 @@ button {
   padding: 10px;
   background-color: transparent;
 }
+
+/* Logotipo */
 #logo {
   position: relative;
   top: 1%;
   left: 7%;
   width: 14vh;
 }
+
+/* Linha para botões agrupados */
 .rowbutton {
   display: flex;
   flex-direction: row;
@@ -82,10 +145,14 @@ button {
   left: 5%;
   top: 5%;
 }
+
+/* Container para configurações */
 .config {
   display: flex;
   flex-direction: column;
 }
+
+/* Título da página inicial */
 #txtinicio {
   color: #0f6c08;
   font-size: 37px;
@@ -95,6 +162,7 @@ button {
   margin-left: 20px;
 }
 
+/* Imagem do usuário no cabeçalho */
 #imageUser {
   position: absolute;
   top: 50%;
@@ -107,6 +175,15 @@ button {
   background-color: #0f6c08;
   transform: translateY(-50%);
 }
+
+/* Formatação da imagem dentro do container de usuário */
+#imageUser img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ícone de configurações */
 .fi-tc-settings {
   position: absolute;
   top: 58%;
@@ -114,11 +191,9 @@ button {
   font-size: 30px;
   transform: translateY(-50%);
 }
-#imageUser img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
+/* ======== MODAL LOGIN ======== */
+/* Container do modal de login */
 #modalLogin {
   width: 100px;
   height: 60px;
@@ -131,6 +206,13 @@ button {
   transition: 1ms;
   justify-content: center;
 }
+
+/* Estilo do backdrop do modal */
+#modalLogin::backdrop {
+  background-color: transparent;
+}
+
+/* Botão de sair no modal de login */
 #sairLogin {
   width: 100px;
   height: 40px;
@@ -141,76 +223,56 @@ button {
   justify-content: center;
 }
 
-#modalLogin::backdrop {
-  background-color: transparent;
-}
-
+/* Efeito hover para o botão de sair */
 #sairLogin:hover {
   background-color: #353434;
-}
-
-/* --------------------------------------------------------- */
-:root {
-  --primary-color: #4f7942;
-  --secondary-color: #8da47e;
-  --accent-color: #f5c13d;
-  --light-color: #f9f6f0;
-  --dark-color: #333;
-  --error-color: #d9534f;
-  --success-color: #5cb85c;
-}
-
-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.form-container {
-  background-color: rgb(214, 214, 214);
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
   padding: 25px;
   max-height: calc(140vh - 120px);
+  /* Altura máxima com scroll após 140% da altura da viewport menos 120px */
   overflow-y: auto;
+  /* Adiciona barra de rolagem vertical quando o conteúdo excede a altura máxima */
 }
 
+/* Estilos para seções do formulário */
 .form-section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
+  /* Linha separadora entre seções */
 }
 
+/* Remove a borda inferior da última seção */
 .form-section:last-child {
   border-bottom: none;
 }
 
+/* Estilo dos títulos de seção */
 .form-section h2 {
   color: var(--primary-color);
+  /* Usa a cor primária definida em variáveis CSS */
   margin-bottom: 15px;
   font-size: 1.7rem;
 }
 
+/* Linha de campos do formulário com flexbox */
 .form-row {
   display: flex;
   flex-wrap: wrap;
+  /* Permite que os campos quebrem para a próxima linha em telas menores */
   margin-bottom: 15px;
   gap: 15px;
+  /* Espaçamento uniforme entre os elementos */
 }
 
+/* Grupo de formulário individual */
 .form-group {
   flex: 1;
+  /* Distribui o espaço igualmente entre os grupos */
   min-width: 200px;
+  /* Garante uma largura mínima para melhor visualização */
 }
 
+/* Estilo para todos os labels */
 label {
   display: block;
   margin-bottom: 5px;
@@ -219,6 +281,7 @@ label {
   color: var(--dark-color);
 }
 
+/* Estilo comum para elementos de entrada */
 input,
 select,
 textarea {
@@ -229,29 +292,36 @@ textarea {
   font-size: 20px;
 }
 
+/* Estilo de foco para elementos de entrada */
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 5px rgba(79, 121, 66, 0.5);
+  /* Sombra sutil ao focar */
 }
 
+/* Estilo para grupos de botões de rádio */
 .radio-group {
   display: flex;
   gap: 15px;
 }
 
+/* Estilo para opções de rádio individuais */
 .radio-option {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
+/* Ajuste específico para inputs de rádio */
 .radio-option input[type="radio"] {
   width: auto;
+  /* Sobrescreve a largura 100% definida anteriormente */
 }
 
+/* Estilo comum para botões principais */
 #button-salvar,
 #limparBtn,
 #addItemBtn {
@@ -264,34 +334,43 @@ textarea:focus {
   font-size: 18px;
   font-weight: 600;
   transition: background-color 0.2s;
+  /* Transição suave para hover */
   margin-right: 10px;
 }
 
+/* Efeito hover para botão salvar */
 #button-salvar:hover {
   background-color: var(--secondary-color);
 }
 
+/* Estilo para botão secundário */
 #limparBtn.secondary {
   background-color: #f0f0f0;
   color: var(--dark-color);
 }
 
+/* Efeito hover para botão secundário */
 #limparBtn.secondary:hover {
   background-color: #e0e0e0;
 }
 
+/* Container para grupo de botões */
 .btn-group {
   display: flex;
   justify-content: flex-end;
+  /* Alinha botões à direita */
   margin-top: 20px;
 }
 
+/* Estilos para tabelas */
 table {
   width: 100%;
   border-collapse: collapse;
+  /* Remove espaço entre células */
   margin-bottom: 15px;
 }
 
+/* Estilo para cabeçalhos de tabela */
 table th {
   background-color: var(--secondary-color);
   color: white;
@@ -299,11 +378,13 @@ table th {
   text-align: left;
 }
 
+/* Estilo para células de tabela */
 table td {
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
 
+/* Estilo para botão de adicionar item */
 .add-item-btn {
   background-color: var(--accent-color);
   color: var(--dark-color);
@@ -316,21 +397,29 @@ table td {
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  /* Espaço entre texto e ícone (se houver) */
 }
 
+/* Efeito hover para botão de adicionar item */
 .add-item-btn:hover {
   background-color: #e5b535;
+  /* Tom mais escuro do que a cor de acento */
 }
 
+/* Estilo para linhas da tabela */
 .item-row td {
   vertical-align: middle;
+  /* Alinha o conteúdo verticalmente no centro da célula */
 }
 
+/* Container para botões de ação na tabela */
 .action-cell {
   display: flex;
   gap: 5px;
+  /* Espaçamento entre botões de ação */
 }
 
+/* Estilo base para botões de ação */
 .action-btn {
   background-color: transparent;
   border: none;
@@ -338,68 +427,87 @@ table td {
   padding: 5px;
   font-size: 16px;
   transition: color 0.2s;
+  /* Transição suave para mudança de cor */
 }
 
+/* Botão de edição com cor primária */
 .edit-btn {
   color: var(--primary-color);
 }
 
+/* Botão de exclusão com cor de erro */
 .delete-btn {
   color: var(--error-color);
 }
 
+/* Estilo para linha de total na tabela */
 .total-row {
   font-weight: bold;
   background-color: #f9f9f9;
+  /* Fundo cinza claro para destacar */
 }
 
+/* Estilo para o rodapé da página */
 footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
   color: #777;
+  /* Cinza para texto menos importante */
   font-size: 14px;
 }
 
+/* Container para campo de autocompletar */
 .autocomplete {
   position: relative;
+  /* Necessário para posicionamento absoluto dos itens */
 }
 
+/* Lista de sugestões do autocompletar */
 .autocomplete-items {
   position: absolute;
   border: 1px solid #ddd;
   border-top: none;
   z-index: 99;
+  /* Garante que fique acima de outros elementos */
   top: 100%;
+  /* Posiciona logo abaixo do campo */
   left: 0;
   right: 0;
   border-radius: 0 0 4px 4px;
   max-height: 150px;
   overflow-y: auto;
+  /* Adiciona scroll se houver muitos itens */
   background-color: white;
 }
 
+/* Itens individuais da lista de autocompletar */
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
 }
 
+/* Efeito hover nos itens de autocompletar */
 .autocomplete-items div:hover {
   background-color: #f1f1f1;
 }
 
+/* Estilo para células de ação de itens */
 .item-action {
   width: 30px;
   text-align: center;
   cursor: pointer;
 }
 
+/* Indicador visual para campos obrigatórios */
 .required::after {
   content: "*";
+  /* Adiciona asterisco após o label */
   color: var(--error-color);
   margin-left: 3px;
 }
 
+/* Informações adicionais do formulário */
 .form-info {
   background-color: #f8f9fa;
   padding: 10px;
@@ -409,24 +517,30 @@ footer {
   color: #666;
 }
 
+/* Ênfase em partes do texto informativo */
 .form-info span {
   font-weight: bold;
 }
 
+/* Media queries para responsividade */
 @media (max-width: 768px) {
+  /* Ajusta layout de linhas para dispositivos móveis */
   .form-row {
     flex-direction: column;
     gap: 10px;
   }
 
+  /* Expande grupos de formulário para largura total */
   .form-group {
     width: 100%;
   }
 
+  /* Oculta cabeçalhos de tabela em telas pequenas */
   table thead {
     display: none;
   }
 
+  /* Transforma tabela para layout vertical em dispositivos móveis */
   table,
   table tbody,
   table tr,
@@ -435,6 +549,7 @@ footer {
     width: 100%;
   }
 
+  /* Estiliza linhas como cards individuais */
   table tr {
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -442,6 +557,7 @@ footer {
     padding: 10px;
   }
 
+  /* Reorganiza células para exibir rótulo e valor em formato vertical */
   table td {
     text-align: right;
     padding-left: 50%;
@@ -449,6 +565,7 @@ footer {
     border-bottom: 1px solid #eee;
   }
 
+  /* Adiciona rótulos para cada célula usando atributos data-* */
   table td:before {
     content: attr(data-label);
     position: absolute;
@@ -460,6 +577,7 @@ footer {
     font-weight: bold;
   }
 
+  /* Remove a borda da última célula em cada linha */
   table td:last-child {
     border-bottom: none;
   }

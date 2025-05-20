@@ -1,49 +1,69 @@
+/* ======== FONTES BASE ======== */
 :root {
   font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  font-feature-settings: "liga" 1, "calt" 1;
+  /* Correção para Chrome */
 }
+
+/* Suporte a variações de fonte InterVariable */
 @supports (font-variation-settings: normal) {
   :root {
     font-family: InterVariable, sans-serif;
   }
 }
+
+/* ======== RESET GLOBAL ======== */
 * {
   border: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* O <body> está como 'display: contents' para não interferir no layout */
 body {
   display: contents;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ======== HEADER FIXO NO TOPO ======== */
 #headersuperior {
   position: fixed;
   background-color: #ffffff;
   height: 6vh;
-  left: 300px; /* Alinhado com o menu lateral */
-  width: calc(100% - 300px); /* Largura total menos o menu lateral */
-  /* border: solid 2px #818181; */
+  left: 300px;
+  /* Alinha com o menu lateral */
+  width: calc(100% - 300px);
+  /* Calcula largura total - menu lateral */
   z-index: 1000;
+  /* Fica acima do restante */
 }
+
+/* ======== CONTAINERS GERAIS ======== */
 .containerTotal {
   display: flex;
   min-height: 100vh;
   width: 100%;
   background-color: #e4e4e4;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: calc(100% - 300px); /* Considerando o espaço do menu lateral */
+  width: calc(100% - 300px);
+  /* Considera o menu lateral */
   background-color: #e4e4e4;
-  margin-left: 300px; /* Space for sidebar */
-  padding: 6vh 20px 20px 20px; /* Top, right, bottom, left padding */
+  margin-left: 300px;
+  /* Espaço do menu lateral */
+  padding: 6vh 20px 20px 20px;
+  /* Padding top já considera header */
   overflow-x: hidden;
 }
+
+/* ======== MENU LATERAL ======== */
 .containerButtons {
-  font-family: inter;
+  font-family: Inter;
   font-size: 25px;
   position: fixed;
   display: flex;
@@ -52,73 +72,51 @@ body {
   background-color: #ffffff;
   flex-direction: column;
   gap: 20px;
-  z-index: 1001; /* Ensure it stays above other content */
+  z-index: 1001;
+  /* Acima do header */
 }
+
 button {
   display: flex;
   align-items: center;
   position: relative;
   top: 10%;
-  font-family: inter;
+  font-family: Inter;
   font-size: 25px;
   padding: 10px;
   background-color: transparent;
 }
-/* .buttonLink{
-    display: flex;
-    justify-content:baseline;
-    font-weight: bold;
-    width: 100%;
-    font-size:medium;
-    color: rgb(255, 255, 255);
-    background-color: #ffffff;
-    padding: 2em;
-    outline: none;
-} */
+
+/* Logo no menu lateral */
 #logo {
   position: relative;
   top: 1%;
   left: 7%;
   width: 14vh;
 }
-.craficosLinha {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-  margin-top: 20px;
-}
+
+/* ======== LAYOUT DE GRÁFICOS ======== */
+.craficosLinha,
 .segundaLinha {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 20px;
   width: 100%;
   margin-top: 20px;
-  gap: 20px;
 }
+
+/* ======== CARDS DE GRÁFICO ======== */
 #chart1,
+#chart2,
 #chart3 {
   width: calc(50% - 10px);
   min-width: 400px;
   max-width: 100%;
   background-color: rgb(246, 246, 246);
 }
-#chart2 {
-  width: calc(50% - 10px);
-  min-width: 400px;
-  max-width: 100%;
-  background-color: rgb(246, 246, 246);
-  /* margin-top: 20px; */
-}
-/* #textos{
-    display: flex;
-    flex-direction:row;
-    gap: 85vh;
-    position: relative;
-    left: 15%;
-} */
 
+/* ======== BOTÕES DE NAVEGAÇÃO ======== */
 .rowbutton {
   display: flex;
   flex-direction: row;
@@ -128,28 +126,37 @@ button {
   left: 5%;
   top: 5%;
 }
+
 .config {
   display: flex;
   flex-direction: column;
 }
 
+/* ======== CARDS DE ESTATÍSTICA ======== */
 #dadosEstoque {
   width: 350px;
   height: 130px;
   margin-bottom: 10px;
 }
+
+/* Cores dos cards */
 .totalgreen {
   background: linear-gradient(270deg, #6ad871, #5bb961, #38723c);
 }
+
 .baixoEstoqueRed {
   background: linear-gradient(270deg, #e96569, #83393b);
 }
+
 .EntradasEstoqueBlue {
   background: linear-gradient(270deg, #4aa0fe, #2c6098);
 }
+
 .saidaEstoquebluemarine {
   background: linear-gradient(270deg, #44c4c1, #215e5d);
 }
+
+/* Container horizontal para cards */
 .containertrafic {
   display: flex;
   flex-direction: row;
@@ -158,45 +165,49 @@ button {
   z-index: 1;
   width: 100%;
   overflow-x: auto;
-  padding-bottom: 10px; /* Espaço para a barra de rolagem */
+  padding-bottom: 10px;
 }
 
+/* Card de ajuda */
 .ajudasblue {
   width: calc(50% - 10px);
   background-color: #152551;
   min-width: 400px;
   max-width: 100%;
-  /* max-width: 800px;
-    height: 350px; */
-  margin-top: 0;
 }
 
+/* ======== TEXTOS E VALORES ======== */
 #txtinicio {
   color: #0f6c08;
   font-size: 37px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 20px 0 20px 20px;
   align-self: flex-start;
-  margin-left: 20px;
 }
 
+.valoresEstoque {
+  padding-left: 20px;
+  font-size: xx-large;
+  color: white;
+}
+
+#txtEstoque {
+  position: relative;
+  color: white;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======== FOTO DO USUÁRIO E ÍCONE DE CONFIG ======== */
 #imageUser {
   position: absolute;
   top: 50%;
   right: 2%;
-  /* left: 85%; */
   width: 35px;
   height: 35px;
   border-radius: 100%;
   overflow: hidden;
   background-color: #0f6c08;
-  transform: translateY(-50%);
-}
-.fi-tc-settings {
-  position: absolute;
-  top: 58%;
-  right: 5.5%;
-  font-size: 30px;
   transform: translateY(-50%);
 }
 
@@ -206,18 +217,47 @@ button {
   object-fit: cover;
 }
 
-#txtEstoque {
-  position: relative;
-  color: white;
-  padding: 0px 0px 0px 20px;
+.fi-tc-settings {
+  position: absolute;
+  top: 58%;
+  right: 5.5%;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+/* ======== MODAL DE LOGIN ======== */
+#modalLogin {
+  width: 100px;
+  height: 60px;
+  top: -81.3%;
+  left: 93%;
+  z-index: 1000;
+  position: absolute;
   display: flex;
-  flex-direction: column;
+  background-color: #e4e4e4;
+  transition: 1ms;
+  justify-content: center;
 }
-.valoresEstoque {
-  padding: 0px 0px 0px 20px;
-  font-size: xx-large;
+
+#sairLogin {
+  width: 100px;
+  height: 40px;
+  background-color: #858585;
   color: white;
+  outline: none;
+  font-size: 18px;
+  justify-content: center;
 }
+
+#modalLogin::backdrop {
+  background-color: transparent;
+}
+
+#sairLogin:hover {
+  background-color: #353434;
+}
+
+/* ======== MEDIA QUERY PARA TELAS GRANDES ======== */
 @media screen and (min-width: 1930px) {
   #dadosEstoque {
     width: 500px;
@@ -275,33 +315,4 @@ button {
     min-width: 700px;
     width: 45%;
   }
-}
-#modalLogin {
-  width: 100px;
-  height: 60px;
-  top: -81.3%;
-  left: 93%;
-  z-index: 1000;
-  position: absolute;
-  display: flex;
-  background-color: #e4e4e4;
-  transition: 1ms;
-  justify-content: center;
-}
-#sairLogin {
-  width: 100px;
-  height: 40px;
-  background-color: #858585;
-  color: white;
-  outline: none;
-  font-size: 18px;
-  justify-content: center;
-}
-
-#modalLogin::backdrop {
-  background-color: transparent;
-}
-
-#sairLogin:hover {
-  background-color: #353434;
 }

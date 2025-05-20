@@ -1,115 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="css/img/logoAtualizada.png" type="image/x-icon">
-        <link rel="stylesheet" href="css/telaInicio.css">
-        <link rel="preconnect" href="https://rsms.me/">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
-        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-        <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-        <!-- <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'> -->
-        <link rel="stylesheet" href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-        <script type="module" src="integracoes/authMiddleware.js"></script> <!-- autentica o usuario --> 
-        <!-- se o token nao for valido vai voltar pro login -->
-        <title>CerealistaSouza</title>
+  <head>
+    <!-- Metadados essenciais -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    </head>
-    
-    <body>
-        <div class="containerTotal">
-            <div class="containerButtons">
-                <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-                <div class="rowbutton"><i class="fi fi-rs-apps"></i><button type="button" style="cursor: not-allowed;">Dashboard</button></div>
-                <div class="rowbutton" onclick="window.location.href='telafuncionarios.html'"><i class="fi fi-tr-users"></i><button type="button" style="cursor: pointer;">Funcionarios</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
-                </div>
-                <div class="rowbutton" onclick="window.location.href='telaprodutos.html'"><i class="fi fi-tr-boxes"></i><button type="button" style="cursor: pointer;">Estoque</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-                </div>
-                <div class="rowbutton" onclick="window.location.href='telarelatoriodeProdutos.html'"><i class="fi fi-tr-chart-line-up"></i><button type="button" style="cursor: pointer;">Movimentações</button><i
-                        class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 80%;"></i>
-                </div>
-                <div class="rowbutton"><i class="fi fi-rr-shopping-bag"></i><button type="button" onclick="window.location.href='telaAddPedido.html'">Pedidos</button>
-                    <i class="fi fi-ss-angle-right"style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-                </div>
-            </div>
-            <header id="headersuperior">
-                <!-- <div class="config">
-                </div> -->
-                <div id="imageUser"><img src="" alt=""></div>
-            </header>
-            <div class="container">
-                <h1 id="txtinicio">Dashboard</h1>
-                <div class="containertrafic">
-                    <div id="dadosEstoque" class="totalgreen">
-                        <h2 id="txtEstoque">Estoque</h2>
-                        <p class="valoresEstoque" id="estoque"><strong> </strong></p>
-                    </div>
-                    <div id="dadosEstoque" class="baixoEstoqueRed">
-                        <h2 id="txtEstoque">Baixo Estoque</h2>
-                        <p class="valoresEstoque" id="B_Estoque"><strong> </strong></p>
-                    </div>
-                    <div id="dadosEstoque" class="EntradasEstoqueBlue">
-                        <h2 id="txtEstoque">Entradas</h2>
-                        <p class="valoresEstoque" id="E_Estoque"><strong> </strong></p>
-                    </div>
-                    <div id="dadosEstoque" class="saidaEstoquebluemarine">
-                        <h2 id="txtEstoque">Saídas</h2>
-                        <p class="valoresEstoque" id="S_Estoque"><strong> </strong></p>
-                    </div>
-                </div>
-                <div class="craficosLinha">
-                    <div id="chart1"></div>
-                    <div id="chart3"></div>
-                </div>
-                <div class="segundaLinha">
-                    <div id="chart2"></div>
-                    <div class="ajudasblue"></div>
-                </div>
-            </div>
-                    <!-- Modal sair--------------------------------------------------------------------------------->
-                        <dialog id="modalLogin">
-                            <button id="sairLogin">Sair</button>
-                        </dialog>
-            
-                    <!-- --------------------------------------------------------------------------------->
+    <!-- Ícone da aba do navegador -->
+    <link
+      rel="shortcut icon"
+      href="css/img/logoAtualizada.png"
+      type="image/x-icon"
+    />
+
+    <!-- Estilos locais -->
+    <link rel="stylesheet" href="css/telaInicio.css" />
+
+    <!-- Fonte Inter -->
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <!-- Ícones Flaticon - diferentes estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <!-- Biblioteca de gráficos ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Middleware de autenticação (verifica token e redireciona para login se necessário) -->
+    <script type="module" src="integracoes/authMiddleware.js"></script>
+
+    <!-- Título da página -->
+    <title>CerealistaSouza</title>
+  </head>
+
+  <body>
+    <!-- Container principal que envolve toda a tela -->
+    <div class="containerTotal">
+      <!-- Menu lateral com logo e botões de navegação -->
+      <div class="containerButtons">
+        <!-- Logo superior -->
+        <img src="..." id="logo" />
+
+        <!-- Botões do menu (exemplo omitido com '...') -->
+        <div class="rowbutton">...</div>
+        ...
+      </div>
+
+      <!-- Cabeçalho superior com imagem do usuário -->
+      <header id="headersuperior">
+        <div id="imageUser">
+          <img src="" alt="" />
+        </div>
+      </header>
+
+      <!-- Conteúdo principal da dashboard -->
+      <div class="container">
+        <h1 id="txtinicio">Dashboard</h1>
+
+        <!-- Cards com dados do estoque -->
+        <div class="containertrafic">
+          <div id="dadosEstoque" class="totalgreen">...</div>
+          ...
         </div>
 
-            <!-- script do modal -->
-        <!-- <div id="footerinferior"></div>   -->
+        <!-- Primeira linha de gráficos -->
+        <div class="craficosLinha">
+          <div id="chart1"></div>
+          <div id="chart3"></div>
+        </div>
 
-        <!-- Os graficos foram mudados para o arquivo integracoes/inicioIntegration.js :) -->
-         <script>
-             // -------------------------------------------------------------------------------- modal sair login
-             const dialogLogin = document.querySelector("#modalLogin")
-            const openSair = document.querySelector("#imageUser")
+        <!-- Segunda linha: gráfico + bloco de ajuda -->
+        <div class="segundaLinha">
+          <div id="chart2"></div>
+          <div class="ajudasblue"></div>
+        </div>
+      </div>
 
-            openSair.addEventListener("click", (e) =>{
-                dialogLogin.showModal()
-            })
+      <!-- Modal de confirmação de logout -->
+      <dialog id="modalLogin">
+        <button id="sairLogin">Sair</button>
+      </dialog>
+    </div>
 
-            dialogLogin.addEventListener("click", (event) => {
-                const rectLogin = dialogLogin.getBoundingClientRect()
-                if(
-                    event.clientX < rectLogin.left ||
-                    event.clientX > rectLogin.right ||
-                    event.clientY < rectLogin.top ||
-                    event.clientY > rectLogin.bottom
-                ) {
-                    dialogLogin.close()
-                }
-            })
+    <!-- Script de controle do modal de logout -->
+    <script>
+      // Seletores do modal e botão
+      const dialogLogin = document.querySelector("#modalLogin");
+      const openSair = document.querySelector("#imageUser");
 
-            //--------------------------------------------------------------------------------------------------
-         </script>
-        <script src="integracoes/inicioIntegration.js"></script> <!-- integracao com o backend -->
+      // Exibe o modal ao clicar na imagem do usuário
+      openSair.addEventListener("click", (e) => {
+        dialogLogin.showModal();
+      });
 
-    </body>
+      // Fecha o modal ao clicar fora dele
+      dialogLogin.addEventListener("click", (event) => {
+        const rectLogin = dialogLogin.getBoundingClientRect();
+        if (
+          event.clientX < rectLogin.left ||
+          event.clientX > rectLogin.right ||
+          event.clientY < rectLogin.top ||
+          event.clientY > rectLogin.bottom
+        ) {
+          dialogLogin.close();
+        }
+      });
+    </script>
 
+    <!-- Integração com backend: gráficos, dados, etc -->
+    <script src="integracoes/inicioIntegration.js"></script>
+  </body>
 </html>

@@ -1,52 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="css/img/logoAtualizada.png" type="image/x-icon">
-    <title>CerealistaSouza</title>
-    <link rel="stylesheet" href="css/telaLogin.css">
-</head>
-<body>
-    <header>
-        
-    </header>
-        <div id="headersuperior"></div> 
-        <div id="headerinferior"></div>
-        <div class="container">
-            
-            <div class="login">
-                <div><img src="css/img/logoAtualizada.png" alt="fotologo"  id="foto"></div>
-                <form class="bottons" id="loginForm">
-                <input type="email" class="inputbutton2" id="email" required>
-                <label for="email" id="titleLoginEmail">Email</label>
-                <input type="password" class="inputbutton1" id="senha" required>
-                <label for="senha" id="titleLoginSenha">Senha</label>
-                <a href="" id="recuperarSenha">Recuperar a senha</a>
-                <input type="submit" name="acao_login" value="Entrar" id="confirmar">
-                </form>
-            </div>
-        </div>
-        <div id="footersuperior"></div>
-        <!-- <div id="footerinferior"></div>   -->
-        <script src="integracoes/loginIntegration.js"></script> <!-- integracao com o backend -->
-    <footer>
-        
-    </footer>
+  <head>
+    <!-- Metadados essenciais -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Adicione este HTML ao final do body, antes do fechamento da tag </body> -->
-<div id="recuperarSenhaModal" class="modal">
-    <div class="modal-content">
+    <!-- Título da página -->
+    <title>CerealistaSouza</title>
+
+    <!-- Ícone que aparece na aba do navegador (favicon) -->
+    <link
+      rel="shortcut icon"
+      href="css/img/logoAtualizada.png"
+      type="image/x-icon"
+    />
+
+    <!-- Importa o arquivo CSS com o estilo da tela de login -->
+    <link rel="stylesheet" href="css/telaLogin.css" />
+  </head>
+
+  <body>
+    <!-- Cabeçalhos superiores -->
+    <header></header>
+    <div id="headersuperior"></div>
+    <div id="headerinferior"></div>
+
+    <!-- Container da tela de login -->
+    <div class="container">
+      <div class="login">
+        <!-- Logo -->
+        <div>
+          <img src="css/img/logoAtualizada.png" alt="fotologo" id="foto" />
+        </div>
+
+        <!-- Formulário de login -->
+        <form class="bottons" id="loginForm">
+          <input type="email" class="inputbutton2" id="email" required />
+          <label for="email" id="titleLoginEmail">Email</label>
+
+          <input type="password" class="inputbutton1" id="senha" required />
+          <label for="senha" id="titleLoginSenha">Senha</label>
+
+          <a href="#" id="recuperarSenha">Recuperar a senha</a>
+
+          <input
+            type="submit"
+            name="acao_login"
+            value="Entrar"
+            id="confirmar"
+          />
+        </form>
+      </div>
+    </div>
+
+    <!-- Rodapés -->
+    <div id="footersuperior"></div>
+    <!-- <div id="footerinferior"></div> -->
+
+    <!-- Modal de recuperação de senha -->
+    <div id="recuperarSenhaModal" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Recuperar Senha</h2>
-        <p>Informe seu email para receber instruções de recuperação de senha.</p>
+        <p>
+          Informe seu email para receber instruções de recuperação de senha.
+        </p>
         <form id="recuperarSenhaForm">
-            <input type="email" id="emailRecuperacao" placeholder="Seu email" required>
-            <button type="submit">Enviar</button>
+          <input
+            type="email"
+            id="emailRecuperacao"
+            placeholder="Seu email"
+            required
+          />
+          <button type="submit">Enviar</button>
         </form>
-        <div id="mensagemRecuperacao" style="display: none;"></div>
+        <div id="mensagemRecuperacao" style="display: none"></div>
+      </div>
     </div>
-</div>
 
-</body>
+    <!-- Script de integração com backend -->
+    <script src="integracoes/loginIntegration.js"></script>
+
+    <!-- Tag footer, reservada para rodapé futuro -->
+    <footer></footer>
+  </body>
 </html>

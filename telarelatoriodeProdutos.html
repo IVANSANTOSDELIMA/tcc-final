@@ -1,137 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <!-- Configurações básicas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="css/img/logoAtualizada.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/telaRelatorio.css">
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet"
-        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css">
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
-    <link rel="stylesheet"
-        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="css/img/logoAtualizada.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Estilos CSS locais -->
+    <link rel="stylesheet" href="css/telaRelatorio.css" />
+
+    <!-- Fonte Inter do Google Fonts (via preconnect para otimizar) -->
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <!-- Ícones UIcons - vários estilos -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <!-- Repetido? -->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <!-- Biblioteca ApexCharts para gráficos -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
     <title>Cerealista Souza</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
+    <!-- Container principal que engloba toda a página -->
     <div class="containerTotal">
-        <div class="containerButtons">
-            <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo">
-            <div class="rowbutton" onclick="window.location.href='telaInicio.html'"><i class="fi fi-rs-apps"></i><button
-                    type="button" style="cursor: pointer;">Dashboard</button>
-                <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 60%;"></i>
-            </div>
-            <div class="rowbutton" onclick="window.location.href='telafuncionarios.html'"><i
-                    class="fi fi-tr-users"></i><button type="button" style="cursor: pointer;">Funcionarios</button><i
-                    class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
-            </div>
-            <div class="rowbutton" onclick="window.location.href='telaprodutos.html'"><i
-                    class="fi fi-tr-boxes"></i><button type="button" style="cursor: pointer;">Estoque</button><i
-                    class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-            </div>
-            <div class="rowbutton"><i class="fi fi-tr-chart-line-up"></i><button type="button"
-                    style="cursor:not-allowed;">Movimentações</button>
-            </div>
-            <div class="rowbutton" onclick="window.location.href='telaAddPedido.html'"><i
-                    class="fi fi-rr-shopping-bag"></i><button type="button" style="cursor: pointer;">Pedidos</button>
-                <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 50%;"></i>
-            </div>
-        </div>
-        <header id="headersuperior">
-            <div class="config">
-                <div id="imageUser"><img src="" alt=""></div>
-            </div>
-        </header>
-        <div class="container">
-            <h2>Movimentações</h2>
-            <div style="width: 100%;">
-                <button class="acc_total" id="acc-dia"> Dia <i class="fi fi-rr-angle-right "></i></button>
-                <div class="container_acc">
-                    <!-- Linhas das movimentações de hoje serão inseridas aqui -->
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                </div>
-                <button class="acc_total" id="acc-semana">Semana <i class="fi fi-rr-angle-right "></i></button>
-                <div class="container_acc">
-                    <!-- Linhas das movimentações diarias serão inseridas aqui -->
-                    aaaaaaaaaaaaaaaaaaaaaaaaaa
-                </div>
-                <button class="acc_total" id="acc-mes">Mês <i class="fi fi-rr-angle-right "></i></button>
-                <div class="container_acc">
-                    <!-- Linhas das movimentações mensais serão inseridas aqui -->
-                    ddddddddddddddddddddddddddddddddddd
-                </div>
-                <button class="acc_total" id="acc-a">Ano <i class="fi fi-rr-angle-right "></i></button>
-                <div class="container_acc">
-                    <!-- Linhas das movimentações anuais serão inseridas aqui -->
-                    ddddddddddddddddddddddddddddddddddd
-                </div>
-            </div>
-        </div>
-        <!-- Modal sair--------------------------------------------------------------------------------->
-        <dialog id="modalLogin">
-            <button id="sairLogin">Sair</button>
-        </dialog>
+      <!-- Menu lateral com botões -->
+      <div class="containerButtons">
+        <!-- Logo -->
+        <img src="css/img/Logotipo-Cerealista.png" alt="logoLetra" id="logo" />
 
-        <!-- --------------------------------------------------------------------------------->
+        <!-- Botão Dashboard -->
+        <div class="rowbutton" onclick="window.location.href='telaInicio.html'">
+          <i class="fi fi-rs-apps"></i>
+          <button type="button" style="cursor: pointer">Dashboard</button>
+          <i
+            class="fi fi-ss-angle-right"
+            style="font-size: 20px; position: absolute; top: 45%; left: 60%"
+          ></i>
+        </div>
+
+        <!-- Botão Funcionarios -->
+        <div
+          class="rowbutton"
+          onclick="window.location.href='telafuncionarios.html'"
+        >
+          <i class="fi fi-tr-users"></i>
+          <button type="button" style="cursor: pointer">Funcionarios</button>
+          <i
+            class="fi fi-ss-angle-right"
+            style="font-size: 20px; position: absolute; top: 45%; left: 70%"
+          ></i>
+        </div>
+
+        <!-- Botão Estoque -->
+        <div
+          class="rowbutton"
+          onclick="window.location.href='telaprodutos.html'"
+        >
+          <i class="fi fi-tr-boxes"></i>
+          <button type="button" style="cursor: pointer">Estoque</button>
+          <i
+            class="fi fi-ss-angle-right"
+            style="font-size: 20px; position: absolute; top: 45%; left: 50%"
+          ></i>
+        </div>
+
+        <!-- Botão Movimentações (desabilitado) -->
+        <div class="rowbutton">
+          <i class="fi fi-tr-chart-line-up"></i>
+          <button type="button" style="cursor: not-allowed">
+            Movimentações
+          </button>
+        </div>
+
+        <!-- Botão Pedidos -->
+        <div
+          class="rowbutton"
+          onclick="window.location.href='telaAddPedido.html'"
+        >
+          <i class="fi fi-rr-shopping-bag"></i>
+          <button type="button" style="cursor: pointer">Pedidos</button>
+          <i
+            class="fi fi-ss-angle-right"
+            style="font-size: 20px; position: absolute; top: 45%; left: 50%"
+          ></i>
+        </div>
+      </div>
+
+      <!-- Cabeçalho superior -->
+      <header id="headersuperior">
+        <div class="config">
+          <!-- Imagem do usuário, provavelmente carregada via JS -->
+          <div id="imageUser">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Conteúdo principal -->
+      <div class="container">
+        <h2>Movimentações</h2>
+
+        <!-- Área que contém os botões de acordeão e seus conteúdos -->
+        <div style="width: 100%">
+          <!-- Botão para abrir painel do Dia -->
+          <button class="acc_total" id="acc-dia">
+            Dia <i class="fi fi-rr-angle-right"></i>
+          </button>
+          <div class="container_acc">
+            <!-- Linhas das movimentações de hoje serão inseridas aqui -->
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          </div>
+
+          <!-- Botão para abrir painel da Semana -->
+          <button class="acc_total" id="acc-semana">
+            Semana <i class="fi fi-rr-angle-right"></i>
+          </button>
+          <div class="container_acc">
+            <!-- Linhas das movimentações diarias serão inseridas aqui -->
+            aaaaaaaaaaaaaaaaaaaaaaaaaa
+          </div>
+
+          <!-- Botão para abrir painel do Mês -->
+          <button class="acc_total" id="acc-mes">
+            Mês <i class="fi fi-rr-angle-right"></i>
+          </button>
+          <div class="container_acc">
+            <!-- Linhas das movimentações mensais serão inseridas aqui -->
+            ddddddddddddddddddddddddddddddddddd
+          </div>
+
+          <!-- Botão para abrir painel do Ano -->
+          <button class="acc_total" id="acc-a">
+            Ano <i class="fi fi-rr-angle-right"></i>
+          </button>
+          <div class="container_acc">
+            <!-- Linhas das movimentações anuais serão inseridas aqui -->
+            ddddddddddddddddddddddddddddddddddd
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para confirmação de saída (logout) -->
+      <dialog id="modalLogin">
+        <button id="sairLogin">Sair</button>
+      </dialog>
     </div>
+    <!-- fim containerTotal -->
+
+    <!-- Scripts JavaScript -->
+
     <script>
-        // -------------------------------------------------------------------------------- modal sair login
-        const dialogLogin = document.querySelector("#modalLogin")
-        const openSair = document.querySelector("#imageUser")
+      // --------------------------------------------------------------------------------
+      // Modal para sair/login
 
-        openSair.addEventListener("click", (e) => {
-            dialogLogin.showModal()
-        })
+      // Seleciona o modal e o botão que abre o modal
+      const dialogLogin = document.querySelector("#modalLogin");
+      const openSair = document.querySelector("#imageUser");
 
-        dialogLogin.addEventListener("click", (event) => {
-            const rectLogin = dialogLogin.getBoundingClientRect()
-            if (
-                event.clientX < rectLogin.left ||
-                event.clientX > rectLogin.right ||
-                event.clientY < rectLogin.top ||
-                event.clientY > rectLogin.bottom
-            ) {
-                dialogLogin.close()
-            }
-        })
+      // Ao clicar na imagem do usuário, abre o modal
+      openSair.addEventListener("click", (e) => {
+        dialogLogin.showModal();
+      });
 
-        //-------------------------------------------------------------------------------------------------
-        var acc = document.getElementsByClassName("acc_total");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                // Verifica se este painel já está aberto
-                var isActive = this.classList.contains("active");
-
-                // Fecha todos os painéis e remove a classe active de todos os botões
-                for (var j = 0; j < acc.length; j++) {
-                    acc[j].classList.remove("active");
-                    var panel = acc[j].nextElementSibling;
-                    panel.style.display = "none";
-                }
-
-                // Se o painel clicado não estava aberto, abre-o
-                if (!isActive) {
-                    this.classList.add("active");
-                    var container_acc = this.nextElementSibling;
-                    container_acc.style.display = "block";
-                }
-            });
+      // Fecha o modal se o clique for fora da área do modal
+      dialogLogin.addEventListener("click", (event) => {
+        const rectLogin = dialogLogin.getBoundingClientRect();
+        if (
+          event.clientX < rectLogin.left ||
+          event.clientX > rectLogin.right ||
+          event.clientY < rectLogin.top ||
+          event.clientY > rectLogin.bottom
+        ) {
+          dialogLogin.close();
         }
-    </script>
-    <script src="integracoes/relatorioIntegration.js"></script>
-</body>
+      });
 
+      // --------------------------------------------------------------------------------
+      // Acordeão para mostrar/ocultar os painéis das movimentações
+
+      var acc = document.getElementsByClassName("acc_total");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          // Verifica se este painel já está aberto
+          var isActive = this.classList.contains("active");
+
+          // Fecha todos os painéis e remove a classe active de todos os botões
+          for (var j = 0; j < acc.length; j++) {
+            acc[j].classList.remove("active");
+            var panel = acc[j].nextElementSibling;
+            panel.style.display = "none";
+          }
+
+          // Se o painel clicado não estava aberto, abre-o
+          if (!isActive) {
+            this.classList.add("active");
+            var container_acc = this.nextElementSibling;
+            container_acc.style.display = "block";
+          }
+        });
+      }
+    </script>
+
+    <!-- Script de integração externa para relatórios -->
+    <script src="integracoes/relatorioIntegration.js"></script>
+  </body>
 </html>

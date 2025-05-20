@@ -1,24 +1,46 @@
+/* ======== IMPORTAÇÕES ======== */
 @import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css");
 
+/* ======== CONFIGURAÇÕES DE FONTE ======== */
+/* fix for Chrome */
 :root {
   font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  font-feature-settings: "liga" 1, "calt" 1;
 }
+
 @supports (font-variation-settings: normal) {
   :root {
     font-family: InterVariable, sans-serif;
   }
 }
+
+/* ======== RESET GLOBAL ======== */
 * {
   border: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   display: contents;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
+
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* ======== LOGO ======== */
+#logo {
+  position: relative;
+  top: 1%;
+  left: 7%;
+  width: 14vh;
+}
+
+/* ======== HEADER SUPERIOR ======== */
 #headersuperior {
   position: fixed;
   background: #ffffff;
@@ -27,6 +49,7 @@ body {
   width: calc(100% - 300px);
   z-index: 1000;
 }
+
 #headersuperior .config {
   display: flex;
   align-items: center;
@@ -34,12 +57,22 @@ body {
   gap: 12px;
   position: static;
 }
+
+#headersuperior .fi-tc-settings {
+  font-size: 30px;
+  position: static !important;
+  left: unset;
+  top: unset;
+}
+
+/* ======== CONTAINERS ======== */
 .containerTotal {
   display: flex;
   min-height: 100vh;
   width: 100%;
   background-color: #e4e4e4;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -52,6 +85,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
+
 .containerButtons {
   font-family: inter;
   font-size: 25px;
@@ -66,6 +100,8 @@ body {
   /* align-items: flex-start;
     padding-top: 28px; */
 }
+
+/* ======== BOTÕES GERAIS ======== */
 button {
   display: flex;
   flex-direction: left;
@@ -76,36 +112,95 @@ button {
   padding: 6px 10px;
   background-color: transparent;
 }
-/* .buttonLink{
-    display: flex;
-    justify-content:baseline;
-    font-weight: bold;
-    width: 100%;
-    font-size:medium;
-    color: rgb(255, 255, 255);
-    background-color: #ffffff;
-    padding: 2em;
-    outline: none;
-} */
-#logo {
+
+#openButton {
+  font-size: 3.2em;
+  height: 44px;
+  width: 44px;
+  margin-bottom: 0;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f6c08;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.rowbutton {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 1vh;
   position: relative;
-  top: 1%;
-  left: 7%;
-  width: 14vh;
-}
-/* #textos{
-    display: flex;
-    flex-direction:row;
-    gap: 85vh;
-    position: relative;
-    left: 15%;
-} */
-
-/* Removendo estilos antigos de grid para a tabela */
-#rowfuncionarios {
-  /* Removido display grid e propriedades relacionadas */
+  left: 5%;
+  top: 5%;
 }
 
+.rowbutton i {
+  font-size: 28px;
+  display: flex;
+  min-width: 28px;
+  padding-right: 0.5em;
+}
+
+.rowbutton button {
+  font-size: 25px;
+  padding: 10px 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.containerButtons .rowbutton:nth-child(5) button {
+  font-size: 23px;
+}
+
+#submitform,
+#salvarEdicao,
+#salvarFornecedor {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button#adicionar {
+  background-color: #28a745;
+}
+
+/* ======== IMAGEM DO USUÁRIO ======== */
+#imageUser {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  /* left: 85%; */
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #0f6c08;
+  transform: translateY(30%);
+}
+
+#imageUser img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#imageUser {
+  margin: 0 25px 0 0;
+  position: static;
+}
+
+/* ======== TABELAS ======== */
 #table {
   max-width: 1100px;
   margin: 0 auto;
@@ -158,6 +253,56 @@ button {
   border-right: none;
 }
 
+/* Tabela dos funcionarios */
+#table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1550px;
+  background-color: #cfcfcf;
+  padding: none;
+  font-size: 18px;
+}
+
+#toptable {
+  position: relative;
+  top: 27%;
+  left: 18%;
+  width: 100%;
+  max-width: 1550px;
+  height: 60px;
+}
+
+#toptable {
+  height: 500px;
+  overflow-y: auto;
+  width: 1565px;
+}
+
+#headertable-produtos {
+  max-width: 1500px;
+  background-color: #b5b5b5;
+  overflow-x: auto;
+  margin: 0 auto;
+}
+
+#headertable-produtos {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#rowfuncionarios {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  grid-template-columns: repeat(10, auto);
+  grid-auto-columns: auto;
+  -ms-grid-row-align: center;
+  -ms-grid-row-align: center;
+  border: 1px solid #aaaaaa;
+}
+
+/* ======== BOTÕES DE AÇÃO ======== */
 #visualizarButton {
   background-color: orange;
   width: 70px;
@@ -172,13 +317,17 @@ button {
   cursor: pointer;
 }
 
-#iconExcluir {
-  background-image: url(/css/img/trash.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
+#visualizarButton {
+  background-color: orange;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
 }
 
 #editbutton {
@@ -195,92 +344,72 @@ button {
   cursor: pointer;
 }
 
-.rowbutton {
+#editbutton {
+  background-color: #4caf50;
+  border-radius: 15px;
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height: 30px;
   display: flex;
-  flex-direction: row;
-  align-items: end;
-  gap: 1vh;
-  position: relative;
-  left: 5%;
-  top: 5%;
-}
-
-.rowbutton i {
-  font-size: 28px;
-  display: flex;
-  min-width: 28px;
-  padding-right: 0.5em;
-}
-
-.rowbutton button {
-  font-size: 25px;
-  padding: 10px 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-#imageUser {
-  position: absolute;
-  top: 50%;
-  right: 2%;
-  /* left: 85%; */
-  width: 35px;
-  height: 35px;
-  border-radius: 100%;
-  overflow: hidden;
-  background-color: #0f6c08;
-  transform: translateY(30%);
-}
-#imageUser img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-#openButton {
-  font-size: 3.2em;
-  height: 44px;
-  width: 44px;
-  margin-bottom: 0;
-  padding: 0px 0px 0px 0px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: #0f6c08;
-  background-color: transparent;
-  overflow: hidden;
-}
-#closeModal-produtos, #closeModalVisualizar-produtos, #closeModalEditar-produtos, #closeModalFornecedor/* , #closeModalCategoria */ {
-  position: absolute;
-  top: -0%;
-  left: 95%;
-  font-size: 22px;
+  align-items: center;
+  padding: 3px;
 }
 
-#headertable-produtos {
-  max-width: 1500px;
-  background-color: #b5b5b5;
-  overflow-x: auto;
-  margin: 0 auto;
+#iconExcluir {
+  background-image: url(/css/img/trash.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
 }
-#toptable {
-  position: relative;
-  top: 27%;
-  left: 18%;
-  width: 100%;
-  max-width: 1550px;
-  height: 60px;
-}
+
 #iconlixeira {
   position: absolute;
   font-size: 27px;
   top: 130%;
   left: 110%;
 }
+
+/* ======== FILTROS ======== */
+#filtro-cargo,
+#filtro-nome {
+  border: none;
+  outline: none;
+  position: relative;
+  border-radius: 5px;
+  font-size: large;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  background-color: #c2c2c2;
+  z-index: 1000;
+}
+
+#filtro-cargo option {
+  padding: 10px;
+  font-size: large;
+}
+
+.filtros-bloco {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1100px;
+  width: 100%;
+  margin: 32px auto 16px auto;
+}
+
+.filtros-bloco {
+  display: flex;
+  max-width: 1800px;
+  width: 100%;
+  margin: 50px auto 50px auto;
+}
+
+/* ======== BOTÕES DE CATEGORIA ======== */
 #buttonCategory {
   max-width: 1800px;
   width: 100%;
@@ -288,6 +417,7 @@ button {
   justify-content: center;
   gap: 24px;
 }
+
 .inputCtg-categoria {
   border: none;
   outline: none;
@@ -300,7 +430,20 @@ button {
   background-color: #c2c2c2;
   z-index: 1000;
 }
-#modalDialog-produtos, #modalVisualizarDialog-produtos, #modalEditarDialog-produtos, #modalFornecedor/* , #modalCategoria */ {
+
+.category-column-1 {
+  max-width: 1500px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ======== MODAIS ======== */
+#modalDialog-produtos,
+#modalVisualizarDialog-produtos,
+#modalEditarDialog-produtos,
+#modalFornecedor
+/* , #modalCategoria */ {
   position: relative;
   border: 0;
   padding: 30px;
@@ -320,11 +463,49 @@ button {
   z-index: 2;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #f0f0f0;
+#closeModal-produtos,
+#closeModalVisualizar-produtos,
+#closeModalEditar-produtos,
+#closeModalFornecedor
+/* , #closeModalCategoria */ {
+  position: absolute;
+  top: -0%;
+  left: 95%;
+  font-size: 22px;
 }
 
+#modalLogin {
+  width: 100px;
+  height: 60px;
+  top: -81.3%;
+  left: 93%;
+  z-index: 1000;
+  position: absolute;
+  display: flex;
+  background-color: #e4e4e4;
+  transition: 1ms;
+  justify-content: center;
+}
+
+#modalLogin::backdrop {
+  background-color: transparent;
+}
+
+#sairLogin {
+  width: 100px;
+  height: 40px;
+  background-color: #858585;
+  color: white;
+  outline: none;
+  font-size: 18px;
+  justify-content: center;
+}
+
+#sairLogin:hover {
+  background-color: #353434;
+}
+
+/* ======== FORMULÁRIO DE CADASTRO ======== */
 #cadastroForm {
   width: 900px;
   height: 800px;
@@ -355,6 +536,12 @@ label {
   margin-bottom: 5px;
 }
 
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+/* ======== CAMPOS DE FORMULÁRIO ======== */
 #nome-produto,
 #visualizar-nome-produto,
 #editar-nome-produto {
@@ -362,7 +549,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #codigo-produto,
@@ -372,7 +559,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #categoria-produto,
@@ -383,7 +570,11 @@ label {
   height: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;
+  font-size: 18px;
+}
+
+#visualizar-categoria-produto {
+  width: 100%;
 }
 
 #quantidadeProduto,
@@ -393,7 +584,7 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #dataEntrada,
@@ -403,17 +594,17 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #preco-produto,
 #visualizar-preco-produto,
 #editar-preco-produto {
-  width: 70%;
+  width: 80%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #codigo-participante-produto,
@@ -424,20 +615,102 @@ label {
   height: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;
+  font-size: 18px;
+}
+
+#codigo-participante-produto {
+  width: 100%;
 }
 
 #complemento-produto,
 #visualizar-complemento-produto,
 #editar-complemento-produto {
-  width: 260%;
+  width: 270%;
   height: 200px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-    font-size: 18px;  
+  font-size: 18px;
 }
 
+#senha-produto {
+  position: relative;
+  width: 140%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  top: 76%;
+}
+
+#nome-senha-produto {
+  position: relative;
+  top: 75%;
+}
+
+#editar-senha-produto {
+  width: 140%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ======== ESPAÇAMENTO DE LINHAS ======== */
+#line-0,
+#line-0b,
+#line-0c,
+#line-0f {
+  gap: 195px;
+}
+
+#line-1,
+#line-1b,
+#line-1c,
+#line-1f {
+  gap: 195px;
+}
+
+/*#line-2,
+#line-2b,
+#line-2c,
+#line-2f {}
+
+#line-3,
+#line-3b,
+#line-3c,
+#line-3f {}*/
+
+#line-4,
+#line-4b,
+#line-4c,
+#line-4f {
+  gap: 0px;
+}
+
+#line-4-1,
+#line-4-1b,
+#line-4-1c {
+  display: flex;
+  gap: 60px;
+}
+
+#line-5,
+#line-5b,
+#line-5c,
+#line-5f {
+  gap: 400px;
+}
+
+#line-categoria {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+/* ======== INPUTS COM BOTÕES ======== */
 .input-with-button {
   display: flex;
   gap: 8px;
@@ -467,6 +740,7 @@ label {
   margin-top: 0;
 }
 
+/* ======== DATALIST ======== */
 datalist {
   width: 100%;
   background-color: white;
@@ -485,98 +759,7 @@ datalist option:hover {
   background-color: #f5f5f5;
 }
 
-#codigo-participante-produto {
-  width: 100%;
-}
-
-#senha-produto {
-  position: relative;
-  width: 140%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  top: 76%;
-}
-
-#nome-senha-produto {
-  position: relative;
-  top: 75%;
-}
-
-#editar-senha-produto {
-  width: 140%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#line-0,
-#line-0b,
-#line-0c,
-#line-0f {
-  gap: 195px;
-}
-
-#line-1,
-#line-1b,
-#line-1c,
-#line-1f {
-  gap: 195px;
-}
-
-#line-2,
-#line-2b,
-#line-2c,
-#line-2f {
-}
-
-#line-3,
-#line-3b,
-#line-3c,
-#line-3f {
-}
-
-#line-4,
-#line-4b,
-#line-4c,
-#line-4f {
-  gap: 0px;
-}
-
-#line-4-1,
-#line-4-1b,
-#line-4-1c {
-  display: flex;
-  gap: 60px;
-}
-
-#line-5,
-#line-5b,
-#line-5c,
-#line-5f {
-  gap: 400px;
-}
-
-textarea {
-  width: 100%;
-  height: 100px;
-}
-
-#submitform,
-#salvarEdicao,
-#salvarFornecedor {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button#adicionar {
-  background-color: #28a745;
-}
-
+/* ======== VISUALIZAÇÃO DE IMAGEM ======== */
 .preview-imagem-container {
   width: 0;
   height: 0;
@@ -606,143 +789,8 @@ button#adicionar {
   height: 100%;
   object-fit: fill;
 }
-/* Tabela dos funcionarios */
 
-#table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 1550px;
-  background-color: #cfcfcf;
-  padding: none;
-  font-size: 18px;
-}
-#toptable {
-  height: 500px;
-  overflow-y: auto;
-  width: 1565px;
-}
-#rowfuncionarios {
-  display: grid;
-  gap: 10px;
-  padding: 10px;
-  align-items: center;
-  grid-template-columns: repeat(10, auto);
-  grid-auto-columns: auto;
-  -ms-grid-row-align: center;
-  -ms-grid-row-align: center;
-  border: 1px solid #aaaaaa;
-}
-
-#visualizarButton {
-  background-color: orange;
-  width: 100px;
-  height: 30px;
-  border-radius: 15px;
-  font-size: 18px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3px;
-}
-
-/* Tá duplicado, nnão sei se vai ser usado */
-/* #iconExcluir{
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 30px;
-    height: 30px;
-} */
-#editbutton {
-  background-color: #4caf50;
-  border-radius: 15px;
-  font-size: 18px;
-  color: white;
-  width: 70px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3px;
-}
-/* div{
-    border: 1px solid blue;
-} */
-
-#filtro-cargo,
-#filtro-nome {
-  border: none;
-  outline: none;
-  position: relative;
-  border-radius: 5px;
-  font-size: large;
-  width: 200px;
-  height: 50px;
-  padding: 10px;
-  background-color: #c2c2c2;
-  z-index: 1000;
-}
-
-#filtro-cargo option {
-  padding: 10px;
-  font-size: large;
-}
-
-#modalLogin {
-  width: 100px;
-  height: 60px;
-  top: -81.3%;
-  left: 93%;
-  z-index: 1000;
-  position: absolute;
-  display: flex;
-  background-color: #e4e4e4;
-  transition: 1ms;
-  justify-content: center;
-}
-
-#sairLogin {
-  width: 100px;
-  height: 40px;
-  background-color: #858585;
-  color: white;
-  outline: none;
-  font-size: 18px;
-  justify-content: center;
-}
-
-#modalLogin::backdrop {
-  background-color: transparent;
-}
-
-#sairLogin:hover {
-  background-color: #353434;
-}
-
-.containerButtons .rowbutton:nth-child(5) button {
-  font-size: 23px;
-}
-
-#headersuperior .config {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  position: static;
-}
-
-#headersuperior .fi-tc-settings {
-  font-size: 30px;
-  position: static !important;
-  left: unset;
-  top: unset;
-}
-
-#imageUser {
-  margin: 0 25px 0 0;
-  position: static;
-}
-
+/* ======== MODAL FORNECEDOR ======== */
 /* Mantendo os estilos específicos dos modais de fornecedor e categoria */
 #modalFornecedor input {
   width: 300px;
@@ -787,6 +835,7 @@ button#adicionar {
   line-height: 24px;
 }
 
+/* ======== MODAL CATEGORIA ======== */
 .categoria-icon {
   font-size: 80px;
   color: #4caf50;
@@ -852,38 +901,7 @@ button#adicionar {
   background-color: #45a049;
 }
 
-#line-categoria {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-  align-content: center;
-}
-
-#visualizar-categoria-produto {
-  width: 100%;
-}
-.filtros-bloco {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  max-width: 1100px;
-  width: 100%;
-  margin: 32px auto 16px auto;
-}
-#headertable-produtos {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.category-column-1 {
-  max-width: 1500px;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-}
-
+/* ======== MEDIA QUERIES ======== */
 @media (max-width: 1993px), (max-width: 2177px) {
   #headertable-produtos {
     max-width: 1800px;
@@ -892,6 +910,7 @@ button#adicionar {
     margin: 0 auto;
     /* Removido position e qualquer margin extra */
   }
+
   #table {
     max-width: 1800px;
     margin: 0 auto;
@@ -899,6 +918,7 @@ button#adicionar {
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
+
   .filtros-bloco {
     display: flex;
     max-width: 1800px;
