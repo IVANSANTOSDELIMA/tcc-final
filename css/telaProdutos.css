@@ -186,7 +186,7 @@ button#adicionar {
   border-radius: 100%;
   overflow: hidden;
   background-color: #0f6c08;
-  transform: translateY(30%);
+  transform: translateY(-50%);
 }
 
 #imageUser img {
@@ -194,12 +194,6 @@ button#adicionar {
   height: 100%;
   object-fit: cover;
 }
-
-#imageUser {
-  margin: 0 25px 0 0;
-  position: static;
-}
-
 /* ======== TABELAS ======== */
 #table {
   max-width: 1100px;

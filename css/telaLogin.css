@@ -265,7 +265,7 @@ a {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1919px) {
+/* @media (min-width: 1024px) and (max-width: 1919px) {
   .login {
     max-width: 480px;
     padding: 2.5em 2em;
@@ -298,4 +298,4 @@ a {
     font-size: 1.2rem;
     max-width: 300px;
   }
-}
+} */
