@@ -409,7 +409,7 @@ label {
 #preco-produto,
 #visualizar-preco-produto,
 #editar-preco-produto {
-  width: 80%;
+  width: 70%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -430,7 +430,7 @@ label {
 #complemento-produto,
 #visualizar-complemento-produto,
 #editar-complemento-produto {
-  width: 270%;
+  width: 260%;
   height: 200px;
   padding: 8px;
   border: 1px solid #ccc;

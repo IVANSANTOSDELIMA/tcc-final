@@ -129,15 +129,17 @@ body {
 
 .inputbutton1:focus ~ #titleLoginSenha,
 .inputbutton1:valid ~ #titleLoginSenha {
-  top: 63%;
+  top: 62%;
   font-size: 13px;
 }
-.inputbutton2:focus ~ #titleLoginEmail,
+.inputbutton2:focus ~ #titleLoginEmail {
+  top: 47%;
+  font-size: 13px;
+}
 .inputbutton2:valid ~ #titleLoginEmail {
-  top: 49%;
+  top: 47%;
   font-size: 13px;
 }
-
 a{
   color: rgb(110, 152, 194);
   font-size: 13px;
