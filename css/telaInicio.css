@@ -175,6 +175,31 @@ button {
   background-color: #152551;
   min-width: 400px;
   max-width: 100%;
+  color: white;
+  font-size:x-large;
+}
+h1{
+  position: relative;
+  font-size: 3rem;
+  left: 5%;
+}
+#txtconteudo{
+  position: relative;
+  font-size: 1.5rem;
+  left: 1%;
+}
+#txtTell{
+  position: relative;
+  display: flex;
+  font-size: 2em;
+  gap: 140px;
+  left: 8%;
+  align-items: center;
+}
+#seta{
+  position: relative;
+  font-size: 3em;
+  transform: rotate(180deg);
 }
 
 /* ======== TEXTOS E VALORES ======== */
