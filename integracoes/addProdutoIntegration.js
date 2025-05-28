@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   let participantes = [];
   let funcionarios = [];
   let produtos = [];
+  let produtosDisponiveis = [];
   let itemCount = 1;
 
   // Carregando dados iniciais
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         headers: { Authorization: `Bearer ${token}` },
       });
 
+
       if (!responseProdutos.ok) {
         throw new Error(
           `Erro ao carregar produtos: ${responseProdutos.status}`
@@ -71,6 +73,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
 
       produtos = await responseProdutos.json();
+      produtosDisponiveis = [...produtos];
+      console.log(produtosDisponiveis)
 
       // Configurando autocomplete pra participantes
       setupAutocomplete(
@@ -100,7 +104,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       // Configurando autocomplete pro primeiro produto
       setupAutocomplete(
         document.querySelector(".produto-nome"),
-        produtos,
+        produtosDisponiveis,
         document.querySelector(".id-produto"),
         "nome"
       );
@@ -159,6 +163,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Se for saída, tenta selecionar "Consumidor Final"
     if (tipoMovimentacao === "S") {
+      produtosDisponiveis = produtos.filter(p => p.status_produto === "Disponível");
+      console.log("sim ", produtosDisponiveis)
       const consumidorFinal = participantes.find((p) =>
         p.nome_participante.toLowerCase().includes("consumidor final")
       );
@@ -169,9 +175,21 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     } else {
       // Se for entrada, limpa o campo de participante
+      produtosDisponiveis = [... produtos];
+      console.log("É", produtosDisponiveis)
       participanteNomeInput.value = "";
       participanteIdInput.value = "";
     }
+
+    // Atualiza autocomplete dos produtos em todas as linhas
+    document.querySelectorAll(".produto-nome").forEach((input) => {
+      setupAutocomplete(
+        input,
+        produtosDisponiveis,
+        input.closest("tr").querySelector(".id-produto"),
+        "nome"
+      );
+    });
   }
 
   // Configurando autocomplete
@@ -197,11 +215,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (items[i][nameField].toLowerCase().includes(val.toLowerCase())) {
           b = document.createElement("div");
           b.innerHTML = items[i][nameField];
-          b.innerHTML += `<input type='hidden' value='${
-            items[i].id_produto ||
+          b.innerHTML += `<input type='hidden' value='${items[i].id_produto ||
             items[i].id_funcionario ||
             items[i].id_participante
-          }'>`;
+            }'>`;
 
           // Guardando o preço do produto no elemento pra usar depois
           if (items[i].preco_produto) {
@@ -325,20 +342,17 @@ document.addEventListener("DOMContentLoaded", async function () {
             <td data-label="Produto">
                 <div class="autocomplete">
                     <input type="text" class="produto-nome" placeholder="Buscar produto" required>
-                    <input type="hidden" class="id-produto" name="itens[${
-                      itemCount - 1
-                    }][id_produto]">
+                    <input type="hidden" class="id-produto" name="itens[${itemCount - 1
+      }][id_produto]">
                 </div>
             </td>
             <td data-label="Quantidade">
-                <input type="number" class="quantidade" name="itens[${
-                  itemCount - 1
-                }][quantidade]" min="0.01" step="0.01" value="1" required>
+                <input type="number" class="quantidade" name="itens[${itemCount - 1
+      }][quantidade]" min="0.01" step="0.01" value="1" required>
             </td>
             <td data-label="Valor Unitário">
-                <input type="number" class="valor-unitario" name="itens[${
-                  itemCount - 1
-                }][valor_unitario]" min="0.01" step="0.01" value="0.00" required>
+                <input type="number" class="valor-unitario" name="itens[${itemCount - 1
+      }][valor_unitario]" min="0.01" step="0.01" value="0.00" required>
             </td>
             <td data-label="Subtotal" class="subtotal">0.00</td>
             <td data-label="Ações" class="action-cell">
@@ -351,7 +365,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Configurando autocomplete pro novo produto
     setupAutocomplete(
       newRow.querySelector(".produto-nome"),
-      produtos,
+      produtosDisponiveis,
       newRow.querySelector(".id-produto"),
       "nome"
     );
