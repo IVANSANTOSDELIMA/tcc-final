@@ -120,10 +120,10 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <td>${produto.status_produto}</td>
                 <td>
                     <button id="visualizarButton" onclick="visualizarProduto(${produto.id_produto})">Visualizar</button>
+                    <button id="editbutton" onclick="editarProduto(${produto.id_produto})">Editar</button>
                     <button id="iconExcluir" title="Excluir" onclick="excluirProduto(${produto.id_produto})"></button>
                 </td>
             `;
-      //<button id="editbutton" onclick="editarProduto(${produto.id_produto})">Editar</button>
       tbody.appendChild(row);
     });
   }
@@ -178,7 +178,54 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.querySelector("#preview-selected-image").src = "";
   }
 
-  // Função pra visualizar produto - MEXER LOGO, BACK-END NAO SUPORTA GET POR ID AINDA
+  window.editarProduto = async (id) => {
+    funcionarioIdParaEditar = id; // Armazena o ID do funcionário a ser editado
+    try {
+      const response = await fetch(`${baseUrl}/api/estoque/produtos/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        const produto = await response.json();
+        console.log("Produto a ser editado:", produto);
+
+        // Preenche os campos com os dados atuais
+        const dataEntrada = new Date(produto.data_entrada);
+        const dataFormatada = dataEntrada.toISOString().split("T")[0];
+        console.log("Data formatada:", dataFormatada); // Debug
+
+        document.querySelector("#editar-nome-produto").value = produto.nome;
+        /* document.querySelector('#editar-codigo-produto').value = produto.id_produto; */
+        document.querySelector("#editar-categoria-produto").value =
+          produto.nome_categoria;
+        document.querySelector("#editar-dataEntrada").value = dataFormatada;
+        document.querySelector("#editar-preco-produto").value =
+          new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(produto.preco_produto);
+        document.querySelector("#editar-participante-produto").value =
+          produto.nome_participante;
+        document.querySelector("#editar-complemento-produto").value =
+          produto.descricao;
+
+        if (produto.imagem_produto) {
+          document.querySelector(
+            "#editar-imagem-produto"
+          ).src = `${baseUrl}/${produto.imagem_produto}`;
+        }
+
+        document.querySelector("#modalEditarDialog-produtos").showModal();
+      }
+    } catch (error) {
+      console.error("Erro:", error);
+      alert("Erro ao carregar dados do produto");
+    }
+  };
+
+  // Função pra visualizar produto 
   window.visualizarProduto = async (id) => {
     try {
       const response = await fetch(`${baseUrl}/api/estoque/produtos/${id}`, {
