@@ -604,7 +604,7 @@ textarea {
 #codigo-participante-produto,
 #visualizar-participante-produto,
 #editar-participante-produto {
-  width: 171%;
+  width: 154%;
   padding: 8px;
   height: 100%;
   border: 1px solid #ccc;
@@ -619,7 +619,7 @@ textarea {
 #complemento-produto,
 #visualizar-complemento-produto,
 #editar-complemento-produto {
-  width: 260%;
+  width: 271%;
   height: 200px;
   padding: 8px;
   border: 1px solid #ccc;
