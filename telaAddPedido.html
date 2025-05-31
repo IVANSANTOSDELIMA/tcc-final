@@ -28,8 +28,9 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
     <link rel="stylesheet"
         href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
     <!-- Biblioteca de gráficos ApexCharts -->
+     <script type="module" src="integracoes/authMiddleware.js"></script> <!-- autentica o usuario --> 
+        <!-- se o token nao for valido vai voltar pro login -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
     <!-- Título da página -->
@@ -52,7 +53,7 @@
             </div>
             <div class="rowbutton">
                 <i class="fi fi-tr-users"></i>
-                <button type="button" onclick="window.location.href='telafuncionarios.html'">Funcionarios</button>
+                <button type="button" id="btn-funcionarios" onclick="window.location.href='telafuncionarios.html'">Funcionarios</button>
                 <i class="fi fi-ss-angle-right" style="font-size: 20px; position: absolute; top: 45%; left: 70%;"></i>
             </div>
             <div class="rowbutton">

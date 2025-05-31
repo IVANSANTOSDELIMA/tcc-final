@@ -192,6 +192,7 @@
         <div class="form-column">
           <label for="cep">CEP: *</label>
           <input type="text" id="cep" name="cep" required />
+          <span id="cep-erro" style="color:red;font-size:12px"></span>
         </div>
         <div class="form-column">
           <label for="estado">Estado: *</label>
@@ -460,6 +461,12 @@
 
   <!-- Script para controle dos modais -->
   <script>
+    const func = JSON.parse(localStorage.getItem("funcionario"));
+    if (!func || func.nivel_acesso > 1) {
+      alert("Você não tem permissão para acessar esta página.");
+      window.location.href = "telaInicio.html";
+    }
+
     // Seleção dos elementos do DOM
     const dialog = document.querySelector("#modalDialog");
     const openButton = document.querySelector("#openButton");
@@ -542,9 +549,22 @@
       document.getElementById('estado').value = "";
     }
 
+    function mostrarErroCep(msg) {
+      document.getElementById('cep-erro').textContent = msg;
+    }
+
+    function limparErroCep() {
+      document.getElementById('cep-erro').textContent = "";
+    }
+
     // Função pra buscar o endereço pelo CEP
     async function buscarEnderecoPorCEP(cep) {
       cep = cep.replace(/\D/g, '');
+
+      if (cep.length === 0) {
+        limpaFormularioEndereco();
+        return;
+      }
 
       if (cep.length !== 8) {
         limpaFormularioEndereco();

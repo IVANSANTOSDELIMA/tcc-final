@@ -45,6 +45,40 @@ document.querySelector("#sairLogin").addEventListener("click", () => {
   window.location.href = "telalogin.html";
 });
 
+function bloquearBotaoFuncionarios() {
+  const funcionario = JSON.parse(localStorage.getItem("funcionario"));
+  if (funcionario && funcionario.nivel_acesso > 1) {
+    const btn = document.getElementById('btn-funcionarios');
+    if (btn) {
+      btn.onclick = null;
+      btn.style.cursor = 'not-allowed';
+      btn.style.opacity = '0.6';
+      btn.title = "Você não tem permissão para acessar esta tela.";
+      btn.addEventListener('mouseenter', function () {
+        let msg = document.createElement('div');
+        msg.id = 'tooltip-func';
+        msg.innerText = "Acesso restrito!";
+        msg.style.position = 'fixed';
+        msg.style.background = '#b22222';
+        msg.style.color = '#fff';
+        msg.style.padding = '8px 16px';
+        msg.style.borderRadius = '6px';
+        msg.style.top = (btn.getBoundingClientRect().top - 40) + 'px';
+        msg.style.left = (btn.getBoundingClientRect().left) + 'px';
+        msg.style.zIndex = 1000;
+        document.body.appendChild(msg);
+      });
+      btn.addEventListener('mouseleave', function () {
+        const msg = document.getElementById('tooltip-func');
+        if (msg) msg.remove();
+      });
+    }
+  }
+}
+
+// Chama a função ao carregar a página
+window.addEventListener('DOMContentLoaded', bloquearBotaoFuncionarios);
+
 // Roda a autenticação assim que o código carrega
 const auth = new Auth();
 auth.init();
