@@ -182,8 +182,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.querySelector("#preview-selected-image").src = "";
   }
 
+  let produtoIdParaEditar;
   window.editarProduto = async (id) => {
-    funcionarioIdParaEditar = id; // Armazena o ID do funcionário a ser editado
+    produtoIdParaEditar = id; // Armazena o ID do funcionário a ser editado
     try {
       const response = await fetch(`${baseUrl}/api/estoque/produtos/${id}`, {
         headers: {
@@ -228,6 +229,63 @@ document.addEventListener("DOMContentLoaded", async function () {
       alert("Erro ao carregar dados do produto");
     }
   };
+
+  // Evento para salvar a edição do produto
+  const salvarEdicao = document.querySelector("#salvarEdicao"); 
+  if (salvarEdicao) {
+    // Adiciona o evento de clique ao botão de salvar edição
+    salvarEdicao.addEventListener("click", async () => {
+      const categoriaInput = document.querySelector("#editar-categoria-produto");
+      const categoriaOption = document.querySelector(
+        `#categorias-list option[value='${categoriaInput.value}']`
+      ); // Seleciona a opção correspondente à categoria 
+
+      const dados = {
+        nome: document.querySelector("#editar-nome-produto").value,
+        preco_produto: parseFloat(
+          document.querySelector("#editar-preco-produto").value.replace(/[^\d,]/g, '').replace(',', '.')
+        ),
+        descricao: document.querySelector("#editar-complemento-produto").value,
+        nome_participante: document.querySelector("#editar-participante-produto").value,
+        id_categoria: categoriaOption ? parseInt(categoriaOption.dataset.id) : undefined, // Pega o ID da categoria
+        data_entrada: document.querySelector("#editar-dataEntrada").value,
+      };
+
+      try {
+        const response = await fetch(
+          `${baseUrl}/api/estoque/produtos/${produtoIdParaEditar}`,
+          {
+            method: "PUT",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dados),
+          }
+        );
+
+        if (response.ok) {
+          alert("Produto atualizado com sucesso!");
+          document.querySelector("#modalEditarDialog-produtos").close();
+          carregarProdutos();
+        } else {
+          const errorData = await response.json();
+          alert(errorData.message || "Erro ao atualizar produto");
+        }
+      } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao atualizar produto");
+      }
+    });
+  }
+
+  // Evento para fechar o modal de edição
+  const btnFecharModalEditar = document.querySelector("#closeModalEditar-produtos");
+  if (btnFecharModalEditar) {
+    btnFecharModalEditar.addEventListener("click", () => {
+      document.querySelector("#modalEditarDialog-produtos").close();
+    });
+  }
 
   // Função pra visualizar produto 
   window.visualizarProduto = async (id) => {
@@ -283,7 +341,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   window.excluirProduto = async (id) => {
     if (confirm("Tem certeza que deseja excluir este produto?")) {
       try {
-        const response = await fetch(`${baseUrl}/api/estoque/produtos:${id}`, {
+        const response = await fetch(`${baseUrl}/api/estoque/produtos/${id}`, {
           method: "DELETE",
           headers: headers,
         });

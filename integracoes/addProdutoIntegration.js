@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     } else {
       // Se for entrada, limpa o campo de participante
-      produtosDisponiveis = [... produtos];
+      produtosDisponiveis = [...produtos];
       console.log("É", produtosDisponiveis)
       participanteNomeInput.value = "";
       participanteIdInput.value = "";
@@ -247,6 +247,40 @@ document.addEventListener("DOMContentLoaded", async function () {
                   // Disparando o evento de input pra recalcular o subtotal
                   const event = new Event("input", { bubbles: true });
                   valorUnitarioInput.dispatchEvent(event);
+                }
+
+                // Limite de quantidade de produto de acordo com o estoque
+                const quantidadeInput = row.querySelector(".quantidade");
+                // Só aplica o limite se for saída
+                const tipoMov = document.querySelector('input[name="id_tipo_movimentacao"]:checked').value;
+                // Busca o produto selecionado no array de produtos
+                const produtoSelecionado = produtosDisponiveis.find(p =>
+                  p.id_produto == idValue || p.id == idValue
+                );
+                console.log("Produto selecionado:", produtoSelecionado);
+                if (quantidadeInput) {
+                  if (tipoMov === "S" && produtoSelecionado) {
+                    const maxEstoque = Number(produtoSelecionado.qntd_produto);
+                    quantidadeInput.max = maxEstoque;
+                    quantidadeInput.setAttribute('data-max', maxEstoque);
+                    if (parseFloat(quantidadeInput.value) > maxEstoque) {
+                      quantidadeInput.value = maxEstoque;
+                    }
+                    // Remove listener antigo e adiciona novo
+                    quantidadeInput.oninput = null;
+                    quantidadeInput.addEventListener('input', function () {
+                      const max = parseFloat(this.getAttribute('data-max'));
+                      // Verifica se a quantidade atual é maior que o máximo
+                      if (!isNaN(max) && parseFloat(this.value) > max) {
+                        this.value = max; 
+                        alert(`Quantidade máxima disponível em estoque atingida! (${max})`);
+                      }
+                    });
+                  } else {
+                    quantidadeInput.removeAttribute('max'); // Remove o atributo max
+                    quantidadeInput.removeAttribute('data-max'); // Remove o atributo data-max
+                    quantidadeInput.oninput = null; // Remove o listener de input
+                  }
                 }
               }
             }
@@ -348,7 +382,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             </td>
             <td data-label="Quantidade">
                 <input type="number" class="quantidade" name="itens[${itemCount - 1
-      }][quantidade]" min="0.01" step="0.01" value="1" required>
+      }][quantidade]" min="1.00" step="1.00" value="1" required>
             </td>
             <td data-label="Valor Unitário">
                 <input type="number" class="valor-unitario" name="itens[${itemCount - 1
