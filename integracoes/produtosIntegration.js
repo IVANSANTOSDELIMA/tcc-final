@@ -33,7 +33,11 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Filtro por categoria
   async function preencherSelectCategorias(produtos) {
     const categorias = [...new Set(produtos.map((p) => p.nome_categoria))];
+    console.log("Categorias únicas:", categorias);
     const selectCategoria = document.querySelector("#filtro-categoria");
+    console.log("Select encontrado:", selectCategoria);
+    selectCategoria.innerHTML = '<option value="">Todas as categorias</option>'; // Limpa o select antes de preencher novamente, evitando duplicatas
+
     categorias.forEach((categoria) => {
       selectCategoria.innerHTML += `<option value="${categoria}">${categoria}</option>`;
     });

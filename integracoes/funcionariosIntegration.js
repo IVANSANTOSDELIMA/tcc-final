@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("Cargos únicos:", cargos);
     const selectCargo = document.querySelector("#filtro-cargo");
     console.log("Select encontrado:", selectCargo);
+    // selectCargo.innerHTML = '<option value="">Todas as categorias</option>'; // Limpa o select antes de adicionar as opções -- por enquanto a função funciona sem isso
 
     cargos.forEach((cargo) => {
       selectCargo.innerHTML += `<option value="${cargo}">${cargo}</option>`;
