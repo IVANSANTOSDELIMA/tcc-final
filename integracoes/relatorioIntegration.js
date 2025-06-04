@@ -37,7 +37,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   // busca de movimentações do dia
   async function carregarMovimentacoesDiarias() {
     try {
-      const hoje = new Date().toISOString().split("T")[0];
+      // Pega a data de hoje no formato YYYY-MM-DD no fuso horário de Brasília (UTC-3)
+      const hoje = new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString().split("T")[0];
+      console.log("hoje: ", hoje);
       const response = await fetch(
         `${baseUrl}/api/estoque/movimentacao?dataInicio=${hoje}&dataFim=${hoje}`,
         {
@@ -69,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const hoje = new Date();
       const inicioSemana = new Date(hoje);
       inicioSemana.setDate(hoje.getDate() - 6); // Últimos 7 dias (incluindo hoje)
+      
 
       const response = await fetch(
         `${baseUrl}/api/estoque/movimentacao?dataInicio=${
@@ -174,7 +177,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         `;
 
     // linhas da tabela
-    for (let i = 0; i < movimentacoes.length; i++) {
+    for (let i = 0; i < movimentacoes.length; i++) { 
       const m = movimentacoes[i];
       const data = new Date(m.data).toLocaleDateString("pt-BR");
       const tipo = m.id_tipo_movimentacao === "E" ? "Entrada" : "Saída";
