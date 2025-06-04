@@ -219,7 +219,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (produto.imagem_produto) {
           document.querySelector(
             "#editar-imagem-produto"
-          ).src = `${baseUrl}/${produto.imagem_produto}`;
+          ).src = `${baseUrl}/${produto.imagem_produto}`; //
+        } else{
+          document.querySelector("#editar-imagem-produto").src = "https://mercar.pt/dacia/wp-content/uploads/sites/3/2023/03/Produto-sem-imagem.png";
         }
 
         document.querySelector("#modalEditarDialog-produtos").showModal();
@@ -320,7 +322,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (produto.imagem_produto) {
           document.querySelector(
             "#visualizar-imagem-produto"
-          ).src = `${baseUrl}/${produto.imagem_produto}`;
+          ).src = `${baseUrl}/${produto.imagem_produto}`; //
+        } else{
+          document.querySelector("#visualizar-imagem-produto").src = "https://mercar.pt/dacia/wp-content/uploads/sites/3/2023/03/Produto-sem-imagem.png";
         }
 
         document.querySelector("#modalVisualizarDialog-produtos").showModal();

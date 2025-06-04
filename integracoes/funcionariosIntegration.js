@@ -182,7 +182,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (funcionario.imagem_funcionario) {
           document.querySelector(
             "#editar-imagem"
-          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`;
+          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`; //https://mercar.pt/dacia/wp-content/uploads/sites/3/2023/03/Produto-sem-imagem.png
+        } else{
+          document.querySelector("#editar-imagem").src = "https://cdn-icons-png.flaticon.com/512/5436/5436149.png";
         }
 
         document.querySelector("#modalEditarDialog").showModal();
@@ -240,7 +242,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (funcionario.imagem_funcionario) {
           document.querySelector(
             "#visualizar-imagem"
-          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`;
+          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`; //
+        } else{
+          document.querySelector("#visualizar-imagem").src = "https://cdn-icons-png.flaticon.com/512/5436/5436149.png";
         }
 
         document.querySelector("#modalVisualizarDialog").showModal();
