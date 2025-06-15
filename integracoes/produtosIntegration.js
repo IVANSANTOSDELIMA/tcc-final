@@ -216,14 +216,18 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector("#editar-complemento-produto").value =
           produto.descricao;
 
-        if (produto.imagem_produto) {
+        // Extrai apenas o nome do arquivo da imagem (ex: "imagem.png")
+            const nomeImagem = produto.imagem_produto
+            ? produto.imagem_produto.split("\\").pop().split("/").pop() // Remove o caminho e deixa só o nome do arquivo
+            : ""; // Se não houver imagem, mantém a imagem padrão
+        if (produto.imagem_produto && produto.imagem_produto !== "" && produto.imagem_produto == `uploads\\produtos\\${nomeImagem}`) {
           document.querySelector(
             "#editar-imagem-produto"
-          ).src = `${baseUrl}/${produto.imagem_produto}`; //
+          ).src = `${baseUrl}/${produto.imagem_produto}`; 
         } else{
-          document.querySelector("#editar-imagem-produto").src = "https://mercar.pt/dacia/wp-content/uploads/sites/3/2023/03/Produto-sem-imagem.png";
-        }
-
+            document.querySelector("#editar-imagem-produto").src = "css/img/image-not-found.png";
+        } 
+        
         document.querySelector("#modalEditarDialog-produtos").showModal();
       }
     } catch (error) {
@@ -319,12 +323,16 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector("#visualizar-complemento-produto").value =
           produto.descricao;
 
-        if (produto.imagem_produto) {
+            // Extrai apenas o nome do arquivo da imagem (ex: "imagem.png")
+            const nomeImagem = produto.imagem_produto
+            ? produto.imagem_produto.split("\\").pop().split("/").pop() // Remove o caminho e deixa só o nome do arquivo
+            : ""; // Se não houver imagem, mantém a imagem padrão
+        if (produto.imagem_produto && produto.imagem_produto !== "" && produto.imagem_produto == `uploads\\produtos\\${nomeImagem}`) {
           document.querySelector(
             "#visualizar-imagem-produto"
-          ).src = `${baseUrl}/${produto.imagem_produto}`; //
+          ).src = `${baseUrl}/${produto.imagem_produto}`; 
         } else{
-          document.querySelector("#visualizar-imagem-produto").src = "https://mercar.pt/dacia/wp-content/uploads/sites/3/2023/03/Produto-sem-imagem.png";
+            document.querySelector("#visualizar-imagem-produto").src = "css/img/image-not-found.png";
         }
 
         document.querySelector("#modalVisualizarDialog-produtos").showModal();

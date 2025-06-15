@@ -184,13 +184,17 @@ document.addEventListener("DOMContentLoaded", async function () {
           funcionario.complemento;
         /* document.querySelector('#editar-senha').value = funcionario.senha; */
 
-        if (funcionario.imagem_funcionario) {
+        // Extrai apenas o nome do arquivo da imagem (ex: "imagem.png")
+            const nomeImagem = funcionario.imagem_funcionario
+            ? funcionario.imagem_funcionario.split("\\").pop().split("/").pop() // Remove o caminho e deixa só o nome do arquivo
+            : ""; // Se não houver imagem, mantém a imagem padrão
+        if (funcionario.imagem_funcionario && funcionario.imagem_funcionario !== "" && funcionario.imagem_funcionario == `uploads\\funcionarios\\${nomeImagem}`) {
           document.querySelector(
             "#editar-imagem"
           ).src = `${baseUrl}/${funcionario.imagem_funcionario}`; 
         } else{
-          document.querySelector("#editar-imagem").src = "https://cdn-icons-png.flaticon.com/512/5436/5436149.png";
-        }
+            document.querySelector("#editar-imagem").src = "css/img/imageuser-not-found.png";
+        } 
 
         document.querySelector("#modalEditarDialog").showModal();
       }
@@ -218,6 +222,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       if (response.ok) {
         const funcionario = await response.json();
+        console.log("Dados do funcionário:", funcionario);
 
         // Formata a data de admissão
         const dataAdmissao = new Date(funcionario.data_admissao);
@@ -244,13 +249,17 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector("#visualizar-complemento").value =
           funcionario.complemento;
 
-        if (funcionario.imagem_funcionario) {
+        // Extrai apenas o nome do arquivo da imagem (ex: "imagem.png")
+            const nomeImagem = funcionario.imagem_funcionario
+            ? funcionario.imagem_funcionario.split("\\").pop().split("/").pop() // Remove o caminho e deixa só o nome do arquivo
+            : ""; // Se não houver imagem, mantém a imagem padrão
+        if (funcionario.imagem_funcionario && funcionario.imagem_funcionario !== "" && funcionario.imagem_funcionario == `uploads\\funcionarios\\${nomeImagem}`) {
           document.querySelector(
             "#visualizar-imagem"
-          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`; //
+          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`; 
         } else{
-          document.querySelector("#visualizar-imagem").src = "https://cdn-icons-png.flaticon.com/512/5436/5436149.png";
-        }
+            document.querySelector("#visualizar-imagem").src = "css/img/imageuser-not-found.png";
+        } 
 
         document.querySelector("#modalVisualizarDialog").showModal();
       }
