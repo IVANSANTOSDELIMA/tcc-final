@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     funcionarios.forEach((funcionario) => {
       const row = document.createElement("tr");
+      const funcionarioLogado = JSON.parse(localStorage.getItem("funcionario"));
       row.innerHTML = `
                 <td>${funcionario.nome_funcionario}</td>
                 <td>${funcionario.cargo}</td>
@@ -81,7 +82,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <td>
                     <button id="visualizarButton" onclick="visualizarFuncionario(${funcionario.id_funcionario})">Visualizar</button>
                     <button id="editbutton" onclick="editarFuncionario(${funcionario.id_funcionario})">Editar</button>
-                    <button id="iconExcluir" title="Excluir" onclick="excluirFuncionario(${funcionario.id_funcionario})"></button>
+                    ${
+                      funcionarioLogado && funcionarioLogado.id !== funcionario.id_funcionario
+                      ? `<button id="iconExcluir" title="Excluir" onclick="excluirFuncionario(${funcionario.id_funcionario})"></button>`
+                      : ""
+                    }
                 </td>
             `;
       tbody.appendChild(row);
@@ -182,7 +187,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (funcionario.imagem_funcionario) {
           document.querySelector(
             "#editar-imagem"
-          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`; //https://mercar.pt/dacia/wp-content/uploads/sites/3/2023/03/Produto-sem-imagem.png
+          ).src = `${baseUrl}/${funcionario.imagem_funcionario}`; 
         } else{
           document.querySelector("#editar-imagem").src = "https://cdn-icons-png.flaticon.com/512/5436/5436149.png";
         }
