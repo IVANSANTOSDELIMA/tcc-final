@@ -94,7 +94,7 @@ Projeto realizado por:
   </tr>
   <tr>
    <td align="center">
-    <sub><p> Banco de dados,roteiro,QA</sub>
+    <sub><p> Banco de dados,idealização e coordenação,QA</sub>
    </td>
    <td align="center">
     <sub><p> Backend, QA, Integração</sub>
