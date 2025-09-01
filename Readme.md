@@ -34,6 +34,9 @@ Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) com o o
 ### Página de Produtos
 ![Produtos](https://media.licdn.com/dms/image/v2/D4D22AQEDIi_m8NzTAg/feedshare-shrink_800/B4DZgaqPWnGsAg-/0/1752793939438?e=1759363200&v=beta&t=mv_poqmIXihn8cVTGq0O_3M_64zXEwoT_S7b-HGOpcM)
 
+### Página de funcionários 
+![Funcionários](https://media.licdn.com/dms/image/v2/D4D22AQGulW7ry07dAA/feedshare-shrink_800/B4DZgaqPWZHwAk-/0/1752793939360?e=1759363200&v=beta&t=fv8-UpCE-NTXOQ3vezmSxkRwoTsRDVXm3cfz_oRXzc4)
+
 ### Movimentação
 ![Movimentação](https://media.licdn.com/dms/image/v2/D4D22AQEaZWWIoe9cag/feedshare-shrink_800/B4DZgaqPWpHsAg-/0/1752793940370?e=1759363200&v=beta&t=ePSBfKzHK6ChEjq1SHsXlc5UgB6uLdJjGN0RGbrYZZo)
 
