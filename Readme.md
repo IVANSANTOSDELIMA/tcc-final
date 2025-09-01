@@ -64,7 +64,7 @@ O frontend depende de uma API backend, disponível no repositório [API-Gerencia
 - ```/web```: fontes customizadas
 - ```/imagens```: imagens do sistema e telas
 
-## 🤝 Colaboradores
+## ✍️ Criadores
 
 Projeto realizado por:
 
